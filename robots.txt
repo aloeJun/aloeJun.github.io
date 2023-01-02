@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /*
+
+Disallow: /css/
+Disallow: /js/
+Disallow: /gallery/
+
+Sitemap: https://islu.cn/baidusitemap.xml
+Sitemap: https://islu.cn/sitemap.xml

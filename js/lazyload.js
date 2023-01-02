@@ -1,0 +1,1 @@
+function ImgLazyLoad(t,i){$queryAll(t).forEach(t=>{const e=new IntersectionObserver((t,a)=>{t.forEach(r=>{setTimeout(()=>{if(r.isIntersecting){const e=r.target;var t=e.getAttribute(i);e.setAttribute("src",t),a.disconnect()}},500)})});e.observe(t)})}ImgLazyLoad("body img[data-img]","data-img");
