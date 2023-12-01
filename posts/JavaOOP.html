@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" theme="dark">
+<head>
+    
+    
+
+<meta charset="UTF-8">
+<title>Java面向对象 | aloeJun | Lu's blog</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="/media/detail/aloeJun.png" rel="shortcut icon">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="aloeJun">
+<meta name="copyright" content="aloeJun">
+<meta name="keywords" content="Java面向对象概念和特征,java面向对象,java基础,java特征">
+<meta name="description" content="Java 面向对象面向对象概念什么是 Object 对象对象相当于中文语义”东西”。Object 是指一个具体事物实例，比如飞机、狗、运气、哲学等等看得见的，看不见的，有形的，无形的，具体的，抽象的都是对象，总之“一切皆 object”。面向对象 ObjectOriented面向对象是指面向客观事物之间的关系。人类日常的思维方式是面向对象的，自然界事物之间的关系是对象与对象之间的关系。优点直观，高效，与人类的思维习惯一致信息隐藏，提高了程序的可维护性和安全性提高了程序的可重用性面向对象定义首先根据客户需求抽象出业务对象；然后对需求进行合理分层，构建相对独立的业务模块；之后设计业务逻辑，利用多态、继承、封装、抽象的编程思想，实现业务需求最后通过整合各模块，达到高类聚、低耦合的效果，从而满足客户要求面向对象分析 OOAOOA/面向对象设计 OODOODOOADObjectOrientAnalysisDesign 面向对象分析和设计，面向对象分析不设计 ObjectOrientAnalysisDesign 面向对象分析和设计，面向对象分析不设计是现在软件企业广为采用的一项有效技术。OOAD 方法要求在设计中要映射现实世界中指定问题域中的对象和实体，例如：顾客、汽车和销售人员等。这就需要设计要尽可能低接近现实世界，即以最自然的方式表述实体。优点：为能够构建与现实世界相对应的问题模型，并保持他们的结构、关系和行为模式面向对象概念"/>
+<meta property="site_name" content="aloeJun | Lu&#39;s blog "/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.islu.cn/posts/JavaOOP.html">
+<meta property="og:title" content="Java面向对象 | aloeJun | Lu&#39;s blog"/>
+<meta property="og:site_name" content="aloeJun | Lu&#39;s blog"/>
+<meta property="og:description" content="Java 面向对象面向对象概念什么是 Object 对象对象相当于中文语义”东西”。Object 是指一个具体事物实例，比如飞机、狗、运气、哲学等等看得见的，看不见的，有形的，无形的，具体的，抽象的都是对象，总之“一切皆 object”。面向对象 ObjectOriented面向对象是指面向客观事物之间的关系。人类日常的思维方式是面向对象的，自然界事物之间的关系是对象与对象之间的关系。优点直观，高效，与人类的思维习惯一致信息隐藏，提高了程序的可维护性和安全性提高了程序的可重用性面向对象定义首先根据客户需求抽象出业务对象；然后对需求进行合理分层，构建相对独立的业务模块；之后设计业务逻辑，利用多态、继承、封装、抽象的编程思想，实现业务需求最后通过整合各模块，达到高类聚、低耦合的效果，从而满足客户要求面向对象分析 OOAOOA/面向对象设计 OODOODOOADObjectOrientAnalysisDesign 面向对象分析和设计，面向对象分析不设计 ObjectOrientAnalysisDesign 面向对象分析和设计，面向对象分析不设计是现在软件企业广为采用的一项有效技术。OOAD 方法要求在设计中要映射现实世界中指定问题域中的对象和实体，例如：顾客、汽车和销售人员等。这就需要设计要尽可能低接近现实世界，即以最自然的方式表述实体。优点：为能够构建与现实世界相对应的问题模型，并保持他们的结构、关系和行为模式面向对象概念"/>
+<meta property="og:locale" content="zh-CN">
+<meta property="article:author" content="aloeJun ">
+
+<style>html{scroll-behavior:smooth;overflow-y:overlay}html *{margin:0}html .clearfix{zoom:1}html .clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}html .center{text-align:center!important}html .relative{position:relative}html .absolute{position:absolute}html .hotpink{color:#ff69b4}html .right{float:right}html .left{float:left}html .hidden{display:none}html .cursor{cursor:pointer}html .filter{filter:var(--filter)}html ul li{list-style:none}html table{width:100%;display:table;border-collapse:collapse;border-spacing:0}html table td,html table th{padding:15px 5px;display:table-cell;text-align:left;vertical-align:middle;border-radius:2px;border:1px solid var(--love_color)}body{margin:0;background-color:var(--body_bg);font-size:14px;color:var(--text_color);font-family:楷体}body #resource{position:relative;top:0;left:0}body video{max-width:100%}body a{text-decoration:none;color:#0a84ff;transition:all .5s}body p{margin:revert}body .mask{width:100%;height:100%;position:fixed;top:0;z-index:102;background:rgba(0,0,0,.4)}body .pjax_progress{position:fixed;top:0;left:0;width:10%;height:2px;z-index:103;background-image:-webkit-linear-gradient(left,#f16f5c 0,#f16f5c 12.5%,#5b56dd 12.5%,#5b56dd 25%,#e15ced 25%,#e15ced 37.5%,#27e559 37.5%,#27e559 50%,#18c8c9 50%,#18c8c9 62.5%,#dc8987 62.5%,#dc8987 75%,#bb83d6 75%,#bb83d6 87.5%,#e774bd 87.5%,#e774bd 100%);transition:width .4s ease 0s}body .clipboard{right:16px;top:8px;cursor:pointer;border-radius:3px;color:#eff;position:relative;float:right;padding:2px}body ::-webkit-input-placeholder{color:#ff69b4}body ::-moz-placeholder{color:#ff69b4}body :-ms-input-placeholder{color:#ff69b4}body :-moz-placeholder{color:#ff69b4}body .gray-filter{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%)}#body-wrap{width:100%;position:relative}#body-wrap #main-wrap{min-height:24rem}#body-wrap .container{width:90%;max-width:1200px;margin:0 auto}#body-wrap .main-card{background-color:var(--main_bg);border:1px solid #e2dfdd;border-radius:10px}.post_content h2::after{float:right;margin-right:10px;display:inline-block;content:'\f0c1';color:grey;font-family:'Font Awesome 6 Pro'}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#666;border-radius:3px;box-shadow:inset 0 -1px 0 #000}code{padding:.1rem .2rem;background:rgba(27,31,35,.05);color:#f47466;border-radius:3px;word-wrap:break-word;word-break:break-word;overflow-wrap:break-word}blockquote{margin:4px 0;padding:.6rem .8rem;border-left:.2rem solid #e58a8a;background-color:rgba(73,177,245,.1);color:var(--blockquote_color)}blockquote p{margin:0}.pullquote.left{max-width:45%;float:left;margin:.5em .5em 0 0}.pullquote.right{max-width:45%;float:right;margin:.5em 0 0 .5em;border-right:.2rem solid #e58a8a;border-left:none}.video-container{position:relative;overflow:hidden;margin-bottom:.8rem;padding-top:56.25%;height:0}.video-container iframe{position:absolute;top:0;left:0;margin-top:0;width:100%;height:100%}h1{margin:48px 0 22px -5px;font-size:2rem;font-weight:700;line-height:2rem}h2{margin:42px 0 18px -5px;font-size:1.8rem;font-weight:700;line-height:1.8rem}h3{margin:38px 0 15px -4px;font-size:1.6rem;font-weight:700;line-height:1.7rem}h4{margin:32px 0 12px -4px;font-size:1.45rem;font-weight:700;line-height:1.45rem}h5{margin:28px 0 8px -4px;font-size:1.2rem;font-weight:700;line-height:1.2rem}h6{margin:22px 0 4px -4px;font-size:1.1rem;line-height:1.1rem}p{font-size:1rem;line-height:1.5rem}hr{margin:20px 0;border:0;border-top:1px solid #ccc}::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background-color:grey;border-radius:8px;cursor:pointer}::-webkit-scrollbar-thumb:hover{opacity:1;display:block!important}::-webkit-scrollbar-track{background-color:transparent}:root{--main:#c7a17a;--body_bg:#f7f9fe;--text_color:#333;--main_bg:#fff;--post_title:rgba(52,50,50,0.7);--link_bg:#f8f9fa;--code_bg:$highlight-background;--code_wrap_bg:$code_block;--blockquote_color:#6a737d;--table_bg:none;--love_color:#3c4858;--filter:none}html[theme=dark]{--body_bg:#161b2a;--text_color:rgba(255,255,255,0.6);--main_bg:#070615;--post_title:rgba(255,255,255,0.9);--link_bg:#333841;--code_bg:#333841;--code_wrap_bg:#444851;--blockquote_color:rgba(255,255,255,0.6);--table_bg:#282c34;--love_color:#faebd7;--filter:invert(1)}nav .navbar{display:flex;justify-content:space-between;align-items:center;height:5rem;padding:0 30px;margin:0 10%}nav .navbar .open_nav{margin-left:10px;display:none}nav .navbar .blog_name{font-weight:700;font-size:1.8rem;color:#ff7242;display:inline-block;text-decoration:none;margin-left:4rem;min-width:7.2rem}nav ul.side-toolbar{min-width:5.6rem;color:var(--post_title)}nav ul.side-toolbar li{display:inline-block;width:2em;font-size:1.5rem;cursor:pointer}nav ul.side-toolbar li:hover{color:#0a84ff}nav ul.side-toolbar i{font-size:1.5rem}nav #navbar_wrap{padding-inline-start:0;position:fixed;width:100%;z-index:991;top:0;background-color:var(--main_bg);-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:background .5s ease-in-out,padding .5s ease-in-out;-webkit-transition:background .5s ease-in-out,padding .5s ease-in-out;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}nav #navbar_wrap .menu{margin-right:auto}nav #navbar_wrap .menu li{position:relative;list-style:none;float:left;text-align:center}nav #navbar_wrap .menu li:nth-child(odd) a:before{background-color:#ff0}nav #navbar_wrap .menu li:nth-child(odd) a:after{background-color:red}nav #navbar_wrap .menu li:nth-child(odd) a:hover~.indicator{background:linear-gradient(130deg,#ff0,red)}nav #navbar_wrap .menu li:nth-child(even) a:before{background-color:#00e2ff}nav #navbar_wrap .menu li:nth-child(even) a:after{background-color:#89ff00}nav #navbar_wrap .menu li:nth-child(even) a:hover~.indicator{left:34%;background:linear-gradient(130deg,#00e2ff,#89ff00)}nav #navbar_wrap .menu li ul.menu_child{display:none}nav #navbar_wrap .menu li ul.menu_child li{float:none!important}nav #navbar_wrap .menu li ul.menu_child li a:before{background-color:purple}nav #navbar_wrap .menu li ul.menu_child li a:after{background-color:#db7093}nav #navbar_wrap .menu li ul.menu_child li a:hover~.indicator{left:70%;background:linear-gradient(130deg,purple,#db7093)}nav #navbar_wrap .menu li a{cursor:pointer;white-space:nowrap;font-size:1.3rem;color:var(--love_color);position:relative;width:33.333%;display:table-cell;text-align:center;text-decoration:none;font-weight:700;padding:10px 20px;transition:.2s ease color}nav #navbar_wrap .menu li a i{color:var(--love_color);order:1;font-size:13px}nav #navbar_wrap .menu li a i.icon-chevron-up{display:none}nav #navbar_wrap .menu li a:after,nav #navbar_wrap .menu li a:before{content:"";position:absolute;border-radius:50%;transform:scale(0);transition:.2s ease transform}nav #navbar_wrap .menu li a:before{top:0;left:10px;width:6px;height:6px}nav #navbar_wrap .menu li a:after{top:5px;left:18px;width:4px;height:4px}nav #navbar_wrap .menu li a:hover,nav #navbar_wrap .menu li a:hover i{color:#00c4b6}nav #navbar_wrap .menu li a:hover i:after,nav #navbar_wrap .menu li a:hover i:before,nav #navbar_wrap .menu li a:hover:after,nav #navbar_wrap .menu li a:hover:before{transform:scale(1)}nav #navbar_wrap .menu li a:hover i~.indicator,nav #navbar_wrap .menu li a:hover~.indicator{visibility:unset;width:100%}nav #navbar_wrap .menu li .indicator{visibility:hidden;width:0;height:3px;background-color:#fff;border-radius:5px;transition:.35s ease all;margin:0 auto}nav #navbar_wrap .menu li:hover .menu_child{background-color:var(--main_bg);position:absolute;right:0;display:inline-block;padding:0;border-radius:6px;width:-moz-max-content;width:max-content;min-width:80px;box-shadow:0 5px 20px -4px rgba(0,0,0,.5)}nav #navbar_wrap .menu li:hover .menu_childicon-chevron-up{margin-top:13px}.open_mobile{transform:translate3d(100%,0,0)}#mobile_nav{background:var(--main_bg);position:fixed;left:-200px;top:0;z-index:991;overflow:hidden auto;width:200px;height:100%;padding:0;transition:all .5s}#mobile_nav ul{padding-inline-start:unset}#mobile_nav ul li{display:block;list-style:none;text-align:center;line-height:2}#mobile_nav ul li a{font-weight:700;display:block;cursor:pointer;white-space:nowrap;padding:10px;font-size:.9rem;color:var(--love_color)}header{background:linear-gradient(to top,var(--body_bg),#a9a9a9)}header .header_main{-webkit-user-select:none;-moz-user-select:none;user-select:none;cursor:pointer;padding:3.6rem 0}header .header_main .title{line-height:15rem;color:#fff;font-size:5rem;font-weight:700}header .header_main p.now-path{color:#f60;margin-top:0;font-size:2rem;font-weight:bolder}.main-hero-waves-area{width:100%}.waves-area .waves-svg{width:100%;height:5rem}.parallax>use{animation:move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite}.parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(247,249,254,.741)}.parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(247,249,254,.51)}.parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(247,249,254,.212)}.parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#f7f9fe}[theme=dark] .parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(22,27,42,.4)}[theme=dark] .parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(22,27,42,.6)}[theme=dark] .parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(22,27,42,.8)}[theme=dark] .parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#161b2a}@media (max-width:768px){.waves-area .waves-svg{height:40px;min-height:40px}}@keyframes move-forever{0%{transform:translate3d(-90px,0,0)}100%{transform:translate3d(85px,0,0)}}@media only screen and (max-width:601px){nav ul.side-toolbar li{width:1.5em!important}#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}.scrollbar{display:none}header .header_main .title{line-height:10rem}header .header_main p.now-path{font-size:1.5rem}#main-wrap.container{width:98.5%;margin:1rem auto}#main-wrap.container #post-list,#main-wrap.container .post{float:unset;width:100%;margin:0}#main-wrap.container #post-list .post-info,#main-wrap.container .post .post-info{padding:1.5rem}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{max-width:70%;margin:1rem}#main-wrap.container #post-list .post-content,#main-wrap.container .post .post-content{padding:1rem}#main-wrap.container .post+#rightside{display:none}#main-wrap.container #rightside{width:unset}#main-wrap.container #rightside .rightside-category,#main-wrap.container #rightside .rightside-message,#main-wrap.container #rightside .rightside-tag,#main-wrap.container #rightside .rightside-toc{width:unset}#main-wrap.container .category-container li.category-content{width:50%}#main-wrap.container .category-container li.category-content:nth-child(2n):after{width:0}#main-wrap.container .categories-content{font-size:1rem}#main-wrap.container .categories-default{margin:.1rem}#main-wrap.container .archives-container .article-item .post-link{width:88%}#main-wrap.container #categories-chart,#main-wrap.container #posts-chart,#main-wrap.container #tags-chart{display:block;width:100%}#main-wrap.container .uk-alert{padding:0;margin:0}#main-wrap.container .relatedPosts-list{padding-left:0}#main-wrap.container .relatedPosts-list li{display:unset;max-width:unset}#main-wrap.container .about .w32,#main-wrap.container .about .w43,#main-wrap.container .about .w55{width:100%}#main-wrap.container .about .author-content .author-content-item p{font-size:2rem!important;margin:1.5rem 0 0 0!important}footer .footer-message a{margin-right:.5rem!important}.wl-editor{font-size:.6em!important}#local-search{z-index:999!important}}@media only screen and (min-width:600px) and (max-width:992px){#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}#main-wrap.container{width:unset}#main-wrap.container #post-list,#main-wrap.container .post{width:69%}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{margin:0 0 .6rem .6rem}}@font-face{font-family:iconfont;src:url(/font/iconfont.woff2) format('woff2'),url(/font/iconfont.woff) format('woff'),url(/font/iconfont.ttf) format('truetype')}.iconfont{font-family:iconfont!important;font-size:1rem;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-message:before{content:"\e819"}.icon-like{color:red}.icon-like:before{content:"\e6fc"}.icon-eye:before{content:"\e706"}.icon-history-filling:before{content:"\e68a"}.icon-pintu:before{content:"\e741"}.icon-database:before{content:"\e6ac"}.icon-sad-tear:before{content:"\eb8a"}.icon-link:before{content:"\e6b4"}.icon-erweima:before{content:"\eaf1"}.icon-dashang:before{content:"\e693"}.icon-text:before{content:"\e71e"}.icon-timer-fill:before{content:"\e87a"}.icon-copy:before{content:"\e67f"}.icon-share:before{content:"\e68f"}.icon-yinsixieyi:before{content:"\e740"}.icon-paperplane-fill:before{content:"\e7a9"}.icon-tag-fill:before{content:"\e7ae"}.icon-pausecircle-fill:before{content:"\e7cb"}.icon-stopcircle-fill:before{content:"\e7cc"}.icon-playcircle-fill:before{content:"\e7cd"}.icon-picture-fill:before{content:"\e7cf"}.icon-calendaralt-fill:before{content:"\e7d8"}.icon-clouddownload-fill:before{content:"\e7d9"}.icon-times-circle-fill:before{content:"\e7e1"}.icon-angle-double-right:before{content:"\e84a"}.icon-angle-double-left:before{content:"\e84b"}.icon-home:before{content:"\e88b"}.icon-universal-access:before{content:"\ebbd"}.icon-window-restore:before{content:"\ebd3"}.icon-rotateright:before{content:"\e7e7"}.icon-dingyue:before{content:"\e602"}.icon-arrow-up:before{content:"\e601"}.icon-chevron-down:before{content:"\e606"}.icon-bars:before{content:"\e610"}.icon-books:before{content:"\e716"}.icon-tag:before{content:"\e66c"}.icon-search:before{content:"\e6aa"}.icon-envelope:before{content:"\e6ce"}.icon-GitHub:before{content:"\ea0a"}.icon-file-text-fill:before{content:"\e858"}.icon-closed-captioning:before{content:"\e600"}.icon-share-all-solid:before{content:"\e61d"}.icon-file-search-Fill:before{content:"\e8da"}.icon-sun:before{content:"\eba5"}.icon-chevron-left:before{content:"\e603"}.icon-chevron-up:before{content:"\e604"}.icon-chevron-right:before{content:"\e605"}.icon-moon:before{content:"\e8b1"}</style>
+<script>
+    const $id=e=>document.getElementById(e),$query=e=>document.querySelector(e),$queryAll=e=>document.querySelectorAll(e),getScript=(e,t)=>{if(Array.isArray(this.isGetScript)){if(this.isGetScript.includes(e))return t()}else this.isGetScript=[];this.isGetScript.push(e);var r=document.createElement("script");r.src=e,void 0!==t&&(r.readyState?r.onreadystatechange=()=>{"loaded"!=r.readyState&&"complete"!=r.readyState||(r.onreadystatechange=null,t())}:r.onload=()=>{r.onload=null,t()}),(null!=$id("resource")?$id("resource"):document.body).appendChild(r)},getCss=e=>{var t=document.createElement("link");t.rel="stylesheet",t.type="text/css",t.href=e,document.head.appendChild(t)},copyText=e=>navigator.clipboard?.writeText&&navigator.clipboard.writeText(e),getDaysDiffBetweenDates=e=>parseInt((new Date-new Date(e))/864e5),throttle=(t,r)=>{var a=0;return function(){var e=new Date;r<e-a&&(t.apply(this,arguments),a=e)}};
+</script>
+
+<link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="aloeJun | Lu's blog" type="application/atom+xml">
+</head>
+<body>
+
+<div id="body-wrap">
+    
+    
+
+
+    
+    <nav id="nav">
+    <menu id="navbar_wrap">
+        <div class="navbar">
+            <i class="iconfont icon-bars open_nav"></i>
+            <a href="/" class="blog_name"><i>A<span style="color: #00c4b6">L</span>OEJ<span
+                            style="color: #00c4b6">U</span>N</i></a>
+            <ul class="menu">
+                <li>
+                    <a href="/" rel="noopener noreferrer">首页</a>
+                    <div class="indicator"></div>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/tags/index.html" rel="noopener noreferrer">
+                                标签
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/categories/index.html" rel="noopener noreferrer">
+                                分类
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/archives/index.html" rel="noopener noreferrer">
+                                归档
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about/index.html" rel="noopener noreferrer">
+                                关于
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/contact/index.html" rel="noopener noreferrer">
+                                留言
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/friends/index.html" rel="noopener noreferrer">
+                                朋友
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="#" rel="noopener noreferrer">
+                                清单
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="indicator"></div>
+                            <ul class="menu_child">
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                                
+                                    <li>
+                                        <a href='/fcircle/index.html'
+                                           rel="noopener noreferrer">朋友小圈</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/talk/index.html'
+                                           rel="noopener noreferrer">碎碎叨叨</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/books/index.html'
+                                           rel="noopener noreferrer">阅读记录</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                <li>
+                                    <a target="_blank" href='https://sport.islu.cn' rel="noopener noreferrer noopener">运动记录</a>
+                                    <div class="indicator"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                
+            </ul>
+            <ul class="side-toolbar">
+                <li>
+                    <i id="darkBtn" class="iconfont icon-sun" title="深色/浅色"></i>
+                </li>
+                <li>
+                    <i id="searchBtn" class="iconfont icon-search"></i>
+                </li>
+            </ul>
+        </div>
+    </menu>
+    <menu id="mobile_nav">
+        <ul>
+            <li>
+                <a href="/" rel="noopener noreferrer">首页</a>
+                <div class="indicator"></div>
+            </li>
+            
+                
+                    <li>
+                        <a href="/tags/index.html" rel="noopener noreferrer">
+                            标签
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/categories/index.html" rel="noopener noreferrer">
+                            分类
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/archives/index.html" rel="noopener noreferrer">
+                            归档
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/about/index.html" rel="noopener noreferrer">
+                            关于
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/contact/index.html" rel="noopener noreferrer">
+                            留言
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/friends/index.html" rel="noopener noreferrer">
+                            朋友
+                        </a>
+                    </li>
+                
+            
+                
+                    
+                        <li>
+                            <a href='/fcircle/index.html'
+                               rel="noopener noreferrer">
+                                朋友小圈
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/talk/index.html'
+                               rel="noopener noreferrer">
+                                碎碎叨叨
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/books/index.html'
+                               rel="noopener noreferrer">
+                                阅读记录
+                            </a>
+                        </li>
+                    
+                
+            
+            <li>
+                <a target="_blank" href="https://sport.islu.cn" rel="noopener noreferrer noopener">运动</a>
+                <div class="indicator"></div>
+            </li>
+        </ul>
+    </menu>
+</nav>
+
+    
+    <header id="header" class="main-hero-waves-area waves-area">
+    <div class="header_main">
+        <div class="container center">
+            <h2 class="title">Choice over effort.</h2>
+            <p class="now-path">
+                <a href="/" rel="noopener noreferrer" title="返回首页">Home /</a>
+                
+                    Java面向对象
+                
+            </p>
+        </div>
+    </div>
+    <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352Z"></path>
+        </defs>
+        <g class="parallax">
+            <use href="#gentle-wave" x="48" y="0"></use>
+            <use href="#gentle-wave" x="48" y="3"></use>
+            <use href="#gentle-wave" x="48" y="5"></use>
+            <use href="#gentle-wave" x="48" y="7"></use>
+        </g>
+    </svg>
+</header>
+    
+    <main id="main-wrap" style="display: none" class="container clearfix">
+        
+<article class="post main-card" id="post">
+    <div class="post-info">
+        <div class="post-title">
+            <h1>Java面向对象</h1>
+        </div>
+        <div class="post-meta">
+            <div class="post-date">
+                <i class="iconfont icon-calendaralt-fill post-meta-icon"></i>
+                <span class="post-meta-label">
+                    发表于
+                    <span id="dateTime">
+                        2021-03-15
+                    </span> |
+                </span>
+                <i class="iconfont icon-history-filling post-meta-icon"></i>
+                <span class="post-meta-label">
+                    更新于
+                    <span id="updateTime">
+                        2021-03-15
+                    </span>
+                </span>
+            </div>
+            <div class="post-meta-wordcount">
+                <i class="iconfont icon-text post-meta-icon"></i>
+                <span class="post-meta-label">总字数:</span>
+                <span class="word-count">4.2k | </span>
+                <i class="iconfont icon-timer-fill post-meta-icon"></i>
+                <span class="post-meta-label">阅读时长:</span>
+                <span>17分钟</span>
+                
+                    | <i class="iconfont icon-eye post-meta-icon"></i>
+                    <span class="post-meta-label">阅读量:</span>
+                    <span class="waline-pageview-count"></span>
+                    </span>
+                
+            </div>
+        </div>
+        <div class="uk-alert">
+            <p id="thisTime">
+                <span id="timeLag" class="loading center">
+                       <img src="/media/detail/loaded.svg" alt="加载中...">
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="post-content">
+        <h1 id="Java-面向对象"><a href="#Java-面向对象" class="headerlink" title="Java 面向对象"></a>Java 面向对象</h1><h2 id="面向对象概念"><a href="#面向对象概念" class="headerlink" title="面向对象概念"></a>面向对象概念</h2><h3 id="什么是-Object-对象对象"><a href="#什么是-Object-对象对象" class="headerlink" title="什么是 Object 对象对象"></a>什么是 Object 对象对象</h3><p>相当于中文语义”东西”。Object 是指一个具体事物实例，比如飞机、狗、运气、哲学等等看得见的，看不见的，有形的，无形的，具体的，抽象的都是对象，总之“一切皆 object”。</p>
+<h3 id="面向对象-ObjectOriented"><a href="#面向对象-ObjectOriented" class="headerlink" title="面向对象 ObjectOriented"></a>面向对象 ObjectOriented</h3><p>面向对象是指面向客观事物之间的关系。人类日常的思维方式是面向对象的，自然界事物之间的关系是对象与对象之间的关系。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>直观，高效，与人类的思维习惯一致</li>
+<li>信息隐藏，提高了程序的可维护性和安全性</li>
+<li>提高了程序的可重用性</li>
+</ul>
+<h3 id="面向对象定义"><a href="#面向对象定义" class="headerlink" title="面向对象定义"></a>面向对象定义</h3><p>首先根据客户需求抽象出业务对象；</p>
+<p>然后对需求进行合理分层，构建相对独立的业务模块；</p>
+<p>之后设计业务逻辑，利用多态、继承、封装、抽象的编程思想，实现业务需求</p>
+<p>最后通过整合各模块，达到高类聚、低耦合的效果，从而满足客户要求</p>
+<h3 id="面向对象分析-OOAOOA-面向对象设计-OODOOD"><a href="#面向对象分析-OOAOOA-面向对象设计-OODOOD" class="headerlink" title="面向对象分析 OOAOOA/面向对象设计 OODOOD"></a>面向对象分析 OOAOOA/面向对象设计 OODOOD</h3><p>OOADObjectOrientAnalysisDesign 面向对象分析和设计，面向对象分析不设计 ObjectOrientAnalysisDesign 面向对象分析和设计，面向对象分析不设计是现在软件企业广为采用的一项有效技术。OOAD 方法要求在设计中要映射现实世界中指定问题域中的对象和实体，例如：顾客、汽车和销售人员等。这就需要设计要尽可能低接近现实世界，即以最自然的方式表述实体。</p>
+<blockquote>
+<p><strong>优点：</strong>为能够构建与现实世界相对应的问题模型，并保持他们的结构、关系和行为模式</p>
+</blockquote>
+<h3 id="面向对象概念-1"><a href="#面向对象概念-1" class="headerlink" title="面向对象概念"></a>面向对象概念</h3><figure class="highlight shell">
+    <div class="code-block-header" lang="shell">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">1、类型(类)指一个名词概念，如：客人、菜品、厨师</span><br><span class="line"></span><br><span class="line">2、引用(变量)指引用具体概念实例的代词，如：某人、特价菜</span><br><span class="line"></span><br><span class="line">3、对象(东西)指具体概念的个体实例，如：张三丰是个人、一盘大盘鸡</span><br><span class="line">    如上三者关系之间的关系可以体现为：“今天的特价菜是一盘大盘鸡”</span><br><span class="line">4、行为(方法)</span><br><span class="line"></span><br><span class="line">5、多态 行为或引用，在具体情形下会发生变化的现象。</span><br><span class="line">    如：“一只动物”可以是“一匹马”、“一头驴”、“一只猴子”，多态的</span><br><span class="line">6、封装 任何对象实例都是尽可能封装，减少暴露，它的实现细节对你是透明的(看不到的)。比如：只能看到汽车的壳子、轮胎等，看不到发动机</span><br><span class="line"></span><br><span class="line">7、继承 概念的继承关系</span><br></pre></td></tr></table></figure>
+
+<h3 id="面向对象思想"><a href="#面向对象思想" class="headerlink" title="面向对象思想"></a>面向对象思想</h3><figure class="highlight shell">
+    <div class="code-block-header" lang="shell">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">1、面向对象是基于面向过程的编程思想</span><br><span class="line"></span><br><span class="line">2、万物皆对象</span><br><span class="line"></span><br><span class="line">3、对象具有唯一性</span><br><span class="line"></span><br><span class="line">4、任何对象都具有一定的特征和行为；特征是事物的基本描述，行为是事物的功能</span><br><span class="line"></span><br><span class="line">5、类是一组相关的属性和方法的集合，是一个抽象的概念</span><br><span class="line"></span><br><span class="line">6、对象是类的具体存在</span><br><span class="line"></span><br><span class="line">7、在一组相同或相似的对象中，抽取出共性的特征和行为，保留所关注的部分就是类的抽取</span><br><span class="line"></span><br><span class="line">8、类是模板、图纸，通过类创造的对象就是实体</span><br></pre></td></tr></table></figure>
+
+<h2 id="面向对象特征"><a href="#面向对象特征" class="headerlink" title="面向对象特征"></a>面向对象特征</h2><p>面向对象的编程语言有封装、继承、抽象、多态等四个主要的特征</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>是指隐藏对象的属性和实现细节，仅对外提供公共访问方式。核心是归纳总结</p>
+<p>封装是保证软件部件具有优良的模块性的基础。</p>
+<p>封装的目标：实现软件部件的“高内聚、低耦合”，防止程序相互依赖性而带来的变动影响。</p>
+<p>面向对象的封装就是把描述一个对象的属性和行为的代码封装在一个“模块”中，也就是一个类中，属性用变量定义，行为用方法进行定义，方法可以直接访问同一个对象中的属性。通常情况下，只要记住让变量和访问这个变量的方法放在一起，将一个类中的成员变量全部定义成私有的，只有这个类自己的方法可以访问到这些成员的变量，这就基本实现了对象的封装，就很容易找到分配到这些类的方法了，就基本上算是会面向对象的编程了。</p>
+<blockquote>
+<p>把对同一事物进行操作的方法和相关的方法放在同一个类中，把方法和它操作的数据放在同一个类中。</p>
+</blockquote>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><blockquote>
+<p>提高代码的复用度、安全性，不必关心具体细节，便于开发</p>
+</blockquote>
+<h4 id="JavaBean-规范化封装"><a href="#JavaBean-规范化封装" class="headerlink" title="JavaBean 规范化封装"></a>JavaBean 规范化封装</h4><figure class="highlight shell">
+    <div class="code-block-header" lang="shell">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">1. 要求Java中的所有实体类成员变量全部私有化，最少提供一个无参数构造方法，对应成员变量实现setter和getter方法</span><br><span class="line">2. JavaBean规范，是为了后期开发汇总更好的代码适配度，提高代码运行的统一性，能够满足框架的使用</span><br><span class="line">3. JavaBean规范只是一个规范，而且是作为一个基础规范，操作都是可以使用快捷键来完成的！！！</span><br><span class="line">class Person &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private char sex;</span><br><span class="line">    private boolean alive;</span><br><span class="line"></span><br><span class="line">    public Person() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return this.name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return this.age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public char getSex() &#123;</span><br><span class="line">        return this.sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean isAlive() &#123;</span><br><span class="line">        return alive;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAlive(boolean alive) &#123;</span><br><span class="line">        this.alive = alive;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setSex(char sex) &#123;</span><br><span class="line">        this.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系，这多个类就具备了这些内容。这个关系叫继承。</p>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">关键字：extends</span><br><span class="line"></span><br><span class="line">格式:</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_">Father</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一个孩子只能有一个父亲</span></span><br><span class="line"><span class="comment">//一个父亲可以有多个孩子</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><blockquote>
+<ol>
+<li>Java 为单继承，一个类只能有一个直接父类，但可以多级继承，属性和方法逐级叠加</li>
+<li>构造方法只可服务于本类，不可继承，子类执行构造方法前会默认调用父类的无参构造方法。可以通过 super 去访问父类的构造方法</li>
+<li>private 修饰的属性和方法不能被继承</li>
+</ol>
+</blockquote>
+<h4 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h4><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建一个父类对象</span></span><br><span class="line">        <span class="type">Father</span> <span class="variable">father</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Father</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 父类调用父类的属性和方法</span></span><br><span class="line">        father.name = <span class="string">&quot;父&quot;</span>;</span><br><span class="line">        System.out.println(father.name);</span><br><span class="line">        father.game();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;-------------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一歌子类对象</span></span><br><span class="line">        <span class="type">Son</span> <span class="variable">son</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 子类调用子类的属性和方法</span></span><br><span class="line">        son.age = <span class="number">16</span>;</span><br><span class="line">        System.out.println(son.age);</span><br><span class="line">        son.study();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 子类调用父类的属性和方法(public修饰)</span></span><br><span class="line">        son.name = <span class="string">&quot;子&quot;</span>;</span><br><span class="line">        System.out.println(son.name);</span><br><span class="line">        son.game();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 子类调用父类private修饰的属性和方法</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * 报错</span></span><br><span class="line"><span class="comment">         * The field Father.suffer is not visible</span></span><br><span class="line"><span class="comment">         * The method cook() from the type Father is not visible</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * 由此可知子类不能调用父类私有化的属性和方法</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        son.suffer = 10;</span></span><br><span class="line"><span class="comment">//        son.cook();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Father</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> suffer;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">game</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;下棋&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">cook</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;做饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">study</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类 -- 学习&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><blockquote>
+<ol>
+<li>提高了代码的复用性</li>
+<li>提高了代码的维护性</li>
+<li>让类与类之间产生了一个关系，是多态的前提</li>
+</ol>
+</blockquote>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><blockquote>
+<ol>
+<li>让类的耦合性增强。这样某个类的改变，就会影响到其他和该类相关的类</li>
+<li>打破了封装性</li>
+</ol>
+</blockquote>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
+<ol>
+<li>Java 中只有单继承</li>
+<li>子类可以继承父类的非私有属性和方法（非 private 修饰的）</li>
+<li>执行子类的构造方法前会默认执行父类的无参构造方法</li>
+</ol>
+</blockquote>
+<h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><p>不能实例化的类就是抽象类，用 abstract 修饰</p>
+<h5 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h5><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> class 类名 &#123;</span><br><span class="line">    成员变量</span><br><span class="line">    构造方法</span><br><span class="line">    成员方法</span><br><span class="line">        非抽象方法</span><br><span class="line">        抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h5><figure class="highlight shell">
+    <div class="code-block-header" lang="shell">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">1、抽象类和抽象方法必须用关键字 abstract 修饰</span><br><span class="line">2、抽象类中不一定有抽象方法，但是有抽象方法的类一定是抽象类</span><br><span class="line">3、abstract 修饰的方法没有方法体，且子类必须重写</span><br><span class="line">4、抽象类不能实例化，因为 abstract 类中有 abstract 方法</span><br><span class="line">5、抽象类的子类</span><br><span class="line">        也可以是一个抽象类，可以重写也可以不重写父类的抽象方法。</span><br><span class="line">        可以是一个具体类。这个类必须重写抽象类中的所有抽象方法。(可以实例化)</span><br><span class="line">public class TestSon &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Son son = new Son();</span><br><span class="line">        son.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 抽象类</span><br><span class="line">abstract class Father &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int age;</span><br><span class="line"></span><br><span class="line">    public Father() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void eat() &#123;</span><br><span class="line">        System.out.println(&quot;吃饭&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 抽象方法</span><br><span class="line">    abstract public void play();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Son extends Father &#123;</span><br><span class="line">    // 抽象方法的重写</span><br><span class="line">    @Override</span><br><span class="line">    public void play() &#123;</span><br><span class="line">        System.out.println(&quot;玩游戏&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p><strong>二者具有直接或间接的继承关系时，父类引用指向子类对象，从而产生多种形态；接口的引用指向实现接口的类对象也是多态</strong></p>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>多态场景下，父类引用调用方法，如果被子类重写过，优先执行子类重写过后的方法</p>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">testCar</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 父类引用指向子类对象</span></span><br><span class="line">        <span class="type">Vehicle</span> <span class="variable">vehicle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 优先执行子类重写过的方法</span></span><br><span class="line">        vehicle.run();    <span class="comment">// Car run！！！</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Vehicle run！！！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> <span class="keyword">extends</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Car run！！！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="应用场景一"><a href="#应用场景一" class="headerlink" title="应用场景一"></a>应用场景一</h4><p>使用父类作为方法形参实现多态，使方法参数的类型更为宽泛</p>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestCar</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Vehicle</span> <span class="variable">vehicle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>();</span><br><span class="line">        vehicle.type = <span class="string">&quot;小汽车&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">Bike</span> <span class="variable">bike</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bike</span>();</span><br><span class="line">        bike.type = <span class="string">&quot;自行车&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">Bus</span> <span class="variable">bus</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br><span class="line">        bus.type = <span class="string">&quot;公交车&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">Employee</span> <span class="variable">employee</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Employee</span>(<span class="string">&quot;你的迪丽热巴&quot;</span>);</span><br><span class="line">        employee.goHome(vehicle);</span><br><span class="line">        employee.goHome(bus);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Employee</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Employee</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">goHome</span><span class="params">(Vehicle vehicle)</span> &#123;</span><br><span class="line">        System.out.println(<span class="built_in">this</span>.name + <span class="string">&quot;乘坐&quot;</span> + vehicle.type + <span class="string">&quot;交通工具回家&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    String type;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Vehicle run！！！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> <span class="keyword">extends</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Bus run！！！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> <span class="keyword">extends</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Car run！！！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bike</span> <span class="keyword">extends</span> <span class="title class_">Vehicle</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Bike run！！！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="应用场景二"><a href="#应用场景二" class="headerlink" title="应用场景二"></a>应用场景二</h4><p>使用父类作为方法返回值实现多态，使方法可以返回不同子类对象</p>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Vehicle <span class="title function_">buyVehicle</span><span class="params">(<span class="type">int</span> money)</span> &#123;</span><br><span class="line">        <span class="type">Vehicle</span> <span class="variable">vehicle</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (money &gt;= <span class="number">100</span>) &#123;</span><br><span class="line">            <span class="type">Bus</span> <span class="variable">bus</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bus</span>();</span><br><span class="line">            bus.speed = <span class="number">60</span>;</span><br><span class="line">            bus.price = <span class="number">1230000.0</span>;</span><br><span class="line">            bus.seatNum = <span class="number">16</span>;</span><br><span class="line">            bus.type = <span class="string">&quot;公交车&quot;</span>;</span><br><span class="line">            vehicle = bus;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (money &gt;= <span class="number">30</span>) &#123;</span><br><span class="line">            <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>();</span><br><span class="line">            car.price = <span class="number">310000.0</span>;</span><br><span class="line">            car.speed = <span class="number">90</span>;</span><br><span class="line">            car.type = <span class="string">&quot;小汽车&quot;</span>;</span><br><span class="line">            car.brand = <span class="string">&quot;BMW&quot;</span>;</span><br><span class="line">            vehicle = car;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (money &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="type">Bike</span> <span class="variable">bike</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bike</span>();</span><br><span class="line">            bike.type = <span class="string">&quot;捷安特自行车&quot;</span>;</span><br><span class="line">            bike.speed = <span class="number">40</span>;</span><br><span class="line">            bike.price = <span class="number">2000.0</span>;</span><br><span class="line">            bike.color = <span class="string">&quot;红色&quot;</span>;</span><br><span class="line">            vehicle = bike;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> vehicle;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="向上装箱与向下拆箱"><a href="#向上装箱与向下拆箱" class="headerlink" title="向上装箱与向下拆箱"></a>向上装箱与向下拆箱</h4><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Fish</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        showAnimal(<span class="keyword">new</span> <span class="title class_">Animal</span>());    <span class="comment">// code.polymorphic.animal.Animal@7852e922</span></span><br><span class="line">        <span class="comment">// 向上转型</span></span><br><span class="line">        showAnimal(<span class="keyword">new</span> <span class="title class_">Cat</span>());    <span class="comment">// code.polymorphic.animal.Cat@4e25154f</span></span><br><span class="line">        <span class="comment">// 向上转型</span></span><br><span class="line">        showAnimal(<span class="keyword">new</span> <span class="title class_">Dog</span>());    <span class="comment">// code.polymorphic.animal.Dog@70dea4e</span></span><br><span class="line">        <span class="comment">// 向上转型</span></span><br><span class="line">        showAnimal(<span class="keyword">new</span> <span class="title class_">Fish</span>());    <span class="comment">// code.polymorphic.animal.Fish@5c647e05</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;----------------------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Animal</span> <span class="variable">animal</span> <span class="operator">=</span> getAnimal();</span><br><span class="line">        <span class="comment">// 向下转型</span></span><br><span class="line">        <span class="type">Cat</span> <span class="variable">cat</span> <span class="operator">=</span> (Cat) getCat();</span><br><span class="line">        <span class="comment">// 向下转型</span></span><br><span class="line">        <span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> (Dog) getDog();</span><br><span class="line">        <span class="comment">// 向下转型</span></span><br><span class="line">        <span class="type">Fish</span> <span class="variable">fish</span> <span class="operator">=</span> (Fish) getFish();</span><br><span class="line"></span><br><span class="line">        System.out.println(animal);    <span class="comment">// code.polymorphic.animal.Animal@33909752</span></span><br><span class="line">        System.out.println(cat);    <span class="comment">// code.polymorphic.animal.Cat@55f96302</span></span><br><span class="line">        System.out.println(dog);    <span class="comment">// code.polymorphic.animal.Dog@3d4eac69</span></span><br><span class="line">        System.out.println(fish);    <span class="comment">// code.polymorphic.animal.Fish@42a57993</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 展示动物</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> animal</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">showAnimal</span><span class="params">(Animal animal)</span> &#123;</span><br><span class="line">        System.out.println(animal);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 得到动物</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回一个Animal对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Animal <span class="title function_">getAnimal</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Animal</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 得到猫</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回一个Cat对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Animal <span class="title function_">getCat</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 得到狗</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回一个Dog对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Animal <span class="title function_">getDog</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 得到鱼</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回一个Fish对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Animal <span class="title function_">getFish</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Fish</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h4><p>用于判断当前对象是否是某个类，或者其子类、实现类的实例。如果是返回 true，否则返回 false。</p>
+<figure class="highlight plaintext">
+    <div class="code-block-header" lang="plaintext">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 动物类</span><br><span class="line"> */</span><br><span class="line">class Animal &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 老虎类</span><br><span class="line"> */</span><br><span class="line">class Tiger extends Animal &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 熊猫类</span><br><span class="line"> */</span><br><span class="line">class Panda extends Animal &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 猴子类</span><br><span class="line"> */</span><br><span class="line">class Monkey extends Animal &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class AnimalDemo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Animal ani = getAnimal();</span><br><span class="line"></span><br><span class="line">        if (ani instanceof Panda) &#123;</span><br><span class="line">            // ani一定是panda对象或子类对象</span><br><span class="line">            Panda panda2 = (Panda) ani;</span><br><span class="line">            System.out.println(&quot;这是熊猫：&quot; + panda2);</span><br><span class="line">            showPanda(panda2);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            System.out.println(&quot;这是动物：&quot; + ani);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 获取动物，返回一个Panda对象</span><br><span class="line">    public static Animal getAnimal() &#123;</span><br><span class="line">        return new Panda();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 展示熊猫对象</span><br><span class="line">    public static void showPanda(Panda panda) &#123;</span><br><span class="line">        System.out.println(panda);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【注意】<strong>使用 instanceof 关键字做判断时， instanceof 操作符的左操作数必须和右操作数存在继承或实现关系</strong></p>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><blockquote>
+<ol>
+<li>父类引用指向子类对象，接口引用指向实现类对象</li>
+<li>instanceof 用以比较对象是否是类或父类的实例，接口的实现类</li>
+</ol>
+</blockquote>
+<h2 id="访问权限权限修饰符"><a href="#访问权限权限修饰符" class="headerlink" title="访问权限权限修饰符"></a>访问权限权限修饰符</h2><h3 id="Java-中的访问修饰符"><a href="#Java-中的访问修饰符" class="headerlink" title="Java 中的访问修饰符"></a>Java 中的访问修饰符</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>类内部</th>
+<th>同包下</th>
+<th>子类中</th>
+<th>非同包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>默认不写</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<h3 id="public-公共的公共的关键字"><a href="#public-公共的公共的关键字" class="headerlink" title="public 公共的公共的关键字"></a>public 公共的公共的关键字</h3><h3 id="protected-受保护的受保护的关键字"><a href="#protected-受保护的受保护的关键字" class="headerlink" title="protected 受保护的受保护的关键字"></a>protected 受保护的受保护的关键字</h3><h3 id="private-私有的私有的关键字"><a href="#private-私有的私有的关键字" class="headerlink" title="private 私有的私有的关键字"></a>private 私有的私有的关键字</h3><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、可以修饰成员变量和成员方法</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、被<span class="keyword">private</span>修饰的变量和方法仅本类中可用</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、被<span class="keyword">private</span>修饰的变量需要提供get、set方法供类外调用使用</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、<span class="type">boolean</span>类型的 get 方法比较特殊：</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在使用 Eclipse 写 Java 程序同时按住 shift+Alt+s 选择“Generate Getters and Setters”可以自动写出 set、get 的方法</p>
+</blockquote>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">function</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;method be execute!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">executeFunction</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.function();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<ol>
+<li>般我们最常用的就是 private 和 public，建议任何情况下都使用访问修饰符对变量和方法进行限制</li>
+<li>public 权限最高，整个项目中都可以访问（同一个项目），private 权限最小，只能在本类中使用</li>
+<li>被 private 修饰的变量和方法可以通过提供公共的方法对其进行访问</li>
+</ol>
+</blockquote>
+<h2 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>没有名字的对象，是对象的一种简化表示形式</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>一次性，每次使用都是一个新的对象</p>
+<h3 id="使用情景"><a href="#使用情景" class="headerlink" title="使用情景"></a>使用情景</h3><blockquote>
+<p>1、对象调用方法仅使用一次，然后等待销毁</p>
+<p>2、作为实际参数传递</p>
+</blockquote>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestDog</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 对象调用方法仅使用一次</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Dog</span>().sleep();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 作为实际参数传递</span></span><br><span class="line">        useDog(<span class="keyword">new</span> <span class="title class_">Dog</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">useDog</span><span class="params">(Dog dog)</span> &#123;</span><br><span class="line">        dog.sleep();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;小狗睡觉.....&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><p>提高开发效率，简化代码结构</p>
+<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>类是对某一类事物的描述，是抽象的、概念上的定义。<strong>类是模板，包含了一类事物所共有的特征属性属性和行为方法方法</strong></p>
+<blockquote>
+<p>属性描述：学号、姓名、性别、年龄、身高、体重、地址、电话、微信、QQ…</p>
+<p>行为描述：吃饭、睡觉、上班、学习、娱乐…</p>
+</blockquote>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p><strong>对象是类的具体体现（</strong><a target="_blank" rel="noopener" href="https://localhost:63342/ialoe.github.io-master/posts/36.html?_ijt=4djrf4sgdibf0v57aogg3jvm4k"><strong>属性和方法</strong></a><strong>），是具体的、独一无二的个体。</strong></p>
+<p>以班长为例：</p>
+<blockquote>
+<p>属性描述：班长的学号、班长的姓名、班长的身高…</p>
+<p>行为描述：班长吃饭、班长睡觉、班长学习…</p>
+</blockquote>
+<h3 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h3><p>类是对象的抽象，对象是类的具体实现</p>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><p>类是一种自定义的数据类型</p>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line">    class 类名 &#123;</span><br><span class="line">        成员变量;<span class="comment">// Fieldi</span></span><br><span class="line"></span><br><span class="line">        成员方法;<span class="comment">// Method</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">class：</span><br><span class="line">    定义类的关键字</span><br><span class="line"></span><br><span class="line">类名：</span><br><span class="line">    大驼峰命名，首字母大写，见名知意</span><br><span class="line">    类名就是一种数据类型（自定义引用的数据类型），就是模板的名字</span><br><span class="line"></span><br><span class="line">成员变量（属性/特征描述）：</span><br><span class="line">    定义在类中，方法外的变量，用来描述类的特征</span><br><span class="line"></span><br><span class="line">成员方法（行为描述）：</span><br><span class="line">    定义在类中，用来描述类的功能</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>Java 中的类和对象</p>
+<ul>
+<li>类是对象的抽象，具有公共的特征和行为，对象是类的具体实现，具有唯一的特征和行为</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>基础数据类型与类和对象</p>
+<ul>
+<li>类就是一种自定义的数据类型，由类名，属性和方法构成</li>
+<li>对象就是一种数据类型的数据，由对象名，属性和方法构成</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>类和对象的定义和使用</p>
+<ul>
+<li>格式和规范，一定要按照标准</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong></p>
+</blockquote>
+<figure class="highlight shell">
+    <div class="code-block-header" lang="shell">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">大写开头的都是类</span><br><span class="line">小写开头的都是变量</span><br><span class="line">带()的都是方法</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    
+
+    <ul class="post-tools">
+        
+        
+            <li id="reward">
+                <span id="reward-btn" class="dashang" title="打赏，支持一下"><i class="iconfont icon-dashang"></i> 打赏作者</span>
+                <div class="shang-box">
+                    <div class="shang-tit">
+                        <p>感谢您的支持，我会继续努力的!</p>
+                    </div>
+                    <div class="shang-payimg">
+                        <img id="alipay" src="/media/reward/alipay.jpg" alt="扫码支持" title="扫一扫">
+                        <img id="wechat" src="/media/reward/wechat.jpg" alt="扫码支持" title="扫一扫">
+                    </div>
+                    <div class="pay-explain">扫码打赏，你说多少就多少</div>
+                    <div class="shang-payselect">
+                        <label id="alipay-radio" class="pay-item">
+                            <input type="radio" checked name="reward">
+                            <span></span>
+                        </label>
+                        <label id="wechat-radio" class="pay-item">
+                            <input type="radio" name="reward">
+                            <span></span>
+                        </label>
+                    </div>
+                    <button class="tip-button">
+                        <span class="tip-button-text">打赏完毕</span>
+                        <div class="coin-wrapper">
+                            <div class="coin">
+                                <div class="coin-middle"></div>
+                                <div class="coin-back"></div>
+                                <div class="coin-front"></div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+        
+        
+            <li id="qrcode-btn" title="扫描二维码访问">
+                <i class="iconfont icon-erweima"></i>
+            </li>
+        
+        <li class="sharePage" title="分享本页"  onclick="copyText(window.location.href)">
+            <i class="iconfont icon-link"></i>
+        </li>
+        
+            
+                <li class="right">
+                    <a href="/tags/Java/">
+                        # Java 12
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+    
+    
+        
+            
+            <div class="post-copyright">
+                <div class="post-copyright-icon"></div>
+                <div class="post-copyright-author">
+                    <span class="post-copyright-meta">文章作者: </span>
+                    <span class="post-copyright-info">
+              <a href="mailto:aloeJun@qq.com">aloeJun</a>
+            </span>
+                </div>
+                <div class="post-copyright-type">
+                    <span class="post-copyright-meta">文章链接: </span>
+                    <span class="post-copyright-info">
+              <a href="https://www.islu.cn/posts/JavaOOP.html">https://www.islu.cn/posts/JavaOOP.html</a>
+            </span>
+                </div>
+                <div class="post-copyright-notice">
+                    <span class="post-copyright-meta">版权声明: </span>
+                    <span class="post-copyright-info">
+                        本博客所有文章除特别声明外，均采用
+                      <a href="/cc " target="_blank">
+                          CC BY-NC-SA 4.0 </a> 许可协议。转载请注明来自
+                      <a href="https://www.islu.cn/posts/JavaOOP.html" target="_blank">aloeJun | Lu's Blog</a>
+                    </span>
+                </div>
+            </div>
+        
+    
+    
+    <div class="pagination-post">
+        
+            <a href="/posts/JavaAPI.html">
+                <div class="prev-title"><i class="iconfont icon-chevron-left"></i>Java常用API</div>
+            </a>
+        
+        
+            <a href="/posts/JavaMethod.html">
+                <div class="next-title">Java方法<i class="iconfont icon-chevron-right"></i></div>
+            </a>
+        
+    </div>
+    
+    <hr>
+    <div class="comment-head">
+        <div id="comment">
+    <div class="loading center"><img src="/media/detail/load.svg" alt="加载中..."></div>
+</div>
+<script type="module" data-pjax>
+    import { init } from '/lib/waline/waline.mjs';
+
+    const locale = {
+        nick: '昵称(必填)',
+        nickError: '即使是昵称也不要少于3个字哦 ~ ',
+        mail: '邮箱(必填)',
+        mailError: '请再次检查一下的邮件地址哦 ~ ',
+        link: '网址(选填)',
+        placeholder: '🤣一起来玩，留下你的足迹吧~。评论支持邮箱回复通知！📧\n' +
+            '🚀支持注册登录，并新增支持QQ登录(⊙o⊙)！💖\n' +
+            '💣请文明评论哦禁止恶意评论🈲\n' +
+            '⚠️公开网络空间，请不要发表任何包含个人或其他人的隐私信息⛔',
+        sofa: '抢个沙发吧 ~ ',
+        submit: '发射炮弹',
+        reply: '准备回击',
+        cancelReply: '取消回击',
+        comment: '评论',
+        more: '加载更多...',
+        preview: '实时演示',
+        emoji: '表情炸弹',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '实名发射',
+        logout: '取消实名',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    };
+
+
+    init({
+        el: '#comment',
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        pageSize: 10, // 评论数
+        pageview: true, // 阅读量
+        emoji: [ // 表情
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+        ],
+        WalineSearchOptions: false, // 搜索功能
+        copyright: false, // 右下角版权
+        imageUploader: false, //上传图片
+        lang: 'zh',
+        search: false, // 表情包搜索
+        reaction: false, // 开启反应
+        locale // 自定义提示
+    });
+
+</script>
+    </div>
+    
+    
+</article>
+
+        
+        
+    <aside id="rightside" class="clearfix">
+        <div class="rightside-message">
+            <h1 class="blog-name">aloeJun</h1>
+            <div class="my-description">
+                迷茫的原因往往只有一个，那就是在本该拼命去努力的年纪，想得太多，做得太少。🔔
+            </div>
+        </div>
+
+        
+            <div class="rightside-toc">
+                <p class="title">
+                    <i class="iconfont icon-bars"></i> 目录
+                    <span class="num">0%</span>
+                    <i class="backTop iconfont icon-arrow-up"
+                       onclick="document.documentElement.scrollTop = document.body.scrollTop =0"></i>
+                </p>
+
+                <progress class="progress" value="0" max="100"></progress>
+                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A6%82%E5%BF%B5"><span class="toc-text">面向对象概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Object-%E5%AF%B9%E8%B1%A1%E5%AF%B9%E8%B1%A1"><span class="toc-text">什么是 Object 对象对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-ObjectOriented"><span class="toc-text">面向对象 ObjectOriented</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%AE%9A%E4%B9%89"><span class="toc-text">面向对象定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90-OOAOOA-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1-OODOOD"><span class="toc-text">面向对象分析 OOAOOA&#x2F;面向对象设计 OODOOD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A6%82%E5%BF%B5-1"><span class="toc-text">面向对象概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3"><span class="toc-text">面向对象思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E5%BE%81"><span class="toc-text">面向对象特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1"><span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">访问权限权限修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E4%B8%AD%E7%9A%84%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">Java 中的访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#public-%E5%85%AC%E5%85%B1%E7%9A%84%E5%85%AC%E5%85%B1%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">public 公共的公共的关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#protected-%E5%8F%97%E4%BF%9D%E6%8A%A4%E7%9A%84%E5%8F%97%E4%BF%9D%E6%8A%A4%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">protected 受保护的受保护的关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#private-%E7%A7%81%E6%9C%89%E7%9A%84%E7%A7%81%E6%9C%89%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">private 私有的私有的关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1"><span class="toc-text">匿名对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%83%85%E6%99%AF"><span class="toc-text">使用情景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9-1"><span class="toc-text">优点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-text">类和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-text">对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">类和对象的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">类的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-text">总结</span></a></li></ol></li></ol>
+                <a id="goComment" href="#comment" title="移步评论" alt="移步评论">COMMENT <i
+                            class="iconfont icon-arrow-down"></i></a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="related-posts">
+                <p class="title"><i class="fas fa-thumbs-up fa-fw"></i>推荐文章</p><ul class="relatedPosts-list"><li><a href="/posts/WindowsInstallJDK.html" title="JDK安装和配置">JDK安装和配置</a></li><li><a href="/posts/JDBCDefenseSQLInjection.html" title="JDBC-防SQL注入">JDBC-防SQL注入</a></li><li><a href="/posts/JDBC.html" title="JDBC">JDBC</a></li><li><a href="/posts/JavaList.html" title="Java集合">Java集合</a></li><li><a href="/posts/JavaInterface.html" title="Java接口">Java接口</a></li><li><a href="/posts/JavaGenericity.html" title="Java泛型">Java泛型</a></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li></ul>
+                <div class="webinfo">
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-file-text-fill"></i> 文章总数 :</div>
+                        <div class="item-count">57 篇</div>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-timer-fill"></i> 建站天数 :</div>
+                        <div class="item-count" id="runtimeshow"> 1024 天</div>
+                        <script async>
+                            window.addEventListener("load", function () {
+                                $id("runtimeshow").innerHTML = getDaysDiffBetweenDates('2020-08-16') + "天";
+                            });
+                        </script>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-text"></i> 总字数 :</div>
+                        <div class="item-count">93.7k 字</div>
+                    </div>
+                </div>
+            </div>
+        
+    </aside>
+
+
+    </main>
+    
+    
+    
+    <mark id="mask" onclick="close_all()"></mark>
+    
+    
+<footer id="footer" style="display: none">
+    <span id="backTop" onclick="document.documentElement.scrollTop = document.body.scrollTop =0">
+        <i class="iconfont icon-arrow-up"></i>
+    </span>
+    <div class="container">
+        <p class="footer-text">欢迎第<span id="aloeJun-pageview-count" data-path="/"><img width="14px" height="14px" src="/media/detail/loaded.svg" alt="加载中..."></span>位来访者</p>
+        <p class="footer-message">
+            
+                <a id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+                    豫ICP备2020025858号-2
+                </a>
+            
+            
+                <a id="upy" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"
+                   rel="noopener noreferrer">
+                    <img width="90px" height="40px" src="/media/detail/upy.png" loading="lazy" alt="upy" title="又拍云">
+                </a>
+            
+
+            <a href="/atom.xml" target="_blank" title="RSS订阅">
+                <i class="iconfont icon-dingyue" style="font-size: 1.2rem"></i>
+            </a>
+            <a href="/cc" title="cc协议">
+                <i class="iconfont icon-closed-captioning" style="font-size: 1.5rem"></i>
+            </a>
+    </div>
+</footer>
+    
+    <section id="local-search" class="hidden">
+        <div id="local-search-title">本地搜索 </div>
+        <input id="local-search-input" autocomplete="off" placeholder="搜索文章" type="text">
+        <hr>
+        <div id="local-search-result"></div>
+        <span class="search-close-button" onclick="closeSearch()"><i class="iconfont icon-times-circle-fill"></i></span>
+        <script async src="/js/search.js"></script>
+    </section>
+
+</div>
+
+<div id="resource">
+    
+<script type="application/javascript">
+    var $config = {
+        
+            searchFile: "/search.json",
+        
+        
+        qrcode:{
+            source_js: "/lib/qrcode/qrcode.js",
+            Data:{
+                render: 'canvas',
+                text: 'https://www.islu.cn/posts/JavaOOP.html',
+                size: 100,
+                correctLevel: 3,
+                background: '#fff',
+                image: '',
+                imageSize: '120px'
+            }
+        },
+        
+        
+        code_block_expand: {
+            enable: true,
+            height: 400,
+            scrollTop: 200
+        },
+        
+    }
+</script>
+
+    <script async type="application/javascript" src="/js/main.js"></script>
+    
+    <script defer type="text/javascript">
+        getScript('/lib/pjax/pjax.min.js', ()=>{
+            window.pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    "head meta[name='keywords']",
+                    "head meta[name='description']",
+                    "header p.now-path",
+                    "main",
+                    "span#aloeJun-pageview-count"
+                ],
+                cacheBust: false
+            });
+        });
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', () => {
+            // 执行进度条
+            
+        });
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', () => {
+            // 加载进度条加载完毕
+            
+            // 执行所有方法
+            exeAllFn()
+        });
+
+        document.addEventListener('pjax:success', () => {
+            $queryAll('script[data-pjax]').forEach((item) => {
+                const newScript = document.createElement('script')
+                const content = item.text || item.textContent || item.innerHTML || ""
+                Array.from(item.attributes).forEach((attr) => {
+                    newScript.setAttribute(attr.name, attr.value)
+                })
+                newScript.appendChild(document.createTextNode(content))
+                item.parentNode.replaceChild(newScript, item)
+            })
+        });
+        // Pjax请求错误时，跳转到404页面
+        document.addEventListener('pjax:error', (err) => {
+            if (err.request.status === 404) {
+                pjax.loadUrl('/404.html')
+            }
+        })
+    </script>
+
+    
+    <div id="nav-music"></div>
+    <script defer>
+        if (document.body.clientWidth > 768) {
+            window.addEventListener('load', () => {
+                getCss('/lib/aplayer/APlayer.min.css')
+                $id("nav-music").innerHTML = `<div id="nav-music-hoverTips" onclick="aloejun.musicToggle()">播放音乐</div>
+                <meting-js
+                        id="8164170333"
+                        server="netease"
+                        type="playlist"
+                        theme='#42b983'
+                        loop='all'
+                        preload='auto'
+                        order='random'
+                        volume='0.7'
+                        data-lrctype="0"
+                >
+                </meting-js>`
+                getScript('/lib/aplayer/APlayer.min.js', () => {
+                    getScript('/lib/aplayer/Meting.min.js')
+                })
+            }, false)
+        }
+    </script>
+
+    
+
+
+
+
+    
+<script async type="text/javascript">
+    window.addEventListener("load", () => {
+        getCss("/lib/waline/waline.css")
+        // 页面加载完毕后执行的代码
+        getScript("/lib/waline/activate-input.js", () => {
+            console.log("\n %c 最美的旅程 %c 是不断的经历 \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3;color:#030307; padding:5px 0;")
+        });
+    });
+
+</script>
+<script type="module" defer data-pjax>
+    import {pageviewCount} from '/lib/waline/pageview.mjs';
+
+    pageviewCount({
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        selector: '#aloeJun-pageview-count',
+        update: true
+    });
+</script>
+</div>
+</body>
+
+</html>

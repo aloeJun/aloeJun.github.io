@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" theme="dark">
+<head>
+    
+    
+
+<meta charset="UTF-8">
+<title>Hexo-导航页 | aloeJun | Lu's blog</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="/media/detail/aloeJun.png" rel="shortcut icon">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="aloeJun">
+<meta name="copyright" content="aloeJun">
+<meta name="keywords" content="Hexo,matery导航页,hexo-theme-matery常用网页,matery美化,hexo魔改">
+<meta name="description" content="Hexo 添加导航页效果年久失修，详细效果请自己部署后查看新建页面首先新建页面，执行下面的命令hexo new page navigate修改navigate目录下的index.md的格式---title: 导航date: 2020-"/>
+<meta property="site_name" content="aloeJun | Lu&#39;s blog "/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.islu.cn/posts/HexoNavigationPage.html">
+<meta property="og:title" content="Hexo-导航页 | aloeJun | Lu&#39;s blog"/>
+<meta property="og:site_name" content="aloeJun | Lu&#39;s blog"/>
+<meta property="og:description" content="Hexo 添加导航页效果年久失修，详细效果请自己部署后查看新建页面首先新建页面，执行下面的命令hexo new page navigate修改navigate目录下的index.md的格式---title: 导航date: 2020-"/>
+<meta property="og:locale" content="zh-CN">
+<meta property="article:author" content="aloeJun ">
+
+<style>html{scroll-behavior:smooth;overflow-y:overlay}html *{margin:0}html .clearfix{zoom:1}html .clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}html .center{text-align:center!important}html .relative{position:relative}html .absolute{position:absolute}html .hotpink{color:#ff69b4}html .right{float:right}html .left{float:left}html .hidden{display:none}html .cursor{cursor:pointer}html .filter{filter:var(--filter)}html ul li{list-style:none}html table{width:100%;display:table;border-collapse:collapse;border-spacing:0}html table td,html table th{padding:15px 5px;display:table-cell;text-align:left;vertical-align:middle;border-radius:2px;border:1px solid var(--love_color)}body{margin:0;background-color:var(--body_bg);font-size:14px;color:var(--text_color);font-family:楷体}body #resource{position:relative;top:0;left:0}body video{max-width:100%}body a{text-decoration:none;color:#0a84ff;transition:all .5s}body p{margin:revert}body .mask{width:100%;height:100%;position:fixed;top:0;z-index:102;background:rgba(0,0,0,.4)}body .pjax_progress{position:fixed;top:0;left:0;width:10%;height:2px;z-index:103;background-image:-webkit-linear-gradient(left,#f16f5c 0,#f16f5c 12.5%,#5b56dd 12.5%,#5b56dd 25%,#e15ced 25%,#e15ced 37.5%,#27e559 37.5%,#27e559 50%,#18c8c9 50%,#18c8c9 62.5%,#dc8987 62.5%,#dc8987 75%,#bb83d6 75%,#bb83d6 87.5%,#e774bd 87.5%,#e774bd 100%);transition:width .4s ease 0s}body .clipboard{right:16px;top:8px;cursor:pointer;border-radius:3px;color:#eff;position:relative;float:right;padding:2px}body ::-webkit-input-placeholder{color:#ff69b4}body ::-moz-placeholder{color:#ff69b4}body :-ms-input-placeholder{color:#ff69b4}body :-moz-placeholder{color:#ff69b4}body .gray-filter{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%)}#body-wrap{width:100%;position:relative}#body-wrap #main-wrap{min-height:24rem}#body-wrap .container{width:90%;max-width:1200px;margin:0 auto}#body-wrap .main-card{background-color:var(--main_bg);border:1px solid #e2dfdd;border-radius:10px}.post_content h2::after{float:right;margin-right:10px;display:inline-block;content:'\f0c1';color:grey;font-family:'Font Awesome 6 Pro'}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#666;border-radius:3px;box-shadow:inset 0 -1px 0 #000}code{padding:.1rem .2rem;background:rgba(27,31,35,.05);color:#f47466;border-radius:3px;word-wrap:break-word;word-break:break-word;overflow-wrap:break-word}blockquote{margin:4px 0;padding:.6rem .8rem;border-left:.2rem solid #e58a8a;background-color:rgba(73,177,245,.1);color:var(--blockquote_color)}blockquote p{margin:0}.pullquote.left{max-width:45%;float:left;margin:.5em .5em 0 0}.pullquote.right{max-width:45%;float:right;margin:.5em 0 0 .5em;border-right:.2rem solid #e58a8a;border-left:none}.video-container{position:relative;overflow:hidden;margin-bottom:.8rem;padding-top:56.25%;height:0}.video-container iframe{position:absolute;top:0;left:0;margin-top:0;width:100%;height:100%}h1{margin:48px 0 22px -5px;font-size:2rem;font-weight:700;line-height:2rem}h2{margin:42px 0 18px -5px;font-size:1.8rem;font-weight:700;line-height:1.8rem}h3{margin:38px 0 15px -4px;font-size:1.6rem;font-weight:700;line-height:1.7rem}h4{margin:32px 0 12px -4px;font-size:1.45rem;font-weight:700;line-height:1.45rem}h5{margin:28px 0 8px -4px;font-size:1.2rem;font-weight:700;line-height:1.2rem}h6{margin:22px 0 4px -4px;font-size:1.1rem;line-height:1.1rem}p{font-size:1rem;line-height:1.5rem}hr{margin:20px 0;border:0;border-top:1px solid #ccc}::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background-color:grey;border-radius:8px;cursor:pointer}::-webkit-scrollbar-thumb:hover{opacity:1;display:block!important}::-webkit-scrollbar-track{background-color:transparent}:root{--main:#c7a17a;--body_bg:#f7f9fe;--text_color:#333;--main_bg:#fff;--post_title:rgba(52,50,50,0.7);--link_bg:#f8f9fa;--code_bg:$highlight-background;--code_wrap_bg:$code_block;--blockquote_color:#6a737d;--table_bg:none;--love_color:#3c4858;--filter:none}html[theme=dark]{--body_bg:#161b2a;--text_color:rgba(255,255,255,0.6);--main_bg:#070615;--post_title:rgba(255,255,255,0.9);--link_bg:#333841;--code_bg:#333841;--code_wrap_bg:#444851;--blockquote_color:rgba(255,255,255,0.6);--table_bg:#282c34;--love_color:#faebd7;--filter:invert(1)}nav .navbar{display:flex;justify-content:space-between;align-items:center;height:5rem;padding:0 30px;margin:0 10%}nav .navbar .open_nav{margin-left:10px;display:none}nav .navbar .blog_name{font-weight:700;font-size:1.8rem;color:#ff7242;display:inline-block;text-decoration:none;margin-left:4rem;min-width:7.2rem}nav ul.side-toolbar{min-width:5.6rem;color:var(--post_title)}nav ul.side-toolbar li{display:inline-block;width:2em;font-size:1.5rem;cursor:pointer}nav ul.side-toolbar li:hover{color:#0a84ff}nav ul.side-toolbar i{font-size:1.5rem}nav #navbar_wrap{padding-inline-start:0;position:fixed;width:100%;z-index:991;top:0;background-color:var(--main_bg);-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:background .5s ease-in-out,padding .5s ease-in-out;-webkit-transition:background .5s ease-in-out,padding .5s ease-in-out;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}nav #navbar_wrap .menu{margin-right:auto}nav #navbar_wrap .menu li{position:relative;list-style:none;float:left;text-align:center}nav #navbar_wrap .menu li:nth-child(odd) a:before{background-color:#ff0}nav #navbar_wrap .menu li:nth-child(odd) a:after{background-color:red}nav #navbar_wrap .menu li:nth-child(odd) a:hover~.indicator{background:linear-gradient(130deg,#ff0,red)}nav #navbar_wrap .menu li:nth-child(even) a:before{background-color:#00e2ff}nav #navbar_wrap .menu li:nth-child(even) a:after{background-color:#89ff00}nav #navbar_wrap .menu li:nth-child(even) a:hover~.indicator{left:34%;background:linear-gradient(130deg,#00e2ff,#89ff00)}nav #navbar_wrap .menu li ul.menu_child{display:none}nav #navbar_wrap .menu li ul.menu_child li{float:none!important}nav #navbar_wrap .menu li ul.menu_child li a:before{background-color:purple}nav #navbar_wrap .menu li ul.menu_child li a:after{background-color:#db7093}nav #navbar_wrap .menu li ul.menu_child li a:hover~.indicator{left:70%;background:linear-gradient(130deg,purple,#db7093)}nav #navbar_wrap .menu li a{cursor:pointer;white-space:nowrap;font-size:1.3rem;color:var(--love_color);position:relative;width:33.333%;display:table-cell;text-align:center;text-decoration:none;font-weight:700;padding:10px 20px;transition:.2s ease color}nav #navbar_wrap .menu li a i{color:var(--love_color);order:1;font-size:13px}nav #navbar_wrap .menu li a i.icon-chevron-up{display:none}nav #navbar_wrap .menu li a:after,nav #navbar_wrap .menu li a:before{content:"";position:absolute;border-radius:50%;transform:scale(0);transition:.2s ease transform}nav #navbar_wrap .menu li a:before{top:0;left:10px;width:6px;height:6px}nav #navbar_wrap .menu li a:after{top:5px;left:18px;width:4px;height:4px}nav #navbar_wrap .menu li a:hover,nav #navbar_wrap .menu li a:hover i{color:#00c4b6}nav #navbar_wrap .menu li a:hover i:after,nav #navbar_wrap .menu li a:hover i:before,nav #navbar_wrap .menu li a:hover:after,nav #navbar_wrap .menu li a:hover:before{transform:scale(1)}nav #navbar_wrap .menu li a:hover i~.indicator,nav #navbar_wrap .menu li a:hover~.indicator{visibility:unset;width:100%}nav #navbar_wrap .menu li .indicator{visibility:hidden;width:0;height:3px;background-color:#fff;border-radius:5px;transition:.35s ease all;margin:0 auto}nav #navbar_wrap .menu li:hover .menu_child{background-color:var(--main_bg);position:absolute;right:0;display:inline-block;padding:0;border-radius:6px;width:-moz-max-content;width:max-content;min-width:80px;box-shadow:0 5px 20px -4px rgba(0,0,0,.5)}nav #navbar_wrap .menu li:hover .menu_childicon-chevron-up{margin-top:13px}.open_mobile{transform:translate3d(100%,0,0)}#mobile_nav{background:var(--main_bg);position:fixed;left:-200px;top:0;z-index:991;overflow:hidden auto;width:200px;height:100%;padding:0;transition:all .5s}#mobile_nav ul{padding-inline-start:unset}#mobile_nav ul li{display:block;list-style:none;text-align:center;line-height:2}#mobile_nav ul li a{font-weight:700;display:block;cursor:pointer;white-space:nowrap;padding:10px;font-size:.9rem;color:var(--love_color)}header{background:linear-gradient(to top,var(--body_bg),#a9a9a9)}header .header_main{-webkit-user-select:none;-moz-user-select:none;user-select:none;cursor:pointer;padding:3.6rem 0}header .header_main .title{line-height:15rem;color:#fff;font-size:5rem;font-weight:700}header .header_main p.now-path{color:#f60;margin-top:0;font-size:2rem;font-weight:bolder}.main-hero-waves-area{width:100%}.waves-area .waves-svg{width:100%;height:5rem}.parallax>use{animation:move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite}.parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(247,249,254,.741)}.parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(247,249,254,.51)}.parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(247,249,254,.212)}.parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#f7f9fe}[theme=dark] .parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(22,27,42,.4)}[theme=dark] .parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(22,27,42,.6)}[theme=dark] .parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(22,27,42,.8)}[theme=dark] .parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#161b2a}@media (max-width:768px){.waves-area .waves-svg{height:40px;min-height:40px}}@keyframes move-forever{0%{transform:translate3d(-90px,0,0)}100%{transform:translate3d(85px,0,0)}}@media only screen and (max-width:601px){nav ul.side-toolbar li{width:1.5em!important}#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}.scrollbar{display:none}header .header_main .title{line-height:10rem}header .header_main p.now-path{font-size:1.5rem}#main-wrap.container{width:98.5%;margin:1rem auto}#main-wrap.container #post-list,#main-wrap.container .post{float:unset;width:100%;margin:0}#main-wrap.container #post-list .post-info,#main-wrap.container .post .post-info{padding:1.5rem}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{max-width:70%;margin:1rem}#main-wrap.container #post-list .post-content,#main-wrap.container .post .post-content{padding:1rem}#main-wrap.container .post+#rightside{display:none}#main-wrap.container #rightside{width:unset}#main-wrap.container #rightside .rightside-category,#main-wrap.container #rightside .rightside-message,#main-wrap.container #rightside .rightside-tag,#main-wrap.container #rightside .rightside-toc{width:unset}#main-wrap.container .category-container li.category-content{width:50%}#main-wrap.container .category-container li.category-content:nth-child(2n):after{width:0}#main-wrap.container .categories-content{font-size:1rem}#main-wrap.container .categories-default{margin:.1rem}#main-wrap.container .archives-container .article-item .post-link{width:88%}#main-wrap.container #categories-chart,#main-wrap.container #posts-chart,#main-wrap.container #tags-chart{display:block;width:100%}#main-wrap.container .uk-alert{padding:0;margin:0}#main-wrap.container .relatedPosts-list{padding-left:0}#main-wrap.container .relatedPosts-list li{display:unset;max-width:unset}#main-wrap.container .about .w32,#main-wrap.container .about .w43,#main-wrap.container .about .w55{width:100%}#main-wrap.container .about .author-content .author-content-item p{font-size:2rem!important;margin:1.5rem 0 0 0!important}footer .footer-message a{margin-right:.5rem!important}.wl-editor{font-size:.6em!important}#local-search{z-index:999!important}}@media only screen and (min-width:600px) and (max-width:992px){#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}#main-wrap.container{width:unset}#main-wrap.container #post-list,#main-wrap.container .post{width:69%}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{margin:0 0 .6rem .6rem}}@font-face{font-family:iconfont;src:url(/font/iconfont.woff2) format('woff2'),url(/font/iconfont.woff) format('woff'),url(/font/iconfont.ttf) format('truetype')}.iconfont{font-family:iconfont!important;font-size:1rem;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-message:before{content:"\e819"}.icon-like{color:red}.icon-like:before{content:"\e6fc"}.icon-eye:before{content:"\e706"}.icon-history-filling:before{content:"\e68a"}.icon-pintu:before{content:"\e741"}.icon-database:before{content:"\e6ac"}.icon-sad-tear:before{content:"\eb8a"}.icon-link:before{content:"\e6b4"}.icon-erweima:before{content:"\eaf1"}.icon-dashang:before{content:"\e693"}.icon-text:before{content:"\e71e"}.icon-timer-fill:before{content:"\e87a"}.icon-copy:before{content:"\e67f"}.icon-share:before{content:"\e68f"}.icon-yinsixieyi:before{content:"\e740"}.icon-paperplane-fill:before{content:"\e7a9"}.icon-tag-fill:before{content:"\e7ae"}.icon-pausecircle-fill:before{content:"\e7cb"}.icon-stopcircle-fill:before{content:"\e7cc"}.icon-playcircle-fill:before{content:"\e7cd"}.icon-picture-fill:before{content:"\e7cf"}.icon-calendaralt-fill:before{content:"\e7d8"}.icon-clouddownload-fill:before{content:"\e7d9"}.icon-times-circle-fill:before{content:"\e7e1"}.icon-angle-double-right:before{content:"\e84a"}.icon-angle-double-left:before{content:"\e84b"}.icon-home:before{content:"\e88b"}.icon-universal-access:before{content:"\ebbd"}.icon-window-restore:before{content:"\ebd3"}.icon-rotateright:before{content:"\e7e7"}.icon-dingyue:before{content:"\e602"}.icon-arrow-up:before{content:"\e601"}.icon-chevron-down:before{content:"\e606"}.icon-bars:before{content:"\e610"}.icon-books:before{content:"\e716"}.icon-tag:before{content:"\e66c"}.icon-search:before{content:"\e6aa"}.icon-envelope:before{content:"\e6ce"}.icon-GitHub:before{content:"\ea0a"}.icon-file-text-fill:before{content:"\e858"}.icon-closed-captioning:before{content:"\e600"}.icon-share-all-solid:before{content:"\e61d"}.icon-file-search-Fill:before{content:"\e8da"}.icon-sun:before{content:"\eba5"}.icon-chevron-left:before{content:"\e603"}.icon-chevron-up:before{content:"\e604"}.icon-chevron-right:before{content:"\e605"}.icon-moon:before{content:"\e8b1"}</style>
+<script>
+    const $id=e=>document.getElementById(e),$query=e=>document.querySelector(e),$queryAll=e=>document.querySelectorAll(e),getScript=(e,t)=>{if(Array.isArray(this.isGetScript)){if(this.isGetScript.includes(e))return t()}else this.isGetScript=[];this.isGetScript.push(e);var r=document.createElement("script");r.src=e,void 0!==t&&(r.readyState?r.onreadystatechange=()=>{"loaded"!=r.readyState&&"complete"!=r.readyState||(r.onreadystatechange=null,t())}:r.onload=()=>{r.onload=null,t()}),(null!=$id("resource")?$id("resource"):document.body).appendChild(r)},getCss=e=>{var t=document.createElement("link");t.rel="stylesheet",t.type="text/css",t.href=e,document.head.appendChild(t)},copyText=e=>navigator.clipboard?.writeText&&navigator.clipboard.writeText(e),getDaysDiffBetweenDates=e=>parseInt((new Date-new Date(e))/864e5),throttle=(t,r)=>{var a=0;return function(){var e=new Date;r<e-a&&(t.apply(this,arguments),a=e)}};
+</script>
+
+<link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="aloeJun | Lu's blog" type="application/atom+xml">
+</head>
+<body>
+
+<div id="body-wrap">
+    
+    
+
+
+    
+    <nav id="nav">
+    <menu id="navbar_wrap">
+        <div class="navbar">
+            <i class="iconfont icon-bars open_nav"></i>
+            <a href="/" class="blog_name"><i>A<span style="color: #00c4b6">L</span>OEJ<span
+                            style="color: #00c4b6">U</span>N</i></a>
+            <ul class="menu">
+                <li>
+                    <a href="/" rel="noopener noreferrer">首页</a>
+                    <div class="indicator"></div>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/tags/index.html" rel="noopener noreferrer">
+                                标签
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/categories/index.html" rel="noopener noreferrer">
+                                分类
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/archives/index.html" rel="noopener noreferrer">
+                                归档
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about/index.html" rel="noopener noreferrer">
+                                关于
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/contact/index.html" rel="noopener noreferrer">
+                                留言
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/friends/index.html" rel="noopener noreferrer">
+                                朋友
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="#" rel="noopener noreferrer">
+                                清单
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="indicator"></div>
+                            <ul class="menu_child">
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                                
+                                    <li>
+                                        <a href='/fcircle/index.html'
+                                           rel="noopener noreferrer">朋友小圈</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/talk/index.html'
+                                           rel="noopener noreferrer">碎碎叨叨</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/books/index.html'
+                                           rel="noopener noreferrer">阅读记录</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                <li>
+                                    <a target="_blank" href='https://sport.islu.cn' rel="noopener noreferrer noopener">运动记录</a>
+                                    <div class="indicator"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                
+            </ul>
+            <ul class="side-toolbar">
+                <li>
+                    <i id="darkBtn" class="iconfont icon-sun" title="深色/浅色"></i>
+                </li>
+                <li>
+                    <i id="searchBtn" class="iconfont icon-search"></i>
+                </li>
+            </ul>
+        </div>
+    </menu>
+    <menu id="mobile_nav">
+        <ul>
+            <li>
+                <a href="/" rel="noopener noreferrer">首页</a>
+                <div class="indicator"></div>
+            </li>
+            
+                
+                    <li>
+                        <a href="/tags/index.html" rel="noopener noreferrer">
+                            标签
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/categories/index.html" rel="noopener noreferrer">
+                            分类
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/archives/index.html" rel="noopener noreferrer">
+                            归档
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/about/index.html" rel="noopener noreferrer">
+                            关于
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/contact/index.html" rel="noopener noreferrer">
+                            留言
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/friends/index.html" rel="noopener noreferrer">
+                            朋友
+                        </a>
+                    </li>
+                
+            
+                
+                    
+                        <li>
+                            <a href='/fcircle/index.html'
+                               rel="noopener noreferrer">
+                                朋友小圈
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/talk/index.html'
+                               rel="noopener noreferrer">
+                                碎碎叨叨
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/books/index.html'
+                               rel="noopener noreferrer">
+                                阅读记录
+                            </a>
+                        </li>
+                    
+                
+            
+            <li>
+                <a target="_blank" href="https://sport.islu.cn" rel="noopener noreferrer noopener">运动</a>
+                <div class="indicator"></div>
+            </li>
+        </ul>
+    </menu>
+</nav>
+
+    
+    <header id="header" class="main-hero-waves-area waves-area">
+    <div class="header_main">
+        <div class="container center">
+            <h2 class="title">Choice over effort.</h2>
+            <p class="now-path">
+                <a href="/" rel="noopener noreferrer" title="返回首页">Home /</a>
+                
+                    Hexo-导航页
+                
+            </p>
+        </div>
+    </div>
+    <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352Z"></path>
+        </defs>
+        <g class="parallax">
+            <use href="#gentle-wave" x="48" y="0"></use>
+            <use href="#gentle-wave" x="48" y="3"></use>
+            <use href="#gentle-wave" x="48" y="5"></use>
+            <use href="#gentle-wave" x="48" y="7"></use>
+        </g>
+    </svg>
+</header>
+    
+    <main id="main-wrap" style="display: none" class="container clearfix">
+        
+<article class="post main-card" id="post">
+    <div class="post-info">
+        <div class="post-title">
+            <h1>Hexo-导航页</h1>
+        </div>
+        <div class="post-meta">
+            <div class="post-date">
+                <i class="iconfont icon-calendaralt-fill post-meta-icon"></i>
+                <span class="post-meta-label">
+                    发表于
+                    <span id="dateTime">
+                        2021-03-14
+                    </span> |
+                </span>
+                <i class="iconfont icon-history-filling post-meta-icon"></i>
+                <span class="post-meta-label">
+                    更新于
+                    <span id="updateTime">
+                        2021-03-14
+                    </span>
+                </span>
+            </div>
+            <div class="post-meta-wordcount">
+                <i class="iconfont icon-text post-meta-icon"></i>
+                <span class="post-meta-label">总字数:</span>
+                <span class="word-count">3.7k | </span>
+                <i class="iconfont icon-timer-fill post-meta-icon"></i>
+                <span class="post-meta-label">阅读时长:</span>
+                <span>22分钟</span>
+                
+                    | <i class="iconfont icon-eye post-meta-icon"></i>
+                    <span class="post-meta-label">阅读量:</span>
+                    <span class="waline-pageview-count"></span>
+                    </span>
+                
+            </div>
+        </div>
+        <div class="uk-alert">
+            <p id="thisTime">
+                <span id="timeLag" class="loading center">
+                       <img src="/media/detail/loaded.svg" alt="加载中...">
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="post-content">
+        <h1 id="Hexo-添加导航页"><a href="#Hexo-添加导航页" class="headerlink" title="Hexo 添加导航页"></a>Hexo 添加导航页</h1><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><blockquote>
+<p>年久失修，详细效果请自己部署后查看</p>
+</blockquote>
+<h2 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h2><p>首先新建页面，执行下面的命令</p>
+<p><code>hexo new page navigate</code></p>
+<p>修改<code>navigate</code>目录下的<code>index.md</code>的格式</p>
+<figure class="highlight markdown">
+    <div class="code-block-header" lang="markdown">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 导航</span><br><span class="line">date: 2020-10-18 15:19:14</span><br><span class="line">type: &quot;navigate&quot;</span><br><span class="line"><span class="section">layout: &quot;navigate&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="在主题配置文件中添加导航"><a href="#在主题配置文件中添加导航" class="headerlink" title="在主题配置文件中添加导航"></a>在主题配置文件中添加导航</h2><figure class="highlight yml">
+    <div class="code-block-header" lang="yml">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="comment"># main menu navigation url and icon</span></span><br><span class="line"><span class="comment"># 配置菜单导航的名称、路径和图标icon.</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Index:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">标签:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/tags</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">时光轴:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/archives</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-hourglass-half</span></span><br><span class="line">  <span class="string">留言板:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/contact</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-comments</span></span><br><span class="line">  <span class="string">关于:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/about</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-user-circle</span></span><br><span class="line">  <span class="string">友情链接:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/friends</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-address-book</span></span><br><span class="line">  <span class="attr">Select:</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-life-ring</span></span><br><span class="line">    <span class="attr">children:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">导航</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/navigate</span></span><br><span class="line">        <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-location-arrow</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">相册</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/galleries</span></span><br><span class="line">        <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-image</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加-navigate-页面"><a href="#添加-navigate-页面" class="headerlink" title="添加 navigate 页面"></a>添加 navigate 页面</h2><p>在 <code>matery/layout</code> 下新建 <code>navigate.ejs</code></p>
+<figure class="highlight plaintext">
+    <div class="code-block-header" lang="plaintext">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">dd,dl,dt,form,h1,h2,h3,h4,h5,h6,li,p,ul&#123;margin:0;padding:0;font-size:14px;font-weight:400&#125;img&#123;border-style:none&#125;li&#123;list-style:none;float:left&#125;a&#123;text-decoration:none&#125;.card&#123;background-color:rgba(25,240,229,0);width:96%;margin-left:2%&#125;.baidu&#123;float:left;margin-left:100px&#125;.baidu form&#123;position:relative&#125;.Select-box ul&#123;height:40px;position:absolute;left:-1px;top:0;z-index:9999;background:#fff;border:1px solid #ccc;border-top:none;overflow:hidden&#125;.Select-box li&#123;width:60px;line-height:40px;font-size:14px;color:#484848;border:0;cursor:pointer&#125;.Select-box li:hover&#123;background:#3385ff;color:#fff&#125;.Select-box .this_s&#123;color:#317ef3&#125;.Select-box .this_s:hover&#123;background:#fff;color:#317ef3&#125;.qingkong&#123;position:absolute;right:120px;top:12px;width:18px;height:18px;background:rgba(0,0,0,.1);border-radius:18px;line-height:16px;color:#666;cursor:pointer;text-align:center;font-size:14px;display:none&#125;.qingkong:hover&#123;background:rgba(0,0,0,.2)&#125;.qingkong:active&#123;background:rgba(0,0,0,.3)&#125;.baidu-2&#123;width:100%;height:110px;margin:0 auto;background:0 0;padding-top:50px&#125;.baidu-2 form&#123;width:520px;margin:0 auto&#125;.baidu-2 input&#123;padding:13px 8px;opacity:.9;font-size:15px&#125;#Select-2&#123;float:left&#125;.Select-box-2&#123;text-align:center;float:left;position:relative&#125;.Select-box-2 ul&#123;height:46px;position:absolute;left:0;top:1px;z-index:9999;background:rgba(255,255,255,.9);border:1px solid #ccc;border-top:none;overflow:hidden&#125;.Select-box-2 li&#123;width:60px;line-height:46px;font-size:15px;color:#484848;border:0;cursor:pointer&#125;.Select-box-2 li:hover&#123;background:#3385ff;color:#fff&#125;.Select-box-2 .this_s&#123;color:#317ef3&#125;.Select-box-2 .this_s:hover&#123;background:0 0;color:#317ef3&#125;#kw-2&#123;width:335px;outline:0;border:1px solid #ccc;background:rgba(255,255,255,.2);color:#000;padding-left:70px;font-weight:700&#125;#su-2&#123;width:90px;background:#00f;border:none;border-top:#3385ff 1px solid;border-bottom:1px solid #2d78f4;color:#fff;cursor:pointer;outline:0&#125;#su-2:hover&#123;background:#00f;border-bottom:1px solid #00f&#125;#su-2:active&#123;background:#00f;box-shadow:inset 1px 1px 3px #00f;-webkit-box-shadow:inset 1px 1px 3px #00f&#125;.jj-list-tit&#123;font-size:16px;line-height:25px;color:#fff;width:100%;padding-left:38.5%&#125;.jj-list-con&#123;overflow:hidden;margin:0 auto&#125;.jj-list-con li&#123;width:31.333%;margin:1%&#125;.link-3&#123;display:block;background:rgba(0,0,0,.35);color:#fff;font-size:13px;text-align:center;line-height:35px;padding:4px 0;border-radius:2px;transition:all .2s&#125;.link-3:hover&#123;background:rgba(0,0,0,.45);font-size:15px;font-weight:700&#125;@media only screen and (max-width:584px)&#123;.navi-height&#123;height:1300px&#125;.link-box&#123;margin-top:5%&#125;.large-screen&#123;display:none&#125;&#125;@media only screen and (min-width:584px) and (max-width:993px)&#123;.navi-height&#123;height:800px&#125;.link-box&#123;margin-top:5%&#125;.large-screen&#123;display:none&#125;&#125;@media only screen and (min-width:993px)&#123;.navi-height&#123;position:absolute;width:100%;height:100%&#125;&#125;.page-footer&#123;display:none&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;navi-height bg-cover pd-header&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;link-box container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;baidu baidu-2 large-screen&quot;&gt;</span><br><span class="line">            &lt;form name=&quot;f&quot; action=&quot;https://www.baidu.com/&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">                &lt;div id=&quot;Select-2&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;Select-box-2&quot; id=&quot;baidu&quot;&gt;</span><br><span class="line">                        &lt;ul style=&quot;height:46px&quot;&gt;</span><br><span class="line">                            &lt;li class=&quot;this_s&quot;&gt;百 · 度&lt;/li&gt;</span><br><span class="line">                            &lt;li class=&quot;bing_s&quot;&gt;必 · 应&lt;/li&gt;</span><br><span class="line">                            &lt;li class=&quot;google_s&quot;&gt;谷 · 歌&lt;/li&gt;</span><br><span class="line">                            &lt;li class=&quot;baidu_s&quot;&gt;百 · 度&lt;/li&gt;</span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/div&gt; &lt;input name=&quot;wd&quot; id=&quot;kw-2&quot; maxlength=&quot;100&quot; autocomplete=&quot;off&quot; type=&quot;text&quot;&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;qingkong&quot; id=&quot;qingkong&quot; title=&quot;清 · 空&quot; style=&quot;display:none&quot;&gt;x&lt;/div&gt; &lt;input value=&quot;搜 · 索&quot; id=&quot;su-2&quot; type=&quot;submit&quot;&gt;</span><br><span class="line">                &lt;ul class=&quot;keylist&quot;&gt;&lt;/ul&gt;</span><br><span class="line">            &lt;/form&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;row tags-posts&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;col s12 m6 l4 friend-div aos-init&quot; data-aos=&quot;zoom-in-up&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;jj-list-tit&quot;&gt;娱乐 · 影视&lt;/div&gt;</span><br><span class="line">                    &lt;ul class=&quot;jj-list-con&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.jd.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;京东&lt;/a&gt;</span><br><span class="line">                        &lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.taobao.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;淘宝&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.tmall.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;天猫&lt;/a&gt;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://v.qq.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;腾讯视频&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.iqiyi.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;爱奇艺&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;哔哩哔哩&lt;/a&gt; &lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://music.163.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;网易云音乐&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://y.qq.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;QQ音乐&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.kugou.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;酷狗音乐&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;col s12 m6 l4 friend-div aos-init&quot; data-aos=&quot;zoom-in-up&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;jj-list-tit&quot;&gt;社区 · Code&lt;/div&gt;</span><br><span class="line">                    &lt;ul class=&quot;jj-list-con&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.mobaijun.com/contact/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;留言&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://github.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://coding.net/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;Coding&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://juejin.im/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;掘金&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://gitee.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;码云&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.csdn.net/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;CSDN&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;简书&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;思否&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://cloud.tencent.com/developer/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;云+社区&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;col s12 m6 l4 friend-div aos-init&quot; data-aos=&quot;zoom-in-up&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;jj-list-tit&quot;&gt;实用 · 工具&lt;/div&gt;</span><br><span class="line">                    &lt;ul class=&quot;jj-list-con&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://mdnice.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;Markdown编辑器&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://translate.google.cn/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;谷歌翻译&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.uupoop.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;在线PS&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.processon.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;思维导图&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://wallhaven.cc/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;超清壁纸&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://cli.im/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;二维码生成&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://tool.cc/pic-resizer/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;图片在线压缩&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.iconfont.cn/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;阿里巴巴图标库&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://my.openwrite.cn/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;OW分发&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;col s12 m6 l4 friend-div aos-init&quot; data-aos=&quot;zoom-in-up&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;jj-list-tit&quot;&gt;编程 · 学习&lt;/div&gt;</span><br><span class="line">                    &lt;ul class=&quot;jj-list-con&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.oschina.net/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;开源中国&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://htmldog.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;HTML狗&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.icourse163.org/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;中国大学慕课&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.imooc.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;慕课网&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.wxapp-union.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;小程序&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.runoob.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;菜鸟教程&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://blog.51cto.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;51CTO&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.shiyanlou.com/library/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;实验楼&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://spring.io/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;col s12 m6 l4 friend-div aos-init&quot; data-aos=&quot;zoom-in-up&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;jj-list-tit&quot;&gt;资讯 · 趋势&lt;/div&gt;</span><br><span class="line">                    &lt;ul class=&quot;jj-list-con&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.huxiu.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;虎嗅&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://insights.stackoverflow.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;技术调查&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.asciiworld.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;摸鱼&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://sspai.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;少数派&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://zh.wikihow.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;WikeHom&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.awesomes.cn/rank?sort=hot&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;前端趋势&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://github-trending.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;GitHub趋势&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.tiobe.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;编程趋势&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://trends.google.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;Google趋势&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;col s12 m6 l4 friend-div aos-init&quot; data-aos=&quot;zoom-in-up&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;jj-list-tit&quot;&gt;搜索 · 其他&lt;/div&gt;</span><br><span class="line">                    &lt;ul class=&quot;jj-list-con&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://ac.scmor.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;谷歌镜像&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.pansoso.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;网盘搜索&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://tool.mkblog.cn/music/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;音乐搜索&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.upyun.com/?utm_source=lianmeng&amp;amp;utm_medium=referral&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;又拍云&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://carbon.now.sh/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;代码图片&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.zhipin.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;Boos&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.fontawesome.com.cn/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;图标库&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://www.qvdv.com/tools/qvdv-guid.html&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;在线工具&lt;/a&gt;</span><br><span class="line">                        &lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;https://zhongguose.com/&quot; rel=&quot;external nofollow noreferrer&quot; class=&quot;link-3&quot; target=&quot;_blank&quot;&gt;中国色&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;script&gt;$(&quot;.Select-box ul&quot;).hover(function()&#123;$(this).css(&quot;height&quot;,&quot;auto&quot;)&#125;,function()&#123;$(this).css(&quot;height&quot;,&quot;40px&quot;)&#125;),$(&quot;.Select-box-2 ul&quot;).hover(function()&#123;$(this).css(&quot;height&quot;,&quot;auto&quot;)&#125;,function()&#123;$(this).css(&quot;height&quot;,&quot;46px&quot;)&#125;),$(&quot;.Select-box li&quot;).click(function()&#123;var t=$(this).attr(&quot;class&quot;),s=$(this).html();&quot;baidu_s&quot;==t&amp;&amp;(t=&quot;https://www.baidu.com/s&quot;,_name=&quot;wd&quot;),&quot;google_s&quot;==t&amp;&amp;(t=&quot;https://www.google.com/search&quot;,_name=&quot;q&quot;),&quot;bing_s&quot;==t&amp;&amp;(t=&quot;https://www.bing.com/search&quot;,_name=&quot;q&quot;),$(&quot;.baidu form&quot;).attr(&quot;action&quot;,t),$(&quot;.this_s&quot;).html(s),$(&quot;#kw&quot;).attr(&quot;name&quot;,_name),$(&quot;.Select-box ul&quot;).css(&quot;height&quot;,&quot;40px&quot;)&#125;),$(&quot;.Select-box-2 li&quot;).click(function()&#123;var t=$(this).attr(&quot;class&quot;),s=$(this).html();&quot;baidu_s&quot;==t&amp;&amp;(t=&quot;https://www.baidu.com/s&quot;,_name=&quot;wd&quot;),&quot;google_s&quot;==t&amp;&amp;(t=&quot;https://www.google.com/search&quot;,_name=&quot;q&quot;),&quot;bing_s&quot;==t&amp;&amp;(t=&quot;https://www.bing.com/search&quot;,_name=&quot;q&quot;),$(&quot;.baidu form&quot;).attr(&quot;action&quot;,t),$(&quot;.this_s&quot;).html(s),$(&quot;#kw-2&quot;).attr(&quot;name&quot;,_name),$(&quot;.Select-box-2 ul&quot;).css(&quot;height&quot;,&quot;48px&quot;)&#125;)&lt;/script&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="预览部署"><a href="#预览部署" class="headerlink" title="预览部署"></a>预览部署</h2><p>执行相关命令</p>
+<p>预览</p>
+<p><code>hexo cl&amp;&amp;hexo g&amp;&amp;hexo s</code></p>
+<p>部署</p>
+<p><code>hexo cl&amp;&amp;hexo g&amp;&amp;hexo d</code></p>
+
+    </div>
+    
+    
+
+    <ul class="post-tools">
+        
+        
+            <li id="reward">
+                <span id="reward-btn" class="dashang" title="打赏，支持一下"><i class="iconfont icon-dashang"></i> 打赏作者</span>
+                <div class="shang-box">
+                    <div class="shang-tit">
+                        <p>感谢您的支持，我会继续努力的!</p>
+                    </div>
+                    <div class="shang-payimg">
+                        <img id="alipay" src="/media/reward/alipay.jpg" alt="扫码支持" title="扫一扫">
+                        <img id="wechat" src="/media/reward/wechat.jpg" alt="扫码支持" title="扫一扫">
+                    </div>
+                    <div class="pay-explain">扫码打赏，你说多少就多少</div>
+                    <div class="shang-payselect">
+                        <label id="alipay-radio" class="pay-item">
+                            <input type="radio" checked name="reward">
+                            <span></span>
+                        </label>
+                        <label id="wechat-radio" class="pay-item">
+                            <input type="radio" name="reward">
+                            <span></span>
+                        </label>
+                    </div>
+                    <button class="tip-button">
+                        <span class="tip-button-text">打赏完毕</span>
+                        <div class="coin-wrapper">
+                            <div class="coin">
+                                <div class="coin-middle"></div>
+                                <div class="coin-back"></div>
+                                <div class="coin-front"></div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+        
+        
+            <li id="qrcode-btn" title="扫描二维码访问">
+                <i class="iconfont icon-erweima"></i>
+            </li>
+        
+        <li class="sharePage" title="分享本页"  onclick="copyText(window.location.href)">
+            <i class="iconfont icon-link"></i>
+        </li>
+        
+            
+                <li class="right">
+                    <a href="/tags/Hexo/">
+                        # Hexo 11
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+    
+    
+        
+            
+            <div class="post-copyright">
+                <div class="post-copyright-icon"></div>
+                <div class="post-copyright-author">
+                    <span class="post-copyright-meta">文章作者: </span>
+                    <span class="post-copyright-info">
+              <a href="mailto:aloeJun@qq.com">aloeJun</a>
+            </span>
+                </div>
+                <div class="post-copyright-type">
+                    <span class="post-copyright-meta">文章链接: </span>
+                    <span class="post-copyright-info">
+              <a href="https://www.islu.cn/posts/HexoNavigationPage.html">https://www.islu.cn/posts/HexoNavigationPage.html</a>
+            </span>
+                </div>
+                <div class="post-copyright-notice">
+                    <span class="post-copyright-meta">版权声明: </span>
+                    <span class="post-copyright-info">
+                        本博客所有文章除特别声明外，均采用
+                      <a href="/cc " target="_blank">
+                          CC BY-NC-SA 4.0 </a> 许可协议。转载请注明来自
+                      <a href="https://www.islu.cn/posts/HexoNavigationPage.html" target="_blank">aloeJun | Lu's Blog</a>
+                    </span>
+                </div>
+            </div>
+        
+    
+    
+    <div class="pagination-post">
+        
+            <a href="/posts/HexoSupervisoryControl.html">
+                <div class="prev-title"><i class="iconfont icon-chevron-left"></i>Hexo-友联监控</div>
+            </a>
+        
+        
+            <a href="/posts/HexoLive2D.html">
+                <div class="next-title">Hexo-live2D添加<i class="iconfont icon-chevron-right"></i></div>
+            </a>
+        
+    </div>
+    
+    <hr>
+    <div class="comment-head">
+        <div id="comment">
+    <div class="loading center"><img src="/media/detail/load.svg" alt="加载中..."></div>
+</div>
+<script type="module" data-pjax>
+    import { init } from '/lib/waline/waline.mjs';
+
+    const locale = {
+        nick: '昵称(必填)',
+        nickError: '即使是昵称也不要少于3个字哦 ~ ',
+        mail: '邮箱(必填)',
+        mailError: '请再次检查一下的邮件地址哦 ~ ',
+        link: '网址(选填)',
+        placeholder: '🤣一起来玩，留下你的足迹吧~。评论支持邮箱回复通知！📧\n' +
+            '🚀支持注册登录，并新增支持QQ登录(⊙o⊙)！💖\n' +
+            '💣请文明评论哦禁止恶意评论🈲\n' +
+            '⚠️公开网络空间，请不要发表任何包含个人或其他人的隐私信息⛔',
+        sofa: '抢个沙发吧 ~ ',
+        submit: '发射炮弹',
+        reply: '准备回击',
+        cancelReply: '取消回击',
+        comment: '评论',
+        more: '加载更多...',
+        preview: '实时演示',
+        emoji: '表情炸弹',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '实名发射',
+        logout: '取消实名',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    };
+
+
+    init({
+        el: '#comment',
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        pageSize: 10, // 评论数
+        pageview: true, // 阅读量
+        emoji: [ // 表情
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+        ],
+        WalineSearchOptions: false, // 搜索功能
+        copyright: false, // 右下角版权
+        imageUploader: false, //上传图片
+        lang: 'zh',
+        search: false, // 表情包搜索
+        reaction: false, // 开启反应
+        locale // 自定义提示
+    });
+
+</script>
+    </div>
+    
+    
+</article>
+
+        
+        
+    <aside id="rightside" class="clearfix">
+        <div class="rightside-message">
+            <h1 class="blog-name">aloeJun</h1>
+            <div class="my-description">
+                迷茫的原因往往只有一个，那就是在本该拼命去努力的年纪，想得太多，做得太少。🔔
+            </div>
+        </div>
+
+        
+            <div class="rightside-toc">
+                <p class="title">
+                    <i class="iconfont icon-bars"></i> 目录
+                    <span class="num">0%</span>
+                    <i class="backTop iconfont icon-arrow-up"
+                       onclick="document.documentElement.scrollTop = document.body.scrollTop =0"></i>
+                </p>
+
+                <progress class="progress" value="0" max="100"></progress>
+                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E9%A1%B5%E9%9D%A2"><span class="toc-text">新建页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%AF%BC%E8%88%AA"><span class="toc-text">在主题配置文件中添加导航</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-navigate-%E9%A1%B5%E9%9D%A2"><span class="toc-text">添加 navigate 页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E8%A7%88%E9%83%A8%E7%BD%B2"><span class="toc-text">预览部署</span></a></li></ol>
+                <a id="goComment" href="#comment" title="移步评论" alt="移步评论">COMMENT <i
+                            class="iconfont icon-arrow-down"></i></a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="related-posts">
+                <p class="title"><i class="fas fa-thumbs-up fa-fw"></i>推荐文章</p><ul class="relatedPosts-list"><li><a href="/posts/WeRead.html" title="Hexo-阅读页面(微信阅读)">Hexo-阅读页面(微信阅读)</a></li><li><a href="/posts/MateryAddPjax.html" title="Matery主题添加Pjax">Matery主题添加Pjax</a></li><li><a href="/posts/MateryAddDark.html" title="Matery添加暗色模式">Matery添加暗色模式</a></li><li><a href="/posts/WindowsPowerShellOperationHexo.html" title="PowerShell运行hexo命令">PowerShell运行hexo命令</a></li><li><a href="/posts/LoadingEatDD.html" title="Hexo页面加载动画(吃豆豆)">Hexo页面加载动画(吃豆豆)</a></li><li><a href="/posts/MateryLinks.html" title="Matery主题友链实现随机排列">Matery主题友链实现随机排列</a></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li></ul>
+                <div class="webinfo">
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-file-text-fill"></i> 文章总数 :</div>
+                        <div class="item-count">57 篇</div>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-timer-fill"></i> 建站天数 :</div>
+                        <div class="item-count" id="runtimeshow"> 1024 天</div>
+                        <script async>
+                            window.addEventListener("load", function () {
+                                $id("runtimeshow").innerHTML = getDaysDiffBetweenDates('2020-08-16') + "天";
+                            });
+                        </script>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-text"></i> 总字数 :</div>
+                        <div class="item-count">93.7k 字</div>
+                    </div>
+                </div>
+            </div>
+        
+    </aside>
+
+
+    </main>
+    
+    
+    
+    <mark id="mask" onclick="close_all()"></mark>
+    
+    
+<footer id="footer" style="display: none">
+    <span id="backTop" onclick="document.documentElement.scrollTop = document.body.scrollTop =0">
+        <i class="iconfont icon-arrow-up"></i>
+    </span>
+    <div class="container">
+        <p class="footer-text">欢迎第<span id="aloeJun-pageview-count" data-path="/"><img width="14px" height="14px" src="/media/detail/loaded.svg" alt="加载中..."></span>位来访者</p>
+        <p class="footer-message">
+            
+                <a id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+                    豫ICP备2020025858号-2
+                </a>
+            
+            
+                <a id="upy" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"
+                   rel="noopener noreferrer">
+                    <img width="90px" height="40px" src="/media/detail/upy.png" loading="lazy" alt="upy" title="又拍云">
+                </a>
+            
+
+            <a href="/atom.xml" target="_blank" title="RSS订阅">
+                <i class="iconfont icon-dingyue" style="font-size: 1.2rem"></i>
+            </a>
+            <a href="/cc" title="cc协议">
+                <i class="iconfont icon-closed-captioning" style="font-size: 1.5rem"></i>
+            </a>
+    </div>
+</footer>
+    
+    <section id="local-search" class="hidden">
+        <div id="local-search-title">本地搜索 </div>
+        <input id="local-search-input" autocomplete="off" placeholder="搜索文章" type="text">
+        <hr>
+        <div id="local-search-result"></div>
+        <span class="search-close-button" onclick="closeSearch()"><i class="iconfont icon-times-circle-fill"></i></span>
+        <script async src="/js/search.js"></script>
+    </section>
+
+</div>
+
+<div id="resource">
+    
+<script type="application/javascript">
+    var $config = {
+        
+            searchFile: "/search.json",
+        
+        
+        qrcode:{
+            source_js: "/lib/qrcode/qrcode.js",
+            Data:{
+                render: 'canvas',
+                text: 'https://www.islu.cn/posts/HexoNavigationPage.html',
+                size: 100,
+                correctLevel: 3,
+                background: '#fff',
+                image: '',
+                imageSize: '120px'
+            }
+        },
+        
+        
+        code_block_expand: {
+            enable: true,
+            height: 400,
+            scrollTop: 200
+        },
+        
+    }
+</script>
+
+    <script async type="application/javascript" src="/js/main.js"></script>
+    
+    <script defer type="text/javascript">
+        getScript('/lib/pjax/pjax.min.js', ()=>{
+            window.pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    "head meta[name='keywords']",
+                    "head meta[name='description']",
+                    "header p.now-path",
+                    "main",
+                    "span#aloeJun-pageview-count"
+                ],
+                cacheBust: false
+            });
+        });
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', () => {
+            // 执行进度条
+            
+        });
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', () => {
+            // 加载进度条加载完毕
+            
+            // 执行所有方法
+            exeAllFn()
+        });
+
+        document.addEventListener('pjax:success', () => {
+            $queryAll('script[data-pjax]').forEach((item) => {
+                const newScript = document.createElement('script')
+                const content = item.text || item.textContent || item.innerHTML || ""
+                Array.from(item.attributes).forEach((attr) => {
+                    newScript.setAttribute(attr.name, attr.value)
+                })
+                newScript.appendChild(document.createTextNode(content))
+                item.parentNode.replaceChild(newScript, item)
+            })
+        });
+        // Pjax请求错误时，跳转到404页面
+        document.addEventListener('pjax:error', (err) => {
+            if (err.request.status === 404) {
+                pjax.loadUrl('/404.html')
+            }
+        })
+    </script>
+
+    
+    <div id="nav-music"></div>
+    <script defer>
+        if (document.body.clientWidth > 768) {
+            window.addEventListener('load', () => {
+                getCss('/lib/aplayer/APlayer.min.css')
+                $id("nav-music").innerHTML = `<div id="nav-music-hoverTips" onclick="aloejun.musicToggle()">播放音乐</div>
+                <meting-js
+                        id="8164170333"
+                        server="netease"
+                        type="playlist"
+                        theme='#42b983'
+                        loop='all'
+                        preload='auto'
+                        order='random'
+                        volume='0.7'
+                        data-lrctype="0"
+                >
+                </meting-js>`
+                getScript('/lib/aplayer/APlayer.min.js', () => {
+                    getScript('/lib/aplayer/Meting.min.js')
+                })
+            }, false)
+        }
+    </script>
+
+    
+
+
+
+
+    
+<script async type="text/javascript">
+    window.addEventListener("load", () => {
+        getCss("/lib/waline/waline.css")
+        // 页面加载完毕后执行的代码
+        getScript("/lib/waline/activate-input.js", () => {
+            console.log("\n %c 最美的旅程 %c 是不断的经历 \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3;color:#030307; padding:5px 0;")
+        });
+    });
+
+</script>
+<script type="module" defer data-pjax>
+    import {pageviewCount} from '/lib/waline/pageview.mjs';
+
+    pageviewCount({
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        selector: '#aloeJun-pageview-count',
+        update: true
+    });
+</script>
+</div>
+</body>
+
+</html>

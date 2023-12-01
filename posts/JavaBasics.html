@@ -1,0 +1,1096 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" theme="dark">
+<head>
+    
+    
+
+<meta charset="UTF-8">
+<title>Java基础笔记 | aloeJun | Lu's blog</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="/media/detail/aloeJun.png" rel="shortcut icon">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="aloeJun">
+<meta name="copyright" content="aloeJun">
+<meta name="keywords" content="Java,Java基础,java语言特点,java开发环境,java基本类型">
+<meta name="description" content="Java 基础Java 语言特点跨平台( 一次开发，到处运行)面向对象(万物皆对象)Java 开发运行环境JDK:Java 开发工具集(开发人员需要安装)window 配置 JDKJVM:java 虚拟机JRE:java 运行环境（运行 java 程序必须安装）注:java 程序最终是运行在 jvm 虚拟机上的，不同的操作系统上可以安装其对应版本的 jvm，这样就实现了跨平台java 程序开发的步骤 编写源代码 (后缀.java)public class HelloWorld&amp;#"/>
+<meta property="site_name" content="aloeJun | Lu&#39;s blog "/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.islu.cn/posts/JavaBasics.html">
+<meta property="og:title" content="Java基础笔记 | aloeJun | Lu&#39;s blog"/>
+<meta property="og:site_name" content="aloeJun | Lu&#39;s blog"/>
+<meta property="og:description" content="Java 基础Java 语言特点跨平台( 一次开发，到处运行)面向对象(万物皆对象)Java 开发运行环境JDK:Java 开发工具集(开发人员需要安装)window 配置 JDKJVM:java 虚拟机JRE:java 运行环境（运行 java 程序必须安装）注:java 程序最终是运行在 jvm 虚拟机上的，不同的操作系统上可以安装其对应版本的 jvm，这样就实现了跨平台java 程序开发的步骤 编写源代码 (后缀.java)public class HelloWorld&amp;#"/>
+<meta property="og:locale" content="zh-CN">
+<meta property="article:author" content="aloeJun ">
+
+<style>html{scroll-behavior:smooth;overflow-y:overlay}html *{margin:0}html .clearfix{zoom:1}html .clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}html .center{text-align:center!important}html .relative{position:relative}html .absolute{position:absolute}html .hotpink{color:#ff69b4}html .right{float:right}html .left{float:left}html .hidden{display:none}html .cursor{cursor:pointer}html .filter{filter:var(--filter)}html ul li{list-style:none}html table{width:100%;display:table;border-collapse:collapse;border-spacing:0}html table td,html table th{padding:15px 5px;display:table-cell;text-align:left;vertical-align:middle;border-radius:2px;border:1px solid var(--love_color)}body{margin:0;background-color:var(--body_bg);font-size:14px;color:var(--text_color);font-family:楷体}body #resource{position:relative;top:0;left:0}body video{max-width:100%}body a{text-decoration:none;color:#0a84ff;transition:all .5s}body p{margin:revert}body .mask{width:100%;height:100%;position:fixed;top:0;z-index:102;background:rgba(0,0,0,.4)}body .pjax_progress{position:fixed;top:0;left:0;width:10%;height:2px;z-index:103;background-image:-webkit-linear-gradient(left,#f16f5c 0,#f16f5c 12.5%,#5b56dd 12.5%,#5b56dd 25%,#e15ced 25%,#e15ced 37.5%,#27e559 37.5%,#27e559 50%,#18c8c9 50%,#18c8c9 62.5%,#dc8987 62.5%,#dc8987 75%,#bb83d6 75%,#bb83d6 87.5%,#e774bd 87.5%,#e774bd 100%);transition:width .4s ease 0s}body .clipboard{right:16px;top:8px;cursor:pointer;border-radius:3px;color:#eff;position:relative;float:right;padding:2px}body ::-webkit-input-placeholder{color:#ff69b4}body ::-moz-placeholder{color:#ff69b4}body :-ms-input-placeholder{color:#ff69b4}body :-moz-placeholder{color:#ff69b4}body .gray-filter{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%)}#body-wrap{width:100%;position:relative}#body-wrap #main-wrap{min-height:24rem}#body-wrap .container{width:90%;max-width:1200px;margin:0 auto}#body-wrap .main-card{background-color:var(--main_bg);border:1px solid #e2dfdd;border-radius:10px}.post_content h2::after{float:right;margin-right:10px;display:inline-block;content:'\f0c1';color:grey;font-family:'Font Awesome 6 Pro'}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#666;border-radius:3px;box-shadow:inset 0 -1px 0 #000}code{padding:.1rem .2rem;background:rgba(27,31,35,.05);color:#f47466;border-radius:3px;word-wrap:break-word;word-break:break-word;overflow-wrap:break-word}blockquote{margin:4px 0;padding:.6rem .8rem;border-left:.2rem solid #e58a8a;background-color:rgba(73,177,245,.1);color:var(--blockquote_color)}blockquote p{margin:0}.pullquote.left{max-width:45%;float:left;margin:.5em .5em 0 0}.pullquote.right{max-width:45%;float:right;margin:.5em 0 0 .5em;border-right:.2rem solid #e58a8a;border-left:none}.video-container{position:relative;overflow:hidden;margin-bottom:.8rem;padding-top:56.25%;height:0}.video-container iframe{position:absolute;top:0;left:0;margin-top:0;width:100%;height:100%}h1{margin:48px 0 22px -5px;font-size:2rem;font-weight:700;line-height:2rem}h2{margin:42px 0 18px -5px;font-size:1.8rem;font-weight:700;line-height:1.8rem}h3{margin:38px 0 15px -4px;font-size:1.6rem;font-weight:700;line-height:1.7rem}h4{margin:32px 0 12px -4px;font-size:1.45rem;font-weight:700;line-height:1.45rem}h5{margin:28px 0 8px -4px;font-size:1.2rem;font-weight:700;line-height:1.2rem}h6{margin:22px 0 4px -4px;font-size:1.1rem;line-height:1.1rem}p{font-size:1rem;line-height:1.5rem}hr{margin:20px 0;border:0;border-top:1px solid #ccc}::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background-color:grey;border-radius:8px;cursor:pointer}::-webkit-scrollbar-thumb:hover{opacity:1;display:block!important}::-webkit-scrollbar-track{background-color:transparent}:root{--main:#c7a17a;--body_bg:#f7f9fe;--text_color:#333;--main_bg:#fff;--post_title:rgba(52,50,50,0.7);--link_bg:#f8f9fa;--code_bg:$highlight-background;--code_wrap_bg:$code_block;--blockquote_color:#6a737d;--table_bg:none;--love_color:#3c4858;--filter:none}html[theme=dark]{--body_bg:#161b2a;--text_color:rgba(255,255,255,0.6);--main_bg:#070615;--post_title:rgba(255,255,255,0.9);--link_bg:#333841;--code_bg:#333841;--code_wrap_bg:#444851;--blockquote_color:rgba(255,255,255,0.6);--table_bg:#282c34;--love_color:#faebd7;--filter:invert(1)}nav .navbar{display:flex;justify-content:space-between;align-items:center;height:5rem;padding:0 30px;margin:0 10%}nav .navbar .open_nav{margin-left:10px;display:none}nav .navbar .blog_name{font-weight:700;font-size:1.8rem;color:#ff7242;display:inline-block;text-decoration:none;margin-left:4rem;min-width:7.2rem}nav ul.side-toolbar{min-width:5.6rem;color:var(--post_title)}nav ul.side-toolbar li{display:inline-block;width:2em;font-size:1.5rem;cursor:pointer}nav ul.side-toolbar li:hover{color:#0a84ff}nav ul.side-toolbar i{font-size:1.5rem}nav #navbar_wrap{padding-inline-start:0;position:fixed;width:100%;z-index:991;top:0;background-color:var(--main_bg);-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:background .5s ease-in-out,padding .5s ease-in-out;-webkit-transition:background .5s ease-in-out,padding .5s ease-in-out;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}nav #navbar_wrap .menu{margin-right:auto}nav #navbar_wrap .menu li{position:relative;list-style:none;float:left;text-align:center}nav #navbar_wrap .menu li:nth-child(odd) a:before{background-color:#ff0}nav #navbar_wrap .menu li:nth-child(odd) a:after{background-color:red}nav #navbar_wrap .menu li:nth-child(odd) a:hover~.indicator{background:linear-gradient(130deg,#ff0,red)}nav #navbar_wrap .menu li:nth-child(even) a:before{background-color:#00e2ff}nav #navbar_wrap .menu li:nth-child(even) a:after{background-color:#89ff00}nav #navbar_wrap .menu li:nth-child(even) a:hover~.indicator{left:34%;background:linear-gradient(130deg,#00e2ff,#89ff00)}nav #navbar_wrap .menu li ul.menu_child{display:none}nav #navbar_wrap .menu li ul.menu_child li{float:none!important}nav #navbar_wrap .menu li ul.menu_child li a:before{background-color:purple}nav #navbar_wrap .menu li ul.menu_child li a:after{background-color:#db7093}nav #navbar_wrap .menu li ul.menu_child li a:hover~.indicator{left:70%;background:linear-gradient(130deg,purple,#db7093)}nav #navbar_wrap .menu li a{cursor:pointer;white-space:nowrap;font-size:1.3rem;color:var(--love_color);position:relative;width:33.333%;display:table-cell;text-align:center;text-decoration:none;font-weight:700;padding:10px 20px;transition:.2s ease color}nav #navbar_wrap .menu li a i{color:var(--love_color);order:1;font-size:13px}nav #navbar_wrap .menu li a i.icon-chevron-up{display:none}nav #navbar_wrap .menu li a:after,nav #navbar_wrap .menu li a:before{content:"";position:absolute;border-radius:50%;transform:scale(0);transition:.2s ease transform}nav #navbar_wrap .menu li a:before{top:0;left:10px;width:6px;height:6px}nav #navbar_wrap .menu li a:after{top:5px;left:18px;width:4px;height:4px}nav #navbar_wrap .menu li a:hover,nav #navbar_wrap .menu li a:hover i{color:#00c4b6}nav #navbar_wrap .menu li a:hover i:after,nav #navbar_wrap .menu li a:hover i:before,nav #navbar_wrap .menu li a:hover:after,nav #navbar_wrap .menu li a:hover:before{transform:scale(1)}nav #navbar_wrap .menu li a:hover i~.indicator,nav #navbar_wrap .menu li a:hover~.indicator{visibility:unset;width:100%}nav #navbar_wrap .menu li .indicator{visibility:hidden;width:0;height:3px;background-color:#fff;border-radius:5px;transition:.35s ease all;margin:0 auto}nav #navbar_wrap .menu li:hover .menu_child{background-color:var(--main_bg);position:absolute;right:0;display:inline-block;padding:0;border-radius:6px;width:-moz-max-content;width:max-content;min-width:80px;box-shadow:0 5px 20px -4px rgba(0,0,0,.5)}nav #navbar_wrap .menu li:hover .menu_childicon-chevron-up{margin-top:13px}.open_mobile{transform:translate3d(100%,0,0)}#mobile_nav{background:var(--main_bg);position:fixed;left:-200px;top:0;z-index:991;overflow:hidden auto;width:200px;height:100%;padding:0;transition:all .5s}#mobile_nav ul{padding-inline-start:unset}#mobile_nav ul li{display:block;list-style:none;text-align:center;line-height:2}#mobile_nav ul li a{font-weight:700;display:block;cursor:pointer;white-space:nowrap;padding:10px;font-size:.9rem;color:var(--love_color)}header{background:linear-gradient(to top,var(--body_bg),#a9a9a9)}header .header_main{-webkit-user-select:none;-moz-user-select:none;user-select:none;cursor:pointer;padding:3.6rem 0}header .header_main .title{line-height:15rem;color:#fff;font-size:5rem;font-weight:700}header .header_main p.now-path{color:#f60;margin-top:0;font-size:2rem;font-weight:bolder}.main-hero-waves-area{width:100%}.waves-area .waves-svg{width:100%;height:5rem}.parallax>use{animation:move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite}.parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(247,249,254,.741)}.parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(247,249,254,.51)}.parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(247,249,254,.212)}.parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#f7f9fe}[theme=dark] .parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(22,27,42,.4)}[theme=dark] .parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(22,27,42,.6)}[theme=dark] .parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(22,27,42,.8)}[theme=dark] .parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#161b2a}@media (max-width:768px){.waves-area .waves-svg{height:40px;min-height:40px}}@keyframes move-forever{0%{transform:translate3d(-90px,0,0)}100%{transform:translate3d(85px,0,0)}}@media only screen and (max-width:601px){nav ul.side-toolbar li{width:1.5em!important}#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}.scrollbar{display:none}header .header_main .title{line-height:10rem}header .header_main p.now-path{font-size:1.5rem}#main-wrap.container{width:98.5%;margin:1rem auto}#main-wrap.container #post-list,#main-wrap.container .post{float:unset;width:100%;margin:0}#main-wrap.container #post-list .post-info,#main-wrap.container .post .post-info{padding:1.5rem}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{max-width:70%;margin:1rem}#main-wrap.container #post-list .post-content,#main-wrap.container .post .post-content{padding:1rem}#main-wrap.container .post+#rightside{display:none}#main-wrap.container #rightside{width:unset}#main-wrap.container #rightside .rightside-category,#main-wrap.container #rightside .rightside-message,#main-wrap.container #rightside .rightside-tag,#main-wrap.container #rightside .rightside-toc{width:unset}#main-wrap.container .category-container li.category-content{width:50%}#main-wrap.container .category-container li.category-content:nth-child(2n):after{width:0}#main-wrap.container .categories-content{font-size:1rem}#main-wrap.container .categories-default{margin:.1rem}#main-wrap.container .archives-container .article-item .post-link{width:88%}#main-wrap.container #categories-chart,#main-wrap.container #posts-chart,#main-wrap.container #tags-chart{display:block;width:100%}#main-wrap.container .uk-alert{padding:0;margin:0}#main-wrap.container .relatedPosts-list{padding-left:0}#main-wrap.container .relatedPosts-list li{display:unset;max-width:unset}#main-wrap.container .about .w32,#main-wrap.container .about .w43,#main-wrap.container .about .w55{width:100%}#main-wrap.container .about .author-content .author-content-item p{font-size:2rem!important;margin:1.5rem 0 0 0!important}footer .footer-message a{margin-right:.5rem!important}.wl-editor{font-size:.6em!important}#local-search{z-index:999!important}}@media only screen and (min-width:600px) and (max-width:992px){#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}#main-wrap.container{width:unset}#main-wrap.container #post-list,#main-wrap.container .post{width:69%}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{margin:0 0 .6rem .6rem}}@font-face{font-family:iconfont;src:url(/font/iconfont.woff2) format('woff2'),url(/font/iconfont.woff) format('woff'),url(/font/iconfont.ttf) format('truetype')}.iconfont{font-family:iconfont!important;font-size:1rem;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-message:before{content:"\e819"}.icon-like{color:red}.icon-like:before{content:"\e6fc"}.icon-eye:before{content:"\e706"}.icon-history-filling:before{content:"\e68a"}.icon-pintu:before{content:"\e741"}.icon-database:before{content:"\e6ac"}.icon-sad-tear:before{content:"\eb8a"}.icon-link:before{content:"\e6b4"}.icon-erweima:before{content:"\eaf1"}.icon-dashang:before{content:"\e693"}.icon-text:before{content:"\e71e"}.icon-timer-fill:before{content:"\e87a"}.icon-copy:before{content:"\e67f"}.icon-share:before{content:"\e68f"}.icon-yinsixieyi:before{content:"\e740"}.icon-paperplane-fill:before{content:"\e7a9"}.icon-tag-fill:before{content:"\e7ae"}.icon-pausecircle-fill:before{content:"\e7cb"}.icon-stopcircle-fill:before{content:"\e7cc"}.icon-playcircle-fill:before{content:"\e7cd"}.icon-picture-fill:before{content:"\e7cf"}.icon-calendaralt-fill:before{content:"\e7d8"}.icon-clouddownload-fill:before{content:"\e7d9"}.icon-times-circle-fill:before{content:"\e7e1"}.icon-angle-double-right:before{content:"\e84a"}.icon-angle-double-left:before{content:"\e84b"}.icon-home:before{content:"\e88b"}.icon-universal-access:before{content:"\ebbd"}.icon-window-restore:before{content:"\ebd3"}.icon-rotateright:before{content:"\e7e7"}.icon-dingyue:before{content:"\e602"}.icon-arrow-up:before{content:"\e601"}.icon-chevron-down:before{content:"\e606"}.icon-bars:before{content:"\e610"}.icon-books:before{content:"\e716"}.icon-tag:before{content:"\e66c"}.icon-search:before{content:"\e6aa"}.icon-envelope:before{content:"\e6ce"}.icon-GitHub:before{content:"\ea0a"}.icon-file-text-fill:before{content:"\e858"}.icon-closed-captioning:before{content:"\e600"}.icon-share-all-solid:before{content:"\e61d"}.icon-file-search-Fill:before{content:"\e8da"}.icon-sun:before{content:"\eba5"}.icon-chevron-left:before{content:"\e603"}.icon-chevron-up:before{content:"\e604"}.icon-chevron-right:before{content:"\e605"}.icon-moon:before{content:"\e8b1"}</style>
+<script>
+    const $id=e=>document.getElementById(e),$query=e=>document.querySelector(e),$queryAll=e=>document.querySelectorAll(e),getScript=(e,t)=>{if(Array.isArray(this.isGetScript)){if(this.isGetScript.includes(e))return t()}else this.isGetScript=[];this.isGetScript.push(e);var r=document.createElement("script");r.src=e,void 0!==t&&(r.readyState?r.onreadystatechange=()=>{"loaded"!=r.readyState&&"complete"!=r.readyState||(r.onreadystatechange=null,t())}:r.onload=()=>{r.onload=null,t()}),(null!=$id("resource")?$id("resource"):document.body).appendChild(r)},getCss=e=>{var t=document.createElement("link");t.rel="stylesheet",t.type="text/css",t.href=e,document.head.appendChild(t)},copyText=e=>navigator.clipboard?.writeText&&navigator.clipboard.writeText(e),getDaysDiffBetweenDates=e=>parseInt((new Date-new Date(e))/864e5),throttle=(t,r)=>{var a=0;return function(){var e=new Date;r<e-a&&(t.apply(this,arguments),a=e)}};
+</script>
+
+<link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="aloeJun | Lu's blog" type="application/atom+xml">
+</head>
+<body>
+
+<div id="body-wrap">
+    
+    
+
+
+    
+    <nav id="nav">
+    <menu id="navbar_wrap">
+        <div class="navbar">
+            <i class="iconfont icon-bars open_nav"></i>
+            <a href="/" class="blog_name"><i>A<span style="color: #00c4b6">L</span>OEJ<span
+                            style="color: #00c4b6">U</span>N</i></a>
+            <ul class="menu">
+                <li>
+                    <a href="/" rel="noopener noreferrer">首页</a>
+                    <div class="indicator"></div>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/tags/index.html" rel="noopener noreferrer">
+                                标签
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/categories/index.html" rel="noopener noreferrer">
+                                分类
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/archives/index.html" rel="noopener noreferrer">
+                                归档
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about/index.html" rel="noopener noreferrer">
+                                关于
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/contact/index.html" rel="noopener noreferrer">
+                                留言
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/friends/index.html" rel="noopener noreferrer">
+                                朋友
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="#" rel="noopener noreferrer">
+                                清单
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="indicator"></div>
+                            <ul class="menu_child">
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                                
+                                    <li>
+                                        <a href='/fcircle/index.html'
+                                           rel="noopener noreferrer">朋友小圈</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/talk/index.html'
+                                           rel="noopener noreferrer">碎碎叨叨</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/books/index.html'
+                                           rel="noopener noreferrer">阅读记录</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                <li>
+                                    <a target="_blank" href='https://sport.islu.cn' rel="noopener noreferrer noopener">运动记录</a>
+                                    <div class="indicator"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                
+            </ul>
+            <ul class="side-toolbar">
+                <li>
+                    <i id="darkBtn" class="iconfont icon-sun" title="深色/浅色"></i>
+                </li>
+                <li>
+                    <i id="searchBtn" class="iconfont icon-search"></i>
+                </li>
+            </ul>
+        </div>
+    </menu>
+    <menu id="mobile_nav">
+        <ul>
+            <li>
+                <a href="/" rel="noopener noreferrer">首页</a>
+                <div class="indicator"></div>
+            </li>
+            
+                
+                    <li>
+                        <a href="/tags/index.html" rel="noopener noreferrer">
+                            标签
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/categories/index.html" rel="noopener noreferrer">
+                            分类
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/archives/index.html" rel="noopener noreferrer">
+                            归档
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/about/index.html" rel="noopener noreferrer">
+                            关于
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/contact/index.html" rel="noopener noreferrer">
+                            留言
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/friends/index.html" rel="noopener noreferrer">
+                            朋友
+                        </a>
+                    </li>
+                
+            
+                
+                    
+                        <li>
+                            <a href='/fcircle/index.html'
+                               rel="noopener noreferrer">
+                                朋友小圈
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/talk/index.html'
+                               rel="noopener noreferrer">
+                                碎碎叨叨
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/books/index.html'
+                               rel="noopener noreferrer">
+                                阅读记录
+                            </a>
+                        </li>
+                    
+                
+            
+            <li>
+                <a target="_blank" href="https://sport.islu.cn" rel="noopener noreferrer noopener">运动</a>
+                <div class="indicator"></div>
+            </li>
+        </ul>
+    </menu>
+</nav>
+
+    
+    <header id="header" class="main-hero-waves-area waves-area">
+    <div class="header_main">
+        <div class="container center">
+            <h2 class="title">Choice over effort.</h2>
+            <p class="now-path">
+                <a href="/" rel="noopener noreferrer" title="返回首页">Home /</a>
+                
+                    Java基础笔记
+                
+            </p>
+        </div>
+    </div>
+    <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352Z"></path>
+        </defs>
+        <g class="parallax">
+            <use href="#gentle-wave" x="48" y="0"></use>
+            <use href="#gentle-wave" x="48" y="3"></use>
+            <use href="#gentle-wave" x="48" y="5"></use>
+            <use href="#gentle-wave" x="48" y="7"></use>
+        </g>
+    </svg>
+</header>
+    
+    <main id="main-wrap" style="display: none" class="container clearfix">
+        
+<article class="post main-card" id="post">
+    <div class="post-info">
+        <div class="post-title">
+            <h1>Java基础笔记</h1>
+        </div>
+        <div class="post-meta">
+            <div class="post-date">
+                <i class="iconfont icon-calendaralt-fill post-meta-icon"></i>
+                <span class="post-meta-label">
+                    发表于
+                    <span id="dateTime">
+                        2020-09-23
+                    </span> |
+                </span>
+                <i class="iconfont icon-history-filling post-meta-icon"></i>
+                <span class="post-meta-label">
+                    更新于
+                    <span id="updateTime">
+                        2020-09-23
+                    </span>
+                </span>
+            </div>
+            <div class="post-meta-wordcount">
+                <i class="iconfont icon-text post-meta-icon"></i>
+                <span class="post-meta-label">总字数:</span>
+                <span class="word-count">2.1k | </span>
+                <i class="iconfont icon-timer-fill post-meta-icon"></i>
+                <span class="post-meta-label">阅读时长:</span>
+                <span>7分钟</span>
+                
+                    | <i class="iconfont icon-eye post-meta-icon"></i>
+                    <span class="post-meta-label">阅读量:</span>
+                    <span class="waline-pageview-count"></span>
+                    </span>
+                
+            </div>
+        </div>
+        <div class="uk-alert">
+            <p id="thisTime">
+                <span id="timeLag" class="loading center">
+                       <img src="/media/detail/loaded.svg" alt="加载中...">
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="post-content">
+        <h1 id="Java-基础"><a href="#Java-基础" class="headerlink" title="Java 基础"></a>Java 基础</h1><h2 id="Java-语言特点"><a href="#Java-语言特点" class="headerlink" title="Java 语言特点"></a>Java 语言特点</h2><ol>
+<li>跨平台( 一次开发，到处运行)</li>
+<li>面向对象(万物皆对象)</li>
+</ol>
+<h2 id="Java-开发运行环境"><a href="#Java-开发运行环境" class="headerlink" title="Java 开发运行环境"></a>Java 开发运行环境</h2><p>JDK:Java 开发工具集(开发人员需要安装)<a target="_blank" rel="noopener" href="https://ialoe.top/posts/57766.html">window 配置 JDK</a></p>
+<p>JVM:java 虚拟机</p>
+<p>JRE:java 运行环境（运行 java 程序必须安装）</p>
+<p>注:java 程序最终是运行在 jvm 虚拟机上的，不同的操作系统上可以安装其对应版本的 jvm，这样就实现了跨平台</p>
+<h2 id="java-程序开发的步骤"><a href="#java-程序开发的步骤" class="headerlink" title="java 程序开发的步骤"></a>java 程序开发的步骤</h2><ol>
+<li> 编写源代码 (后缀.java)</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译                 (后缀.class)<br> <code>javac 文件名.java</code></li>
+<li>运行<br> <code>java 文件名</code></li>
+</ol>
+<h2 id="java-类的结构"><a href="#java-类的结构" class="headerlink" title="java 类的结构"></a>java 类的结构</h2><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> 	class 类名&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>main 方法是 Java 程序的入口</p>
+<h2 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h2><h3 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h3><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;输出内容&quot;</span>);		<span class="comment">//输出完后自动换行--》System.out.print(&quot;\n&quot;);</span></span><br><span class="line">System.out.print(<span class="string">&quot;输出内容&quot;</span>);		<span class="comment">//输出完后不自动换行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><figure class="highlight plaintext">
+    <div class="code-block-header" lang="plaintext">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">\n		换行符</span><br><span class="line">\t		大空格(Tab键)</span><br></pre></td></tr></table></figure>
+
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight plaintext">
+    <div class="code-block-header" lang="plaintext">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">//		单行注释</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> *		多行注释</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>内存中一块储存空间的表示</p>
+<h4 id="变量的数据类型"><a href="#变量的数据类型" class="headerlink" title="变量的数据类型"></a>变量的数据类型</h4><ol>
+<li> 基本类型(8 种)</li>
+</ol>
+<ul>
+<li>byte  1 个字节</li>
+<li>char          2 个字节</li>
+<li>short         2 个字节</li>
+<li>int             4 个字节</li>
+<li>long          8 个字节</li>
+<li>float          4 个字节</li>
+<li>double      8 个字节</li>
+<li>boolean    1 个字节</li>
+</ul>
+<p>自动     小——》大<br>强制     大——》小<br>大小是根据占用字节判断<br>byte—》short—》int—》long—》float—》double<br>char——》int 自动<br>float——》int 强制 (int)12.3f</p>
+<ol start="2">
+<li>引用类型<br> String 数组 对象 除了八种基本类型之外的都属于引用数据类型</li>
+</ol>
+<ul>
+<li>比较相等<ul>
+<li>Java 基本数据类型(8 种)<ul>
+<li>相等 ==</li>
+<li>不相等    !=</li>
+</ul>
+</li>
+<li>String<ul>
+<li>相同 <code>字符串1.equals(字符串2)</code><ul>
+<li>true</li>
+</ul>
+</li>
+<li>不相同    <code>!字符串1.equals(字符串2)</code><ul>
+<li>false</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="变量的声明和使用"><a href="#变量的声明和使用" class="headerlink" title="变量的声明和使用"></a>变量的声明和使用</h4><ol>
+<li>先声明后赋值<ol>
+<li>声明变量 数据类型 变量名；</li>
+<li>变量名 = 变量值；</li>
+<li>使用</li>
+</ol>
+</li>
+<li>声明并赋值<ol>
+<li>声明变量 数据类型 变量名 = 变量值；</li>
+<li>使用</li>
+</ol>
+</li>
+</ol>
+<h4 id="变量的命名规则"><a href="#变量的命名规则" class="headerlink" title="变量的命名规则"></a>变量的命名规则</h4><ol>
+<li>字母,数字,下划线,$,但是不能以数字开头</li>
+<li>不能与关键词重名</li>
+<li>见名知义</li>
+<li>多个单词组成时，第一个单词小写其余单词开头首字母大写。 如:myScore</li>
+</ol>
+<h4 id="键盘接收"><a href="#键盘接收" class="headerlink" title="键盘接收"></a>键盘接收</h4><ol>
+<li>初始化 Scanner 对象<br> <code>Scanner input=new Scanner(System.in);</code></li>
+<li>在程序中导入 Scanner 类<br> 在类的外面写<code>import java.util.Scanner;</code></li>
+<li> 从键盘接收数据赋值给变量</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">String name=input.next();<span class="comment">//接收到String类型值</span></span><br><span class="line"><span class="type">int</span> age=input.nextInt();<span class="comment">//接收到int类型的值</span></span><br><span class="line"><span class="type">double</span> score=input.nextDouble();<span class="comment">//接收到double类型的值</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="声明和使用步骤"><a href="#声明和使用步骤" class="headerlink" title="声明和使用步骤"></a>声明和使用步骤</h4><ol>
+<li>声明</li>
+<li>分配空间</li>
+<li>赋值</li>
+<li>使用</li>
+<li>注意<ul>
+<li>声明同时分配空间：`数据类型 [] 数组名=new 数据类型[数组长度];</li>
+<li>数组下标从 0 开始         数组元素最大下标值是 <code>length-1</code></li>
+<li>声明的时候赋值<ul>
+<li>数据类型 [] 数组名 = new 数据类型[]{值 1,值 2,…}//后面的括号中不能写长度</li>
+<li>数据类型 [] 数组名 = {值 1,值 2,…}//不可拆分</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="遍历数组元素"><a href="#遍历数组元素" class="headerlink" title="遍历数组元素"></a>遍历数组元素</h4><figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;数组名.length;i++)&#123;</span><br><span class="line">	System.out.println(数组名[下标]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的应用"><a href="#数组的应用" class="headerlink" title="数组的应用"></a>数组的应用</h4><ol>
+<li>数组排序<br> 使用 Arrays 类 sort 方法排序,默认升序排序</li>
+</ol>
+<ul>
+<li>步骤<ol>
+<li>Arrays 类导入 <code>import java.util.Arrays</code></li>
+<li><code>Arrays.sort(要排序的数组);</code></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li> 求最大值(打擂台思想)</li>
+</ol>
+<ul>
+<li>思想<ol>
+<li>设置数组第一个元素为默认最大值</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li> 循环数组依次与最大值比较</li>
+</ol>
+<ul>
+<li>关键代码</li>
+</ul>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="type">int</span> max=数组[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;数组名.length;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(数组名[i]&gt;max)&#123;</span><br><span class="line">		max=数组名[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>向数组中添加元素<br> 实现思路</li>
+<li>找到待插入元素的下标<ul>
+<li>循环数组,当满足   待插入元素大于当前数组元素的时候,终止循环,并用变量保存当前下标</li>
+</ul>
+</li>
+<li>给待插入元素腾位置<ul>
+<li>从后往前移动元素   否则会元素覆盖,丢失  i=length-1;i&gt;找到的下标值;i–前一个元素的值   赋值给   后一个</li>
+</ul>
+</li>
+<li>插入元素<ul>
+<li>数组名[下标]=元素值;</li>
+</ul>
+</li>
+</ol>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h4><p>符号:  =</p>
+<p>把等号右边的值赋给左边</p>
+<blockquote>
+<p>sum+=i;//sum=sum+i;</p>
+</blockquote>
+<h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h4><blockquote>
+<p>\ + - * /(求商)  %(求余数)  ++(自增)  –(自减)</p>
+</blockquote>
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><blockquote>
+<p>&lt;,&gt; ,&gt;=,&lt;=,  == (比较两个数是否相等)  !=（比较两数是否不等）</p>
+</blockquote>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><blockquote>
+<p>||或 &amp;&amp;与 !非</p>
+</blockquote>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><blockquote>
+<p>！＞算术运算符＞关系运算符＞＆＆＞｜｜</p>
+<pre><code>    最高小括号,最低赋值运算符
+</code></pre>
+</blockquote>
+<h3 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h3><h5 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h5><p>表示程序的运行流程</p>
+<ul>
+<li>◇ (菱形)表示判断</li>
+<li>矩形 表示代码块</li>
+<li>平行四边形   输出语句</li>
+<li>圆角矩形   开始或者结束</li>
+</ul>
+<h3 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h3><ol>
+<li>简单的 if 选择结构<br> 语法结构：</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>( <span class="type">boolean</span>类型的值 )&#123;</span><br><span class="line">	<span class="comment">//代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>if-else 选择结构—–用于两种分支判断的情形<br> 语法结构：</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>()&#123;</span><br><span class="line">	<span class="comment">//代码块1</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">//代码块2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>多重 if 语句 :用于区间连续情形<br> 语法结构：</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>()&#123;</span><br><span class="line">	<span class="comment">//代码块1</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>()&#123;</span><br><span class="line">	<span class="comment">//代码块2</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//代码块3</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>嵌套 if 语句 :一个完整的 里面嵌套另一个完整的结构<br> 语法结构：</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>()&#123;</span><br><span class="line">	<span class="keyword">if</span>()&#123;</span><br><span class="line">		<span class="comment">//代码块1</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//代码块2</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>()&#123;</span><br><span class="line">		<span class="comment">//代码块3</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//代码块4</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>switch 选择结构—-用于等值判断<br> 语法结构：</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(变量)&#123;</span><br><span class="line">	<span class="keyword">case</span> 常量<span class="number">1</span>:</span><br><span class="line">		<span class="comment">//代码块1</span></span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> 常量<span class="number">2</span>:</span><br><span class="line">		<span class="comment">//代码块2</span></span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="comment">//代码块3</span></span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>switch 小括号里的变量  —&gt;整型和字符型,jdk 版本 1.7 以上 支持 String</li>
+<li>break 可以省略,但是省略之后 case 之间会贯穿执行,直到遇到 break 才结束</li>
+<li>各个 case 之间常量值不能重复的</li>
+<li>default 总是在最后执行的,当前面所有的 case 都匹配不上时,位置不固定</li>
+</ul>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><ol>
+<li> while 循环—–先判断再执行</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化循环变量</span></span><br><span class="line"><span class="keyword">while</span>(判断条件)&#123;</span><br><span class="line">				<span class="comment">//循环操作</span></span><br><span class="line">				更新循环变量</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li> do-while—先执行再判断</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="comment">//定义循环变量</span></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">	<span class="comment">//循环变量的更新</span></span><br><span class="line">&#125;<span class="keyword">while</span>(判断条件);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>for 循环—用于固定循环次数<br> 执行顺序:同 while  1.变量初始化  2 条件判断  3 循环体  4 变量更新<br> for 循环中 3 个表达式均可省略,但是一般不要省略</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(循环变量初始化;条件判断;循环变量更新)&#123;</span><br><span class="line">				<span class="comment">//循环体</span></span><br><span class="line">	      		&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>三种循环比较<br> 顺序：</li>
+</ol>
+<ul>
+<li>先判断后执行：while for</li>
+<li>先执行后判断：do-while</li>
+<li>for 循环主要用于循环次数固定</li>
+<li>在循环条件不成立的时候，do-while 至少执行一次</li>
+</ul>
+<ol start="5">
+<li>二重循环<br> 一个完整的循环结构   再嵌套另一个<br> 外层循环变化一次,内层循环变化一遍</li>
+</ol>
+<figure class="highlight java">
+    <div class="code-block-header" lang="java">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>()&#123;</span><br><span class="line">	   <span class="comment">//循环体</span></span><br><span class="line">	 <span class="keyword">for</span>()&#123;</span><br><span class="line">	 	<span class="comment">//循环体</span></span><br><span class="line">	 	&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="流程控制语句-1"><a href="#流程控制语句-1" class="headerlink" title="流程控制语句"></a>流程控制语句</h3><ul>
+<li>break<ul>
+<li>单层循环中: 终止循环，执行循环外的语句</li>
+<li>二重循环中:用在内层循环中,只能结束内层循环,执行外层剩下的代码</li>
+</ul>
+</li>
+<li>continue<ul>
+<li>单层循环:跳过本次循环，执行下一次循环</li>
+<li>结束本层的本次循环 执行本层下一次</li>
+</ul>
+</li>
+</ul>
+<h3 id="解决代码中的异常"><a href="#解决代码中的异常" class="headerlink" title="解决代码中的异常"></a>解决代码中的异常</h3><ul>
+<li>常见的错误信息<ul>
+<li>The local(局部的) variable(变量) num may not have been(可能还没有被) initialized(初始化)===&gt;变量尚未赋值就已经使用</li>
+<li>num cannot be resolved to a variable===&gt;变量没有声明</li>
+<li>java.util.InputMismatchException  ===&gt;输入类型不匹配</li>
+<li>数组下标越界  java.lang.ArrayIndexOutOfBoundsException   当访问超出了数组下标范围<ul>
+<li>Array 数组</li>
+<li>index 下标</li>
+<li>outof 超出了</li>
+<li>bounds 边界</li>
+<li>Exception 异常</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>简单的异常处理<ul>
+<li>input.hasNextInt()   判断用户输入的内容是否是合法整数,合法为 true, 否则为 false<ul>
+<li>要在变量赋值之前判断</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>程序调试<br>程序在我们的控制下一步一步执行<ul>
+<li>调试代码之前,要先分析可能出错的位置</li>
+<li>在可能出错的地方   打断点—代码执行到断点处会暂停   行号前双击</li>
+<li>以 debug 模式启动程序  debug as—java application</li>
+<li>单步执行,查找错误(F6) {程序运行到断点处才会启动调试模式}</li>
+<li>找到错误,修改代码</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    
+
+    <ul class="post-tools">
+        
+        
+            <li id="reward">
+                <span id="reward-btn" class="dashang" title="打赏，支持一下"><i class="iconfont icon-dashang"></i> 打赏作者</span>
+                <div class="shang-box">
+                    <div class="shang-tit">
+                        <p>感谢您的支持，我会继续努力的!</p>
+                    </div>
+                    <div class="shang-payimg">
+                        <img id="alipay" src="/media/reward/alipay.jpg" alt="扫码支持" title="扫一扫">
+                        <img id="wechat" src="/media/reward/wechat.jpg" alt="扫码支持" title="扫一扫">
+                    </div>
+                    <div class="pay-explain">扫码打赏，你说多少就多少</div>
+                    <div class="shang-payselect">
+                        <label id="alipay-radio" class="pay-item">
+                            <input type="radio" checked name="reward">
+                            <span></span>
+                        </label>
+                        <label id="wechat-radio" class="pay-item">
+                            <input type="radio" name="reward">
+                            <span></span>
+                        </label>
+                    </div>
+                    <button class="tip-button">
+                        <span class="tip-button-text">打赏完毕</span>
+                        <div class="coin-wrapper">
+                            <div class="coin">
+                                <div class="coin-middle"></div>
+                                <div class="coin-back"></div>
+                                <div class="coin-front"></div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+        
+        
+            <li id="qrcode-btn" title="扫描二维码访问">
+                <i class="iconfont icon-erweima"></i>
+            </li>
+        
+        <li class="sharePage" title="分享本页"  onclick="copyText(window.location.href)">
+            <i class="iconfont icon-link"></i>
+        </li>
+        
+            
+                <li class="right">
+                    <a href="/tags/Java/">
+                        # Java 12
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+    
+    
+        
+            
+            <div class="post-copyright">
+                <div class="post-copyright-icon"></div>
+                <div class="post-copyright-author">
+                    <span class="post-copyright-meta">文章作者: </span>
+                    <span class="post-copyright-info">
+              <a href="mailto:aloeJun@qq.com">aloeJun</a>
+            </span>
+                </div>
+                <div class="post-copyright-type">
+                    <span class="post-copyright-meta">文章链接: </span>
+                    <span class="post-copyright-info">
+              <a href="https://www.islu.cn/posts/JavaBasics.html">https://www.islu.cn/posts/JavaBasics.html</a>
+            </span>
+                </div>
+                <div class="post-copyright-notice">
+                    <span class="post-copyright-meta">版权声明: </span>
+                    <span class="post-copyright-info">
+                        本博客所有文章除特别声明外，均采用
+                      <a href="/cc " target="_blank">
+                          CC BY-NC-SA 4.0 </a> 许可协议。转载请注明来自
+                      <a href="https://www.islu.cn/posts/JavaBasics.html" target="_blank">aloeJun | Lu's Blog</a>
+                    </span>
+                </div>
+            </div>
+        
+    
+    
+    <div class="pagination-post">
+        
+            <a href="/posts/HexoLive2D.html">
+                <div class="prev-title"><i class="iconfont icon-chevron-left"></i>Hexo-live2D添加</div>
+            </a>
+        
+        
+            <a href="/posts/JavaScriptBasics.html">
+                <div class="next-title">JavaScript基础<i class="iconfont icon-chevron-right"></i></div>
+            </a>
+        
+    </div>
+    
+    <hr>
+    <div class="comment-head">
+        <div id="comment">
+    <div class="loading center"><img src="/media/detail/load.svg" alt="加载中..."></div>
+</div>
+<script type="module" data-pjax>
+    import { init } from '/lib/waline/waline.mjs';
+
+    const locale = {
+        nick: '昵称(必填)',
+        nickError: '即使是昵称也不要少于3个字哦 ~ ',
+        mail: '邮箱(必填)',
+        mailError: '请再次检查一下的邮件地址哦 ~ ',
+        link: '网址(选填)',
+        placeholder: '🤣一起来玩，留下你的足迹吧~。评论支持邮箱回复通知！📧\n' +
+            '🚀支持注册登录，并新增支持QQ登录(⊙o⊙)！💖\n' +
+            '💣请文明评论哦禁止恶意评论🈲\n' +
+            '⚠️公开网络空间，请不要发表任何包含个人或其他人的隐私信息⛔',
+        sofa: '抢个沙发吧 ~ ',
+        submit: '发射炮弹',
+        reply: '准备回击',
+        cancelReply: '取消回击',
+        comment: '评论',
+        more: '加载更多...',
+        preview: '实时演示',
+        emoji: '表情炸弹',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '实名发射',
+        logout: '取消实名',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    };
+
+
+    init({
+        el: '#comment',
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        pageSize: 10, // 评论数
+        pageview: true, // 阅读量
+        emoji: [ // 表情
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+        ],
+        WalineSearchOptions: false, // 搜索功能
+        copyright: false, // 右下角版权
+        imageUploader: false, //上传图片
+        lang: 'zh',
+        search: false, // 表情包搜索
+        reaction: false, // 开启反应
+        locale // 自定义提示
+    });
+
+</script>
+    </div>
+    
+    
+        <!--  mathjax数学公式支持  -->
+        <script type="application/javascript">
+            getScript('/lib/mathjax/mathjax.js',MathJax = {
+                loader: {
+                    source: {
+                        '[tex]/amsCd': '[tex]/amscd'
+                    }
+                },
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']]
+                }
+            })
+        </script>
+    
+</article>
+
+        
+        
+    <aside id="rightside" class="clearfix">
+        <div class="rightside-message">
+            <h1 class="blog-name">aloeJun</h1>
+            <div class="my-description">
+                迷茫的原因往往只有一个，那就是在本该拼命去努力的年纪，想得太多，做得太少。🔔
+            </div>
+        </div>
+
+        
+            <div class="rightside-toc">
+                <p class="title">
+                    <i class="iconfont icon-bars"></i> 目录
+                    <span class="num">0%</span>
+                    <i class="backTop iconfont icon-arrow-up"
+                       onclick="document.documentElement.scrollTop = document.body.scrollTop =0"></i>
+                </p>
+
+                <progress class="progress" value="0" max="100"></progress>
+                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="toc-text">Java 语言特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E5%BC%80%E5%8F%91%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">Java 开发运行环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">java 程序开发的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-%E7%B1%BB%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">java 类的结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="toc-text">语法规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">输出语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-text">转义字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-text">流程控制语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">选择结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">循环结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-1"><span class="toc-text">流程控制语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="toc-text">解决代码中的异常</span></a></li></ol></li></ol>
+                <a id="goComment" href="#comment" title="移步评论" alt="移步评论">COMMENT <i
+                            class="iconfont icon-arrow-down"></i></a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="related-posts">
+                <p class="title"><i class="fas fa-thumbs-up fa-fw"></i>推荐文章</p><ul class="relatedPosts-list"><li><a href="/posts/WindowsInstallJDK.html" title="JDK安装和配置">JDK安装和配置</a></li><li><a href="/posts/JDBCDefenseSQLInjection.html" title="JDBC-防SQL注入">JDBC-防SQL注入</a></li><li><a href="/posts/JDBC.html" title="JDBC">JDBC</a></li><li><a href="/posts/JavaList.html" title="Java集合">Java集合</a></li><li><a href="/posts/JavaInterface.html" title="Java接口">Java接口</a></li><li><a href="/posts/JavaGenericity.html" title="Java泛型">Java泛型</a></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li></ul>
+                <div class="webinfo">
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-file-text-fill"></i> 文章总数 :</div>
+                        <div class="item-count">57 篇</div>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-timer-fill"></i> 建站天数 :</div>
+                        <div class="item-count" id="runtimeshow"> 1024 天</div>
+                        <script async>
+                            window.addEventListener("load", function () {
+                                $id("runtimeshow").innerHTML = getDaysDiffBetweenDates('2020-08-16') + "天";
+                            });
+                        </script>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-text"></i> 总字数 :</div>
+                        <div class="item-count">93.7k 字</div>
+                    </div>
+                </div>
+            </div>
+        
+    </aside>
+
+
+    </main>
+    
+    
+    
+    <mark id="mask" onclick="close_all()"></mark>
+    
+    
+<footer id="footer" style="display: none">
+    <span id="backTop" onclick="document.documentElement.scrollTop = document.body.scrollTop =0">
+        <i class="iconfont icon-arrow-up"></i>
+    </span>
+    <div class="container">
+        <p class="footer-text">欢迎第<span id="aloeJun-pageview-count" data-path="/"><img width="14px" height="14px" src="/media/detail/loaded.svg" alt="加载中..."></span>位来访者</p>
+        <p class="footer-message">
+            
+                <a id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+                    豫ICP备2020025858号-2
+                </a>
+            
+            
+                <a id="upy" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"
+                   rel="noopener noreferrer">
+                    <img width="90px" height="40px" src="/media/detail/upy.png" loading="lazy" alt="upy" title="又拍云">
+                </a>
+            
+
+            <a href="/atom.xml" target="_blank" title="RSS订阅">
+                <i class="iconfont icon-dingyue" style="font-size: 1.2rem"></i>
+            </a>
+            <a href="/cc" title="cc协议">
+                <i class="iconfont icon-closed-captioning" style="font-size: 1.5rem"></i>
+            </a>
+    </div>
+</footer>
+    
+    <section id="local-search" class="hidden">
+        <div id="local-search-title">本地搜索 </div>
+        <input id="local-search-input" autocomplete="off" placeholder="搜索文章" type="text">
+        <hr>
+        <div id="local-search-result"></div>
+        <span class="search-close-button" onclick="closeSearch()"><i class="iconfont icon-times-circle-fill"></i></span>
+        <script async src="/js/search.js"></script>
+    </section>
+
+</div>
+
+<div id="resource">
+    
+<script type="application/javascript">
+    var $config = {
+        
+            searchFile: "/search.json",
+        
+        
+        qrcode:{
+            source_js: "/lib/qrcode/qrcode.js",
+            Data:{
+                render: 'canvas',
+                text: 'https://www.islu.cn/posts/JavaBasics.html',
+                size: 100,
+                correctLevel: 3,
+                background: '#fff',
+                image: '',
+                imageSize: '120px'
+            }
+        },
+        
+        
+        code_block_expand: {
+            enable: true,
+            height: 400,
+            scrollTop: 200
+        },
+        
+    }
+</script>
+
+    <script async type="application/javascript" src="/js/main.js"></script>
+    
+    <script defer type="text/javascript">
+        getScript('/lib/pjax/pjax.min.js', ()=>{
+            window.pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    "head meta[name='keywords']",
+                    "head meta[name='description']",
+                    "header p.now-path",
+                    "main",
+                    "span#aloeJun-pageview-count"
+                ],
+                cacheBust: false
+            });
+        });
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', () => {
+            // 执行进度条
+            
+        });
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', () => {
+            // 加载进度条加载完毕
+            
+            // 执行所有方法
+            exeAllFn()
+        });
+
+        document.addEventListener('pjax:success', () => {
+            $queryAll('script[data-pjax]').forEach((item) => {
+                const newScript = document.createElement('script')
+                const content = item.text || item.textContent || item.innerHTML || ""
+                Array.from(item.attributes).forEach((attr) => {
+                    newScript.setAttribute(attr.name, attr.value)
+                })
+                newScript.appendChild(document.createTextNode(content))
+                item.parentNode.replaceChild(newScript, item)
+            })
+        });
+        // Pjax请求错误时，跳转到404页面
+        document.addEventListener('pjax:error', (err) => {
+            if (err.request.status === 404) {
+                pjax.loadUrl('/404.html')
+            }
+        })
+    </script>
+
+    
+    <div id="nav-music"></div>
+    <script defer>
+        if (document.body.clientWidth > 768) {
+            window.addEventListener('load', () => {
+                getCss('/lib/aplayer/APlayer.min.css')
+                $id("nav-music").innerHTML = `<div id="nav-music-hoverTips" onclick="aloejun.musicToggle()">播放音乐</div>
+                <meting-js
+                        id="8164170333"
+                        server="netease"
+                        type="playlist"
+                        theme='#42b983'
+                        loop='all'
+                        preload='auto'
+                        order='random'
+                        volume='0.7'
+                        data-lrctype="0"
+                >
+                </meting-js>`
+                getScript('/lib/aplayer/APlayer.min.js', () => {
+                    getScript('/lib/aplayer/Meting.min.js')
+                })
+            }, false)
+        }
+    </script>
+
+    
+
+
+
+
+    
+<script async type="text/javascript">
+    window.addEventListener("load", () => {
+        getCss("/lib/waline/waline.css")
+        // 页面加载完毕后执行的代码
+        getScript("/lib/waline/activate-input.js", () => {
+            console.log("\n %c 最美的旅程 %c 是不断的经历 \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3;color:#030307; padding:5px 0;")
+        });
+    });
+
+</script>
+<script type="module" defer data-pjax>
+    import {pageviewCount} from '/lib/waline/pageview.mjs';
+
+    pageviewCount({
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        selector: '#aloeJun-pageview-count',
+        update: true
+    });
+</script>
+</div>
+</body>
+
+</html>

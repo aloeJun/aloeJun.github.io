@@ -1,0 +1,1 @@
+var history={set:(t,e)=>{data={title:t,url:e},addVisitedRecord(data)},getVisitedRecords:()=>{var t=localStorage.getItem("visitedHistory");return t?JSON.parse(t):[]},addVisitedRecord:t=>{var e=getVisitedRecords();e.push(t),localStorage.setItem("visitedHistory",JSON.stringify(e))}};

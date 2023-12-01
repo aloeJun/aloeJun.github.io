@@ -1,0 +1,1352 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" theme="dark">
+<head>
+    
+    
+
+<meta charset="UTF-8">
+<title>Excel常用函数 | aloeJun | Lu's blog</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="/media/detail/aloeJun.png" rel="shortcut icon">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="aloeJun">
+<meta name="copyright" content="aloeJun">
+<meta name="keywords" content="Excel常用函数,Excel,函数,常用函数">
+<meta name="description" content="Excel 函数求和函数 SUM()SUM函数将为值求和。 可以将单个值、单元格引用或是区域相加，或者将三者的组合相加。"/>
+<meta property="site_name" content="aloeJun | Lu&#39;s blog "/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.islu.cn/posts/ExcelCommonlyUsedFunctions.html">
+<meta property="og:title" content="Excel常用函数 | aloeJun | Lu&#39;s blog"/>
+<meta property="og:site_name" content="aloeJun | Lu&#39;s blog"/>
+<meta property="og:description" content="Excel 函数求和函数 SUM()SUM函数将为值求和。 可以将单个值、单元格引用或是区域相加，或者将三者的组合相加。"/>
+<meta property="og:locale" content="zh-CN">
+<meta property="article:author" content="aloeJun ">
+
+<style>html{scroll-behavior:smooth;overflow-y:overlay}html *{margin:0}html .clearfix{zoom:1}html .clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}html .center{text-align:center!important}html .relative{position:relative}html .absolute{position:absolute}html .hotpink{color:#ff69b4}html .right{float:right}html .left{float:left}html .hidden{display:none}html .cursor{cursor:pointer}html .filter{filter:var(--filter)}html ul li{list-style:none}html table{width:100%;display:table;border-collapse:collapse;border-spacing:0}html table td,html table th{padding:15px 5px;display:table-cell;text-align:left;vertical-align:middle;border-radius:2px;border:1px solid var(--love_color)}body{margin:0;background-color:var(--body_bg);font-size:14px;color:var(--text_color);font-family:楷体}body #resource{position:relative;top:0;left:0}body video{max-width:100%}body a{text-decoration:none;color:#0a84ff;transition:all .5s}body p{margin:revert}body .mask{width:100%;height:100%;position:fixed;top:0;z-index:102;background:rgba(0,0,0,.4)}body .pjax_progress{position:fixed;top:0;left:0;width:10%;height:2px;z-index:103;background-image:-webkit-linear-gradient(left,#f16f5c 0,#f16f5c 12.5%,#5b56dd 12.5%,#5b56dd 25%,#e15ced 25%,#e15ced 37.5%,#27e559 37.5%,#27e559 50%,#18c8c9 50%,#18c8c9 62.5%,#dc8987 62.5%,#dc8987 75%,#bb83d6 75%,#bb83d6 87.5%,#e774bd 87.5%,#e774bd 100%);transition:width .4s ease 0s}body .clipboard{right:16px;top:8px;cursor:pointer;border-radius:3px;color:#eff;position:relative;float:right;padding:2px}body ::-webkit-input-placeholder{color:#ff69b4}body ::-moz-placeholder{color:#ff69b4}body :-ms-input-placeholder{color:#ff69b4}body :-moz-placeholder{color:#ff69b4}body .gray-filter{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%)}#body-wrap{width:100%;position:relative}#body-wrap #main-wrap{min-height:24rem}#body-wrap .container{width:90%;max-width:1200px;margin:0 auto}#body-wrap .main-card{background-color:var(--main_bg);border:1px solid #e2dfdd;border-radius:10px}.post_content h2::after{float:right;margin-right:10px;display:inline-block;content:'\f0c1';color:grey;font-family:'Font Awesome 6 Pro'}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#666;border-radius:3px;box-shadow:inset 0 -1px 0 #000}code{padding:.1rem .2rem;background:rgba(27,31,35,.05);color:#f47466;border-radius:3px;word-wrap:break-word;word-break:break-word;overflow-wrap:break-word}blockquote{margin:4px 0;padding:.6rem .8rem;border-left:.2rem solid #e58a8a;background-color:rgba(73,177,245,.1);color:var(--blockquote_color)}blockquote p{margin:0}.pullquote.left{max-width:45%;float:left;margin:.5em .5em 0 0}.pullquote.right{max-width:45%;float:right;margin:.5em 0 0 .5em;border-right:.2rem solid #e58a8a;border-left:none}.video-container{position:relative;overflow:hidden;margin-bottom:.8rem;padding-top:56.25%;height:0}.video-container iframe{position:absolute;top:0;left:0;margin-top:0;width:100%;height:100%}h1{margin:48px 0 22px -5px;font-size:2rem;font-weight:700;line-height:2rem}h2{margin:42px 0 18px -5px;font-size:1.8rem;font-weight:700;line-height:1.8rem}h3{margin:38px 0 15px -4px;font-size:1.6rem;font-weight:700;line-height:1.7rem}h4{margin:32px 0 12px -4px;font-size:1.45rem;font-weight:700;line-height:1.45rem}h5{margin:28px 0 8px -4px;font-size:1.2rem;font-weight:700;line-height:1.2rem}h6{margin:22px 0 4px -4px;font-size:1.1rem;line-height:1.1rem}p{font-size:1rem;line-height:1.5rem}hr{margin:20px 0;border:0;border-top:1px solid #ccc}::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background-color:grey;border-radius:8px;cursor:pointer}::-webkit-scrollbar-thumb:hover{opacity:1;display:block!important}::-webkit-scrollbar-track{background-color:transparent}:root{--main:#c7a17a;--body_bg:#f7f9fe;--text_color:#333;--main_bg:#fff;--post_title:rgba(52,50,50,0.7);--link_bg:#f8f9fa;--code_bg:$highlight-background;--code_wrap_bg:$code_block;--blockquote_color:#6a737d;--table_bg:none;--love_color:#3c4858;--filter:none}html[theme=dark]{--body_bg:#161b2a;--text_color:rgba(255,255,255,0.6);--main_bg:#070615;--post_title:rgba(255,255,255,0.9);--link_bg:#333841;--code_bg:#333841;--code_wrap_bg:#444851;--blockquote_color:rgba(255,255,255,0.6);--table_bg:#282c34;--love_color:#faebd7;--filter:invert(1)}nav .navbar{display:flex;justify-content:space-between;align-items:center;height:5rem;padding:0 30px;margin:0 10%}nav .navbar .open_nav{margin-left:10px;display:none}nav .navbar .blog_name{font-weight:700;font-size:1.8rem;color:#ff7242;display:inline-block;text-decoration:none;margin-left:4rem;min-width:7.2rem}nav ul.side-toolbar{min-width:5.6rem;color:var(--post_title)}nav ul.side-toolbar li{display:inline-block;width:2em;font-size:1.5rem;cursor:pointer}nav ul.side-toolbar li:hover{color:#0a84ff}nav ul.side-toolbar i{font-size:1.5rem}nav #navbar_wrap{padding-inline-start:0;position:fixed;width:100%;z-index:991;top:0;background-color:var(--main_bg);-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:background .5s ease-in-out,padding .5s ease-in-out;-webkit-transition:background .5s ease-in-out,padding .5s ease-in-out;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}nav #navbar_wrap .menu{margin-right:auto}nav #navbar_wrap .menu li{position:relative;list-style:none;float:left;text-align:center}nav #navbar_wrap .menu li:nth-child(odd) a:before{background-color:#ff0}nav #navbar_wrap .menu li:nth-child(odd) a:after{background-color:red}nav #navbar_wrap .menu li:nth-child(odd) a:hover~.indicator{background:linear-gradient(130deg,#ff0,red)}nav #navbar_wrap .menu li:nth-child(even) a:before{background-color:#00e2ff}nav #navbar_wrap .menu li:nth-child(even) a:after{background-color:#89ff00}nav #navbar_wrap .menu li:nth-child(even) a:hover~.indicator{left:34%;background:linear-gradient(130deg,#00e2ff,#89ff00)}nav #navbar_wrap .menu li ul.menu_child{display:none}nav #navbar_wrap .menu li ul.menu_child li{float:none!important}nav #navbar_wrap .menu li ul.menu_child li a:before{background-color:purple}nav #navbar_wrap .menu li ul.menu_child li a:after{background-color:#db7093}nav #navbar_wrap .menu li ul.menu_child li a:hover~.indicator{left:70%;background:linear-gradient(130deg,purple,#db7093)}nav #navbar_wrap .menu li a{cursor:pointer;white-space:nowrap;font-size:1.3rem;color:var(--love_color);position:relative;width:33.333%;display:table-cell;text-align:center;text-decoration:none;font-weight:700;padding:10px 20px;transition:.2s ease color}nav #navbar_wrap .menu li a i{color:var(--love_color);order:1;font-size:13px}nav #navbar_wrap .menu li a i.icon-chevron-up{display:none}nav #navbar_wrap .menu li a:after,nav #navbar_wrap .menu li a:before{content:"";position:absolute;border-radius:50%;transform:scale(0);transition:.2s ease transform}nav #navbar_wrap .menu li a:before{top:0;left:10px;width:6px;height:6px}nav #navbar_wrap .menu li a:after{top:5px;left:18px;width:4px;height:4px}nav #navbar_wrap .menu li a:hover,nav #navbar_wrap .menu li a:hover i{color:#00c4b6}nav #navbar_wrap .menu li a:hover i:after,nav #navbar_wrap .menu li a:hover i:before,nav #navbar_wrap .menu li a:hover:after,nav #navbar_wrap .menu li a:hover:before{transform:scale(1)}nav #navbar_wrap .menu li a:hover i~.indicator,nav #navbar_wrap .menu li a:hover~.indicator{visibility:unset;width:100%}nav #navbar_wrap .menu li .indicator{visibility:hidden;width:0;height:3px;background-color:#fff;border-radius:5px;transition:.35s ease all;margin:0 auto}nav #navbar_wrap .menu li:hover .menu_child{background-color:var(--main_bg);position:absolute;right:0;display:inline-block;padding:0;border-radius:6px;width:-moz-max-content;width:max-content;min-width:80px;box-shadow:0 5px 20px -4px rgba(0,0,0,.5)}nav #navbar_wrap .menu li:hover .menu_childicon-chevron-up{margin-top:13px}.open_mobile{transform:translate3d(100%,0,0)}#mobile_nav{background:var(--main_bg);position:fixed;left:-200px;top:0;z-index:991;overflow:hidden auto;width:200px;height:100%;padding:0;transition:all .5s}#mobile_nav ul{padding-inline-start:unset}#mobile_nav ul li{display:block;list-style:none;text-align:center;line-height:2}#mobile_nav ul li a{font-weight:700;display:block;cursor:pointer;white-space:nowrap;padding:10px;font-size:.9rem;color:var(--love_color)}header{background:linear-gradient(to top,var(--body_bg),#a9a9a9)}header .header_main{-webkit-user-select:none;-moz-user-select:none;user-select:none;cursor:pointer;padding:3.6rem 0}header .header_main .title{line-height:15rem;color:#fff;font-size:5rem;font-weight:700}header .header_main p.now-path{color:#f60;margin-top:0;font-size:2rem;font-weight:bolder}.main-hero-waves-area{width:100%}.waves-area .waves-svg{width:100%;height:5rem}.parallax>use{animation:move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite}.parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(247,249,254,.741)}.parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(247,249,254,.51)}.parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(247,249,254,.212)}.parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#f7f9fe}[theme=dark] .parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s;fill:rgba(22,27,42,.4)}[theme=dark] .parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s;fill:rgba(22,27,42,.6)}[theme=dark] .parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s;fill:rgba(22,27,42,.8)}[theme=dark] .parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s;fill:#161b2a}@media (max-width:768px){.waves-area .waves-svg{height:40px;min-height:40px}}@keyframes move-forever{0%{transform:translate3d(-90px,0,0)}100%{transform:translate3d(85px,0,0)}}@media only screen and (max-width:601px){nav ul.side-toolbar li{width:1.5em!important}#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}.scrollbar{display:none}header .header_main .title{line-height:10rem}header .header_main p.now-path{font-size:1.5rem}#main-wrap.container{width:98.5%;margin:1rem auto}#main-wrap.container #post-list,#main-wrap.container .post{float:unset;width:100%;margin:0}#main-wrap.container #post-list .post-info,#main-wrap.container .post .post-info{padding:1.5rem}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{max-width:70%;margin:1rem}#main-wrap.container #post-list .post-content,#main-wrap.container .post .post-content{padding:1rem}#main-wrap.container .post+#rightside{display:none}#main-wrap.container #rightside{width:unset}#main-wrap.container #rightside .rightside-category,#main-wrap.container #rightside .rightside-message,#main-wrap.container #rightside .rightside-tag,#main-wrap.container #rightside .rightside-toc{width:unset}#main-wrap.container .category-container li.category-content{width:50%}#main-wrap.container .category-container li.category-content:nth-child(2n):after{width:0}#main-wrap.container .categories-content{font-size:1rem}#main-wrap.container .categories-default{margin:.1rem}#main-wrap.container .archives-container .article-item .post-link{width:88%}#main-wrap.container #categories-chart,#main-wrap.container #posts-chart,#main-wrap.container #tags-chart{display:block;width:100%}#main-wrap.container .uk-alert{padding:0;margin:0}#main-wrap.container .relatedPosts-list{padding-left:0}#main-wrap.container .relatedPosts-list li{display:unset;max-width:unset}#main-wrap.container .about .w32,#main-wrap.container .about .w43,#main-wrap.container .about .w55{width:100%}#main-wrap.container .about .author-content .author-content-item p{font-size:2rem!important;margin:1.5rem 0 0 0!important}footer .footer-message a{margin-right:.5rem!important}.wl-editor{font-size:.6em!important}#local-search{z-index:999!important}}@media only screen and (min-width:600px) and (max-width:992px){#navbar_wrap .navbar .menu{display:none}#navbar_wrap .navbar{margin:0}.navbar .open_nav{display:inline-block!important;margin-left:auto}#main-wrap.container{width:unset}#main-wrap.container #post-list,#main-wrap.container .post{width:69%}#main-wrap.container #post-list .post-item,#main-wrap.container .post .post-item{margin:0 0 .6rem .6rem}}@font-face{font-family:iconfont;src:url(/font/iconfont.woff2) format('woff2'),url(/font/iconfont.woff) format('woff'),url(/font/iconfont.ttf) format('truetype')}.iconfont{font-family:iconfont!important;font-size:1rem;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-message:before{content:"\e819"}.icon-like{color:red}.icon-like:before{content:"\e6fc"}.icon-eye:before{content:"\e706"}.icon-history-filling:before{content:"\e68a"}.icon-pintu:before{content:"\e741"}.icon-database:before{content:"\e6ac"}.icon-sad-tear:before{content:"\eb8a"}.icon-link:before{content:"\e6b4"}.icon-erweima:before{content:"\eaf1"}.icon-dashang:before{content:"\e693"}.icon-text:before{content:"\e71e"}.icon-timer-fill:before{content:"\e87a"}.icon-copy:before{content:"\e67f"}.icon-share:before{content:"\e68f"}.icon-yinsixieyi:before{content:"\e740"}.icon-paperplane-fill:before{content:"\e7a9"}.icon-tag-fill:before{content:"\e7ae"}.icon-pausecircle-fill:before{content:"\e7cb"}.icon-stopcircle-fill:before{content:"\e7cc"}.icon-playcircle-fill:before{content:"\e7cd"}.icon-picture-fill:before{content:"\e7cf"}.icon-calendaralt-fill:before{content:"\e7d8"}.icon-clouddownload-fill:before{content:"\e7d9"}.icon-times-circle-fill:before{content:"\e7e1"}.icon-angle-double-right:before{content:"\e84a"}.icon-angle-double-left:before{content:"\e84b"}.icon-home:before{content:"\e88b"}.icon-universal-access:before{content:"\ebbd"}.icon-window-restore:before{content:"\ebd3"}.icon-rotateright:before{content:"\e7e7"}.icon-dingyue:before{content:"\e602"}.icon-arrow-up:before{content:"\e601"}.icon-chevron-down:before{content:"\e606"}.icon-bars:before{content:"\e610"}.icon-books:before{content:"\e716"}.icon-tag:before{content:"\e66c"}.icon-search:before{content:"\e6aa"}.icon-envelope:before{content:"\e6ce"}.icon-GitHub:before{content:"\ea0a"}.icon-file-text-fill:before{content:"\e858"}.icon-closed-captioning:before{content:"\e600"}.icon-share-all-solid:before{content:"\e61d"}.icon-file-search-Fill:before{content:"\e8da"}.icon-sun:before{content:"\eba5"}.icon-chevron-left:before{content:"\e603"}.icon-chevron-up:before{content:"\e604"}.icon-chevron-right:before{content:"\e605"}.icon-moon:before{content:"\e8b1"}</style>
+<script>
+    const $id=e=>document.getElementById(e),$query=e=>document.querySelector(e),$queryAll=e=>document.querySelectorAll(e),getScript=(e,t)=>{if(Array.isArray(this.isGetScript)){if(this.isGetScript.includes(e))return t()}else this.isGetScript=[];this.isGetScript.push(e);var r=document.createElement("script");r.src=e,void 0!==t&&(r.readyState?r.onreadystatechange=()=>{"loaded"!=r.readyState&&"complete"!=r.readyState||(r.onreadystatechange=null,t())}:r.onload=()=>{r.onload=null,t()}),(null!=$id("resource")?$id("resource"):document.body).appendChild(r)},getCss=e=>{var t=document.createElement("link");t.rel="stylesheet",t.type="text/css",t.href=e,document.head.appendChild(t)},copyText=e=>navigator.clipboard?.writeText&&navigator.clipboard.writeText(e),getDaysDiffBetweenDates=e=>parseInt((new Date-new Date(e))/864e5),throttle=(t,r)=>{var a=0;return function(){var e=new Date;r<e-a&&(t.apply(this,arguments),a=e)}};
+</script>
+
+<link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="aloeJun | Lu's blog" type="application/atom+xml">
+</head>
+<body>
+
+<div id="body-wrap">
+    
+    
+
+
+    
+    <nav id="nav">
+    <menu id="navbar_wrap">
+        <div class="navbar">
+            <i class="iconfont icon-bars open_nav"></i>
+            <a href="/" class="blog_name"><i>A<span style="color: #00c4b6">L</span>OEJ<span
+                            style="color: #00c4b6">U</span>N</i></a>
+            <ul class="menu">
+                <li>
+                    <a href="/" rel="noopener noreferrer">首页</a>
+                    <div class="indicator"></div>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/tags/index.html" rel="noopener noreferrer">
+                                标签
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/categories/index.html" rel="noopener noreferrer">
+                                分类
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/archives/index.html" rel="noopener noreferrer">
+                                归档
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about/index.html" rel="noopener noreferrer">
+                                关于
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/contact/index.html" rel="noopener noreferrer">
+                                留言
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/friends/index.html" rel="noopener noreferrer">
+                                朋友
+                            </a>
+                            <div class="indicator"></div>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="#" rel="noopener noreferrer">
+                                清单
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="indicator"></div>
+                            <ul class="menu_child">
+                                <i class="iconfont icon-chevron-down" aria-hidden="true"></i>
+                                
+                                    <li>
+                                        <a href='/fcircle/index.html'
+                                           rel="noopener noreferrer">朋友小圈</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/talk/index.html'
+                                           rel="noopener noreferrer">碎碎叨叨</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                    <li>
+                                        <a href='/books/index.html'
+                                           rel="noopener noreferrer">阅读记录</a>
+                                        <div class="indicator"></div>
+                                    </li>
+                                
+                                <li>
+                                    <a target="_blank" href='https://sport.islu.cn' rel="noopener noreferrer noopener">运动记录</a>
+                                    <div class="indicator"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                
+            </ul>
+            <ul class="side-toolbar">
+                <li>
+                    <i id="darkBtn" class="iconfont icon-sun" title="深色/浅色"></i>
+                </li>
+                <li>
+                    <i id="searchBtn" class="iconfont icon-search"></i>
+                </li>
+            </ul>
+        </div>
+    </menu>
+    <menu id="mobile_nav">
+        <ul>
+            <li>
+                <a href="/" rel="noopener noreferrer">首页</a>
+                <div class="indicator"></div>
+            </li>
+            
+                
+                    <li>
+                        <a href="/tags/index.html" rel="noopener noreferrer">
+                            标签
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/categories/index.html" rel="noopener noreferrer">
+                            分类
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/archives/index.html" rel="noopener noreferrer">
+                            归档
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/about/index.html" rel="noopener noreferrer">
+                            关于
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/contact/index.html" rel="noopener noreferrer">
+                            留言
+                        </a>
+                    </li>
+                
+            
+                
+                    <li>
+                        <a href="/friends/index.html" rel="noopener noreferrer">
+                            朋友
+                        </a>
+                    </li>
+                
+            
+                
+                    
+                        <li>
+                            <a href='/fcircle/index.html'
+                               rel="noopener noreferrer">
+                                朋友小圈
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/talk/index.html'
+                               rel="noopener noreferrer">
+                                碎碎叨叨
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href='/books/index.html'
+                               rel="noopener noreferrer">
+                                阅读记录
+                            </a>
+                        </li>
+                    
+                
+            
+            <li>
+                <a target="_blank" href="https://sport.islu.cn" rel="noopener noreferrer noopener">运动</a>
+                <div class="indicator"></div>
+            </li>
+        </ul>
+    </menu>
+</nav>
+
+    
+    <header id="header" class="main-hero-waves-area waves-area">
+    <div class="header_main">
+        <div class="container center">
+            <h2 class="title">Choice over effort.</h2>
+            <p class="now-path">
+                <a href="/" rel="noopener noreferrer" title="返回首页">Home /</a>
+                
+                    Excel常用函数
+                
+            </p>
+        </div>
+    </div>
+    <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352Z"></path>
+        </defs>
+        <g class="parallax">
+            <use href="#gentle-wave" x="48" y="0"></use>
+            <use href="#gentle-wave" x="48" y="3"></use>
+            <use href="#gentle-wave" x="48" y="5"></use>
+            <use href="#gentle-wave" x="48" y="7"></use>
+        </g>
+    </svg>
+</header>
+    
+    <main id="main-wrap" style="display: none" class="container clearfix">
+        
+<article class="post main-card" id="post">
+    <div class="post-info">
+        <div class="post-title">
+            <h1>Excel常用函数</h1>
+        </div>
+        <div class="post-meta">
+            <div class="post-date">
+                <i class="iconfont icon-calendaralt-fill post-meta-icon"></i>
+                <span class="post-meta-label">
+                    发表于
+                    <span id="dateTime">
+                        2021-03-15
+                    </span> |
+                </span>
+                <i class="iconfont icon-history-filling post-meta-icon"></i>
+                <span class="post-meta-label">
+                    更新于
+                    <span id="updateTime">
+                        2021-03-15
+                    </span>
+                </span>
+            </div>
+            <div class="post-meta-wordcount">
+                <i class="iconfont icon-text post-meta-icon"></i>
+                <span class="post-meta-label">总字数:</span>
+                <span class="word-count">3.3k | </span>
+                <i class="iconfont icon-timer-fill post-meta-icon"></i>
+                <span class="post-meta-label">阅读时长:</span>
+                <span>12分钟</span>
+                
+                    | <i class="iconfont icon-eye post-meta-icon"></i>
+                    <span class="post-meta-label">阅读量:</span>
+                    <span class="waline-pageview-count"></span>
+                    </span>
+                
+            </div>
+        </div>
+        <div class="uk-alert">
+            <p id="thisTime">
+                <span id="timeLag" class="loading center">
+                       <img src="/media/detail/loaded.svg" alt="加载中...">
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="post-content">
+        <h2 id="Excel-函数"><a href="#Excel-函数" class="headerlink" title="Excel 函数"></a>Excel 函数</h2><h3 id="求和函数-SUM"><a href="#求和函数-SUM" class="headerlink" title="求和函数 SUM()"></a>求和函数 SUM()</h3><blockquote>
+<p><strong>SUM</strong>函数将为值求和。 可以将单个值、单元格引用或是区域相加，或者将三者的组合相加。</p>
+</blockquote>
+<p>1、指定数值求和</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUM</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、指定单元格求和：输入=sum()，在括号中间按住 ctrl 连续点击即可选择需要求和的数据</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUM</span>(<span class="symbol">C5</span>,<span class="symbol">C9</span>,<span class="symbol">C3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3、也可以将指定单元格直接相加</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUM</span>(<span class="symbol">C2</span> + <span class="symbol">C4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>4、区域求和，输入=sum()，在括号中间按住 ctrl 选中所需要求和的数据</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUM</span>(<span class="symbol">C2</span>:<span class="symbol">C11</span>)</span><br></pre></td></tr></table></figure>
+
+<p>5、多个区域求和，输入=sum()，在括号中间分别按住 ctrl 选中所需要的多个区域的数据</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUM</span>(<span class="symbol">C2</span>:<span class="symbol">C4</span>,<span class="symbol">C6</span>:<span class="symbol">C10</span>)</span><br></pre></td></tr></table></figure>
+
+<p>6、配合固定值进行求和，中间使用英文的逗号分隔</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUM</span>(<span class="symbol">C2</span>:<span class="symbol">C11</span>,<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件求和函数-SUMIF"><a href="#条件求和函数-SUMIF" class="headerlink" title="条件求和函数 SUMIF()"></a>条件求和函数 SUMIF()</h3><blockquote>
+<p>按条件求和</p>
+</blockquote>
+<p>sumif 函数的语法格式</p>
+<blockquote>
+<p>Sumif（条件区域，求和条件，实际求和区域），第二个求和条件参数在第一个条件区域里。</p>
+</blockquote>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">sumif</span>(range，criteria，sum_range)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">SUMIF</span>(<span class="symbol">D2</span>:<span class="symbol">D11</span>,<span class="symbol">D4</span>,<span class="symbol">C2</span>:<span class="symbol">C11</span>)</span><br></pre></td></tr></table></figure>
+
+<p>求和所有性别中性别为女的年龄</p>
+<h3 id="求平均值函数-AVERAGE"><a href="#求平均值函数-AVERAGE" class="headerlink" title="求平均值函数 AVERAGE()"></a>求平均值函数 AVERAGE()</h3><blockquote>
+<p>获取平均值</p>
+</blockquote>
+<p>1、指定数值求平均值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">AVERAGE</span>(<span class="number">10</span>,<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、指定单元格求平均值:括号内按 ctrl 选择需要求平均值的单元格</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">AVERAGE</span>(<span class="symbol">C2</span>,<span class="symbol">C8</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3、范围单元格求平均值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">AVERAGE</span>(<span class="symbol">C2</span>:<span class="symbol">C11</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="求最大值函数-MAX"><a href="#求最大值函数-MAX" class="headerlink" title="求最大值函数 MAX()"></a>求最大值函数 MAX()</h3><blockquote>
+<p>获取最大值</p>
+</blockquote>
+<p>1、指定数值求最大值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MAX</span>(<span class="number">30</span>,<span class="number">40</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、指定单元格求最大值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MAX</span>(<span class="symbol">C5</span>,<span class="symbol">C11</span>,<span class="symbol">C7</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3、指定范围单元格求最大值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MAX</span>(<span class="symbol">C2</span>:<span class="symbol">C11</span>)</span><br></pre></td></tr></table></figure>
+
+<p>4、指定多个范围单元格求最大值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MAX</span>(<span class="symbol">C3</span>:<span class="symbol">C4</span>,<span class="symbol">C7</span>,<span class="symbol">C10</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="求最小值函数-MIN"><a href="#求最小值函数-MIN" class="headerlink" title="求最小值函数 MIN()"></a>求最小值函数 MIN()</h3><blockquote>
+<p>获取最小值</p>
+</blockquote>
+<p>1、指定数值求最小值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MIN</span>(<span class="number">30</span>,<span class="number">40</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、指定单元格求最小值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MIN</span>(<span class="symbol">C5</span>,<span class="symbol">C11</span>,<span class="symbol">C7</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3、指定范围单元格求最小值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MIN</span>(<span class="symbol">C2</span>:<span class="symbol">C11</span>)</span><br></pre></td></tr></table></figure>
+
+<p>4、指定多个范围单元格求最小值</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">MIN</span>(<span class="symbol">C3</span>:<span class="symbol">C4</span>,<span class="symbol">C7</span>,<span class="symbol">C10</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="计数函数-COUNT"><a href="#计数函数-COUNT" class="headerlink" title="计数函数 COUNT()"></a>计数函数 COUNT()</h3><blockquote>
+<p>获取指定单元格非空数据数值类型的个数，对于空单元格、逻辑值或者文本数据将被忽略。可以用来判断是否有空白单元格</p>
+</blockquote>
+<p>1、指定数值获取非空数值的个数</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">COUNT</span>(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、获取指定单元格中非空数值的个数</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">COUNT</span>(<span class="symbol">C10</span>,<span class="symbol">F10</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3、指定范围获取非空数值的个数</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">COUNT</span>(<span class="symbol">C10</span>:<span class="symbol">C12</span>)</span><br></pre></td></tr></table></figure>
+
+<p>4、指定多个范围单元格获取非空数值的个数</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">COUNT</span>(<span class="symbol">C8</span>,<span class="symbol">C10</span>,<span class="symbol">C12</span>,<span class="symbol">F4</span>:<span class="symbol">F12</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="非空计数函数-COUNTA"><a href="#非空计数函数-COUNTA" class="headerlink" title="非空计数函数 COUNTA()"></a>非空计数函数 COUNTA()</h3><blockquote>
+<p>统计区域内包含文本和逻辑值的单元格个数。</p>
+<p>注意 counta 函数与 count 函数的区别。</p>
+<p>Count 函数只统计区域内包含数字的单元格个数。</p>
+</blockquote>
+<p>1、指定多个范围单元格获取非空数据的个数</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">COUNTA</span>(<span class="symbol">E4</span>:<span class="symbol">E7</span>,<span class="symbol">C2</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="四舍五入函数-ROUND"><a href="#四舍五入函数-ROUND" class="headerlink" title="四舍五入函数 ROUND()"></a>四舍五入函数 ROUND()</h3><blockquote>
+<p>对数值进行四舍五入</p>
+</blockquote>
+<p>ROUND 函数语法格式：</p>
+<blockquote>
+<p>其中</p>
+<p>number 表示需要进行四舍五入的数值或单元格内容。</p>
+<p>num_digits 表示需要取多少位的参数。</p>
+<p>num_digits&gt;0 时，表示取小数点后对应位数的四舍五入数值。</p>
+<p>num_digits=0 时，表示则将数字四舍五入到最接近的整数。</p>
+<p>num_digits&lt; 0 时，表示对小数点左侧前几位进行四舍五入。</p>
+</blockquote>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line"><span class="built_in">ROUND</span>(number, num_digits)</span><br></pre></td></tr></table></figure>
+
+<p>1、对指定单元格进行四舍五入</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">ROUND</span>(<span class="symbol">E7</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="排名次函数-RANK"><a href="#排名次函数-RANK" class="headerlink" title="排名次函数 RANK()"></a>排名次函数 RANK()</h3><blockquote>
+<p>返回一列数字的数字排位。 数字的排位是相对于列表中的其他值的大小。</p>
+</blockquote>
+<p>语法：RANK(number,ref,[order])</p>
+<blockquote>
+<p>RANK 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Number</strong> 必需。 要找到其排位的数字。</li>
+<li><strong>Ref</strong> 必需。 数字列表的数组，对数字列表的引用。 Ref 中的非数字值会被忽略。</li>
+<li><strong>Order</strong> 可选。 一个指定数字排位方式的数字。<br>如果 order 为 0（零）或省略，Microsoft Excel 对数字的排位是基于 ref 为按照降序排列的列表。<br>如果 order 不为零，Microsoft Excel 对数字的排位是基于 ref 为按照升序排列的列表。</li>
+</ul>
+</blockquote>
+<p>1、获取指定单元格在范围内进行排名</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">RANK</span>(<span class="symbol">C3</span>,<span class="symbol">C2</span>:<span class="symbol">C11</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="排名次函数-RANK-EQ"><a href="#排名次函数-RANK-EQ" class="headerlink" title="排名次函数 RANK.EQ()"></a>排名次函数 RANK.EQ()</h3><figure class="highlight plaintext">
+    <div class="code-block-header" lang="plaintext">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">与RANK函数用法一致</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>返回一列数字的数字排位。 其大小与列表中其他值相关；如果多个值具有相同的排位，则返回该组值的最高排位。</p>
+<p>如果要对列表进行排序，则数字排位可作为其位置。</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>RANK.EQ(number,ref,[order])</p>
+<p>RANK.EQ 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Number</strong> 必需。 要找到其排位的数字。</li>
+<li><strong>Ref</strong> 必需。 数字列表的数组，对数字列表的引用。 Ref 中的非数字值会被忽略。</li>
+<li><strong>Order</strong> 可选。 一个指定数字排位方式的数字。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>【注意】</p>
+<ul>
+<li>如果 Order 为 0（零）或省略，Excel 对数字的排位是基于 Ref 为按降序排列的列表。</li>
+<li>如果 Order 不为零， Excel 对数字的排位是基于 Ref 为按照升序排列的列表。</li>
+</ul>
+</blockquote>
+<p>1、升序排名</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">RANK.EQ</span>(<span class="symbol">C3</span>,<span class="symbol">C2</span>:<span class="symbol">C11</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、降序排名(0 可以省略)</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">RANK.EQ</span>(<span class="symbol">C3</span>,<span class="symbol">C2</span>:<span class="symbol">C11</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="取整函数-INT"><a href="#取整函数-INT" class="headerlink" title="取整函数 INT()"></a>取整函数 INT()</h3><blockquote>
+<p>将数字向下舍入到最接近的整数。</p>
+</blockquote>
+<p>1、对指定单元格进行取整，忽略小数位</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">INT</span>(<span class="symbol">E3</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="求字符串长度函数-LEN"><a href="#求字符串长度函数-LEN" class="headerlink" title="求字符串长度函数 LEN()"></a>求字符串长度函数 LEN()</h3><blockquote>
+<p>返回文本字符串中的字符个数</p>
+<p>【注意】数字，字符，汉字都属于一个字符，包括小数点</p>
+</blockquote>
+<p>1、对指定单元格获取长度</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">LEN</span>(<span class="symbol">E3</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="左取字符串函数-LEFT"><a href="#左取字符串函数-LEFT" class="headerlink" title="左取字符串函数 LEFT()"></a>左取字符串函数 LEFT()</h3><blockquote>
+<p>从文本字符串的第一个字符开始返回指定个数的字符</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>LEFT(text, [num_chars])</p>
+<p>该函数语法具有下列参数：</p>
+<ul>
+<li><strong>Text</strong> 必需。 包含要提取的字符的文本字符串。</li>
+<li>num_chars<br>可选。 指定要由 LEFT 提取的字符的数量。<ul>
+<li>num_chars 必须大于或等于零。</li>
+<li>如果 num_chars 大于文本长度，则 LEFT 返回全部文本。</li>
+<li>如果省略 num_chars，则假定其值为 1。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>1、获取指定单元格从左开始的第一个字符</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">LEFT</span>(<span class="symbol">F2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、获取指定单元格从左开始的指定长度个数的字符</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">LEFT</span>(<span class="symbol">F2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="右取字符串函数-RIGHT"><a href="#右取字符串函数-RIGHT" class="headerlink" title="右取字符串函数 RIGHT()"></a>右取字符串函数 RIGHT()</h3><blockquote>
+<p>根据所指定的字符数返回文本字符串中最后一个或多个字符</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>RIGHT(text,[num_chars])</p>
+<p>RIGHT 函数具有下列参数：</p>
+<ul>
+<li><strong>文本</strong> 必需。 包含要提取字符的文本字符串。</li>
+<li><strong>num_chars</strong> 可选。 指定希望 RIGHT 提取的字符数。</li>
+<li>Num_chars 必须大于或等于零。</li>
+<li>如果 num_chars 大于文本长度，则 RIGHT 返回所有文本。</li>
+<li>如果省略 num_chars，则假定其值为 1。</li>
+</ul>
+</blockquote>
+<p>1、获取指定单元格从右开始的第一个字符</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">RIGHT</span>(<span class="symbol">F2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、获取指定单元格从左开始的指定长度个数的字符</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">RIGHT</span>(<span class="symbol">F2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="日函数-DAY"><a href="#日函数-DAY" class="headerlink" title="日函数 DAY()"></a>日函数 DAY()</h3><blockquote>
+<p>返回以序列数表示的某日期的天数。 天数是介于 1 到 31 之间的整数。</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>DAY(serial_number)</p>
+<p>DAY 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Serial_number</strong> 必需。 尝试查找的日期应使用 DATE 函数输入日期，或者将日期作为其他公式或函数的结果输入。 例如，使用函数 DATE(2008,5,23) 输入 2008 年 5 月 23 日。 如果<a target="_blank" rel="noopener" href="https://support.microsoft.com/zh-cn/office/%E6%9B%B4%E6%94%B9%E6%97%A5%E6%9C%9F%E7%B3%BB%E7%BB%9F%E3%80%81%E6%A0%BC%E5%BC%8F%E6%88%96%E4%B8%A4%E4%BD%8D%E6%95%B0%E5%B9%B4%E4%BB%BD%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F-aaa2159b-4ae8-4651-8bce-d4707bc9fb9f">日期以文本形式输入</a>，则会出现问题。</li>
+</ul>
+</blockquote>
+<p>用法</p>
+<table>
+<thead>
+<tr>
+<th><strong>日期</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2011-4-15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>公式</strong></td>
+<td><strong>描述（结果）</strong></td>
+<td><strong>结果</strong></td>
+</tr>
+<tr>
+<td>=DAY(A2)</td>
+<td>单元格 A2 (15) 中日期的天数</td>
+<td>15</td>
+</tr>
+</tbody></table>
+<h3 id="月函数-MONTH"><a href="#月函数-MONTH" class="headerlink" title="月函数 MONTH()"></a>月函数 MONTH()</h3><blockquote>
+<p>返回日期（以序列数表示）中的月份。 月份是介于 1（一月）到 12（十二月）之间的整数。</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>MONTH(serial_number)</p>
+<p>MONTH 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Serial_number</strong> 必需。 尝试查找的月份的日期应使用 DATE 函数输入日期，或者将日期作为其他公式或函数的结果输入。 例如，使用函数 DATE(2008,5,23) 输入 2008 年 5 月 23 日。 如果<a target="_blank" rel="noopener" href="https://support.microsoft.com/zh-cn/office/%E6%9B%B4%E6%94%B9%E6%97%A5%E6%9C%9F%E7%B3%BB%E7%BB%9F%E3%80%81%E6%A0%BC%E5%BC%8F%E6%88%96%E4%B8%A4%E4%BD%8D%E6%95%B0%E5%B9%B4%E4%BB%BD%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F-aaa2159b-4ae8-4651-8bce-d4707bc9fb9f">日期以文本形式输入</a>，则会出现问题。</li>
+</ul>
+</blockquote>
+<p>用法</p>
+<table>
+<thead>
+<tr>
+<th><strong>日期</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2011-4-15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>公式</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>结果</strong></td>
+</tr>
+<tr>
+<td>=MONTH(A2)</td>
+<td>单元格 A2 中日期的月份</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<h3 id="年函数-YEAR"><a href="#年函数-YEAR" class="headerlink" title="年函数 YEAR()"></a>年函数 YEAR()</h3><blockquote>
+<p>返回对应于某个日期的年份。 Year 作为 1900 - 9999 之间的整数返回。</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>YEAR(serial_number)</p>
+<p>YEAR 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Serial_number</strong> 必需。 要查找的年份的日期。 应使用 DATE 函数输入日期，或者将日期作为其他公式或函数的结果输入。 例如，使用函数 DATE(2008,5,23) 输入 2008 年 5 月 23 日。 如果日期以文本形式输入，则会出现问题。</li>
+</ul>
+</blockquote>
+<p>用法</p>
+<table>
+<thead>
+<tr>
+<th><strong>日期</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2008-7-5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2010-7-5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>公式</strong></td>
+<td><strong>描述（结果）</strong></td>
+<td><strong>结果</strong></td>
+</tr>
+<tr>
+<td>=YEAR(A3)</td>
+<td>单元格 A3 中日期的年份 (2008)</td>
+<td>2008</td>
+</tr>
+<tr>
+<td>=YEAR(A4)</td>
+<td>单元格 A4 中日期的年份 (2010)</td>
+<td>2010</td>
+</tr>
+</tbody></table>
+<h3 id="星期函数-WEEKDAY"><a href="#星期函数-WEEKDAY" class="headerlink" title="星期函数 WEEKDAY()"></a>星期函数 WEEKDAY()</h3><blockquote>
+<p>返回对应于某个日期的一周中的第几天。 默认情况下，天数是 1（星期日）到 7（星期六）范围内的整数。</p>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<p>WEEKDAY(serial_number,[return_type])</p>
+<p>WEEKDAY 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Serial_number</strong> 必需。 一个序列号，代表尝试查找的那一天的日期。 应使用 DATE 函数输入日期，或者将日期作为其他公式或函数的结果输入。 例如，使用函数 DATE(2008,5,23) 输入 2008 年 5 月 23 日。 如果日期以文本形式输入，则会出现问题。</li>
+<li><strong>Return_type</strong> 可选。 用于确定返回值类型的数字。</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>Return_type</strong></th>
+<th><strong>返回的数字</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 或省略</td>
+<td>数字 1（星期日）到 7（星期六）。 同 Microsoft Excel 早期版本。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>数字 1（星期一）到 7（星期日）。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>数字 0（星期一）到 6（星期日）。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>数字 1（星期一）到 7（星期日）。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>数字 1（星期二）到数字 7（星期一）。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>数字 1（星期三）到数字 7（星期二）。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>数字 1（星期四）到数字 7（星期三）。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>数字 1（星期五）到数字 7（星期四）。</td>
+</tr>
+<tr>
+<td>16</td>
+<td>数字 1（星期六）到数字 7（星期五）。</td>
+</tr>
+<tr>
+<td>17</td>
+<td>数字 1（星期日）到 7（星期六）。</td>
+</tr>
+</tbody></table>
+<p>备注</p>
+<blockquote>
+<ul>
+<li>Microsoft Excel 可将日期存储为可用于计算的序列号。 默认情况下，1900 年 1 月 1 日的序列号是 1，而 2008 年 1 月 1 日的序列号是 39448，这是因为它距 1900 年 1 月 1 日有 39448 天。</li>
+<li>如果当前日期基值的 serial_number 超出范围，则 #NUM！ 返回错误。</li>
+<li>如果 return_type 超出了上表中指定的范围，则 #NUM！ 返回错误。</li>
+</ul>
+</blockquote>
+<p>用法</p>
+<table>
+<thead>
+<tr>
+<th><strong>数据</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2008-2-14</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>公式</strong></td>
+<td><strong>描述（结果）</strong></td>
+<td><strong>结果</strong></td>
+</tr>
+<tr>
+<td>=WEEKDAY(A2)</td>
+<td>使用数字 1（星期日）到 7（星期六）表示的一周中的第几天 (5)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>=WEEKDAY(A2, 2)</td>
+<td>使用数字 1（星期一）到 7（星期日）表示的一周中的第几天 (4)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>=WEEKDAY(A2, 3)</td>
+<td>使用数字 0（星期一）到 6（星期日）表示的一周中的第几天 (3)</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<h3 id="日期函数-DATE"><a href="#日期函数-DATE" class="headerlink" title="日期函数 DATE()"></a>日期函数 DATE()</h3><blockquote>
+<p>返回表示特定日期的连续序列号。</p>
+</blockquote>
+<p>语法：</p>
+<blockquote>
+<p>DATE(year,month,day)</p>
+<p>DATE 函数语法具有下列参数：</p>
+<ul>
+<li><strong>Year</strong> ：必需。**<em>year*</em> 参数的值可以包含一到四位数字。Excel 将根据计算机正在使用的日期系统来解释 year*** 参数。默认情况下，Microsoft Excel for Windows 使用的是 1900 日期系统，这表示第一个日期为 1900 年 1 月 1 日。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>提示:</strong> 为避免出现意外结果，请对 *<em>_year</em>_ 参数使用四位数字。例如，“07”可能意味着“1907”或“2007”。因此，使用四位数的年份可避免混淆。</p>
+<ul>
+<li>如果 *<em>_year</em>_ 介于 0（零）到 1899 之间（包含这两个值），则 Excel 会将该值与 1900 相加来计算年份。例如，DATE(108,1,2) 返回 2008 年 1 月 2 日 (1900+108)。</li>
+<li>如果 *<em>_year</em>_ 介于 1900 到 9999 之间（包含这两个值），则 Excel 将使用该数值作为年份。例如，DATE(2008,1,2) 将返回 2008 年 1 月 2 日。</li>
+<li>如果 *<em>_year</em>_ 小于 0 或大于等于 10000，则 Excel 返回 错误值 #NUM!。</li>
+<li><strong>Month</strong> 必需。一个正整数或负整数，表示一年中从 1 月至 12 月（一月到十二月）的各个月。</li>
+<li>如果 <strong><em>month*</em> 大于 12，则 month*</strong> 会从指定年份的第一个月开始加上该月份数。例如，DATE(2008,14,2) 返回表示 2009 年 2 月 2 日的序列数。</li>
+<li>如果 <strong><em>month*</em> 小于 1，则 month*</strong> 会从指定年份的第一个月开始减去该月份数，然后再加上 1 个月。例如，DATE(2008,-3,2) 返回表示 2007 年 9 月 2 日的序列号。</li>
+<li><strong>Day</strong> 必需。一个正整数或负整数，表示一月中从 1 日到 31 日的各天。</li>
+<li>如果 <strong><em>day*</em> 大于指定月中的天数，则 day*</strong> 会从该月的第一天开始加上该天数。例如，DATE(2008,1,35) 返回表示 2008 年 2 月 4 日的序列数。</li>
+<li>如果 <strong><em>day*</em> 小于 1，则 day*</strong> 从指定月份的第一天开始减去该天数，然后再加上 1 天。例如，DATE(2008,1,-15) 返回表示 2007 年 12 月 16 日的序列号。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>注意:</strong> Excel 可将日期存储为连续序列号，以便能在计算中使用它们。1900 年 1 月 1 日的序列号为 1，2008 年 1 月 1 日的序列号为 39448，这是因为它与 1900 年 1 月 1 日之间相差 39,447 天。需要更改数字格式（设置单元格格式）以显示正确的日期。</p>
+</blockquote>
+<p>用法</p>
+<p><strong>=DATE(C2,A2,B2)</strong> 将单元格 C2 中的年、单元格 A2 中的月以及单元格 B2 中的日合并在一起，并将它们放入一个单元格内作为日期。</p>
+<figure class="highlight excel">
+    <div class="code-block-header" lang="excel">
+      <span class="copy-code">COPY</span>
+    </div>
+    <table><tr><td class="code"><pre><span class="line">=<span class="built_in">DATE</span>(<span class="symbol">C2</span>,<span class="symbol">A2</span>,<span class="symbol">B2</span>)</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    
+
+    <ul class="post-tools">
+        
+        
+            <li id="reward">
+                <span id="reward-btn" class="dashang" title="打赏，支持一下"><i class="iconfont icon-dashang"></i> 打赏作者</span>
+                <div class="shang-box">
+                    <div class="shang-tit">
+                        <p>感谢您的支持，我会继续努力的!</p>
+                    </div>
+                    <div class="shang-payimg">
+                        <img id="alipay" src="/media/reward/alipay.jpg" alt="扫码支持" title="扫一扫">
+                        <img id="wechat" src="/media/reward/wechat.jpg" alt="扫码支持" title="扫一扫">
+                    </div>
+                    <div class="pay-explain">扫码打赏，你说多少就多少</div>
+                    <div class="shang-payselect">
+                        <label id="alipay-radio" class="pay-item">
+                            <input type="radio" checked name="reward">
+                            <span></span>
+                        </label>
+                        <label id="wechat-radio" class="pay-item">
+                            <input type="radio" name="reward">
+                            <span></span>
+                        </label>
+                    </div>
+                    <button class="tip-button">
+                        <span class="tip-button-text">打赏完毕</span>
+                        <div class="coin-wrapper">
+                            <div class="coin">
+                                <div class="coin-middle"></div>
+                                <div class="coin-back"></div>
+                                <div class="coin-front"></div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+        
+        
+            <li id="qrcode-btn" title="扫描二维码访问">
+                <i class="iconfont icon-erweima"></i>
+            </li>
+        
+        <li class="sharePage" title="分享本页"  onclick="copyText(window.location.href)">
+            <i class="iconfont icon-link"></i>
+        </li>
+        
+            
+                <li class="right">
+                    <a href="/tags/Excel/">
+                        # Excel 1
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+    
+    
+        
+            
+            <div class="post-copyright">
+                <div class="post-copyright-icon"></div>
+                <div class="post-copyright-author">
+                    <span class="post-copyright-meta">文章作者: </span>
+                    <span class="post-copyright-info">
+              <a href="mailto:aloeJun@qq.com">aloeJun</a>
+            </span>
+                </div>
+                <div class="post-copyright-type">
+                    <span class="post-copyright-meta">文章链接: </span>
+                    <span class="post-copyright-info">
+              <a href="https://www.islu.cn/posts/ExcelCommonlyUsedFunctions.html">https://www.islu.cn/posts/ExcelCommonlyUsedFunctions.html</a>
+            </span>
+                </div>
+                <div class="post-copyright-notice">
+                    <span class="post-copyright-meta">版权声明: </span>
+                    <span class="post-copyright-info">
+                        本博客所有文章除特别声明外，均采用
+                      <a href="/cc " target="_blank">
+                          CC BY-NC-SA 4.0 </a> 许可协议。转载请注明来自
+                      <a href="https://www.islu.cn/posts/ExcelCommonlyUsedFunctions.html" target="_blank">aloeJun | Lu's Blog</a>
+                    </span>
+                </div>
+            </div>
+        
+    
+    
+    <div class="pagination-post">
+        
+            <a href="/posts/Jetbrains.html">
+                <div class="prev-title"><i class="iconfont icon-chevron-left"></i>Jetbrains系列产品激活</div>
+            </a>
+        
+        
+            <a href="/posts/JavaScriptLoadSpeed.html">
+                <div class="next-title">JavaScript加载速度<i class="iconfont icon-chevron-right"></i></div>
+            </a>
+        
+    </div>
+    
+    <hr>
+    <div class="comment-head">
+        <div id="comment">
+    <div class="loading center"><img src="/media/detail/load.svg" alt="加载中..."></div>
+</div>
+<script type="module" data-pjax>
+    import { init } from '/lib/waline/waline.mjs';
+
+    const locale = {
+        nick: '昵称(必填)',
+        nickError: '即使是昵称也不要少于3个字哦 ~ ',
+        mail: '邮箱(必填)',
+        mailError: '请再次检查一下的邮件地址哦 ~ ',
+        link: '网址(选填)',
+        placeholder: '🤣一起来玩，留下你的足迹吧~。评论支持邮箱回复通知！📧\n' +
+            '🚀支持注册登录，并新增支持QQ登录(⊙o⊙)！💖\n' +
+            '💣请文明评论哦禁止恶意评论🈲\n' +
+            '⚠️公开网络空间，请不要发表任何包含个人或其他人的隐私信息⛔',
+        sofa: '抢个沙发吧 ~ ',
+        submit: '发射炮弹',
+        reply: '准备回击',
+        cancelReply: '取消回击',
+        comment: '评论',
+        more: '加载更多...',
+        preview: '实时演示',
+        emoji: '表情炸弹',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '实名发射',
+        logout: '取消实名',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    };
+
+
+    init({
+        el: '#comment',
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        pageSize: 10, // 评论数
+        pageview: true, // 阅读量
+        emoji: [ // 表情
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+        ],
+        WalineSearchOptions: false, // 搜索功能
+        copyright: false, // 右下角版权
+        imageUploader: false, //上传图片
+        lang: 'zh',
+        search: false, // 表情包搜索
+        reaction: false, // 开启反应
+        locale // 自定义提示
+    });
+
+</script>
+    </div>
+    
+    
+</article>
+
+        
+        
+    <aside id="rightside" class="clearfix">
+        <div class="rightside-message">
+            <h1 class="blog-name">aloeJun</h1>
+            <div class="my-description">
+                迷茫的原因往往只有一个，那就是在本该拼命去努力的年纪，想得太多，做得太少。🔔
+            </div>
+        </div>
+
+        
+            <div class="rightside-toc">
+                <p class="title">
+                    <i class="iconfont icon-bars"></i> 目录
+                    <span class="num">0%</span>
+                    <i class="backTop iconfont icon-arrow-up"
+                       onclick="document.documentElement.scrollTop = document.body.scrollTop =0"></i>
+                </p>
+
+                <progress class="progress" value="0" max="100"></progress>
+                
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Excel-%E5%87%BD%E6%95%B0"><span class="toc-text">Excel 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%92%8C%E5%87%BD%E6%95%B0-SUM"><span class="toc-text">求和函数 SUM()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B1%82%E5%92%8C%E5%87%BD%E6%95%B0-SUMIF"><span class="toc-text">条件求和函数 SUMIF()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%E5%87%BD%E6%95%B0-AVERAGE"><span class="toc-text">求平均值函数 AVERAGE()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E6%9C%80%E5%A4%A7%E5%80%BC%E5%87%BD%E6%95%B0-MAX"><span class="toc-text">求最大值函数 MAX()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E6%9C%80%E5%B0%8F%E5%80%BC%E5%87%BD%E6%95%B0-MIN"><span class="toc-text">求最小值函数 MIN()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E6%95%B0%E5%87%BD%E6%95%B0-COUNT"><span class="toc-text">计数函数 COUNT()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E8%AE%A1%E6%95%B0%E5%87%BD%E6%95%B0-COUNTA"><span class="toc-text">非空计数函数 COUNTA()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%E5%87%BD%E6%95%B0-ROUND"><span class="toc-text">四舍五入函数 ROUND()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%90%8D%E6%AC%A1%E5%87%BD%E6%95%B0-RANK"><span class="toc-text">排名次函数 RANK()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%90%8D%E6%AC%A1%E5%87%BD%E6%95%B0-RANK-EQ"><span class="toc-text">排名次函数 RANK.EQ()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E6%95%B4%E5%87%BD%E6%95%B0-INT"><span class="toc-text">取整函数 INT()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6%E5%87%BD%E6%95%B0-LEN"><span class="toc-text">求字符串长度函数 LEN()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0-LEFT"><span class="toc-text">左取字符串函数 LEFT()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0-RIGHT"><span class="toc-text">右取字符串函数 RIGHT()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%87%BD%E6%95%B0-DAY"><span class="toc-text">日函数 DAY()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%88%E5%87%BD%E6%95%B0-MONTH"><span class="toc-text">月函数 MONTH()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B4%E5%87%BD%E6%95%B0-YEAR"><span class="toc-text">年函数 YEAR()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E6%9C%9F%E5%87%BD%E6%95%B0-WEEKDAY"><span class="toc-text">星期函数 WEEKDAY()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0-DATE"><span class="toc-text">日期函数 DATE()</span></a></li></ol></li></ol>
+                <a id="goComment" href="#comment" title="移步评论" alt="移步评论">COMMENT <i
+                            class="iconfont icon-arrow-down"></i></a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="related-posts">
+                
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li></ul>
+                <div class="webinfo">
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-file-text-fill"></i> 文章总数 :</div>
+                        <div class="item-count">57 篇</div>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-timer-fill"></i> 建站天数 :</div>
+                        <div class="item-count" id="runtimeshow"> 1024 天</div>
+                        <script async>
+                            window.addEventListener("load", function () {
+                                $id("runtimeshow").innerHTML = getDaysDiffBetweenDates('2020-08-16') + "天";
+                            });
+                        </script>
+                    </div>
+                    <div class="webinfo-item">
+                        <div class="webinfo-item-title"><i class="item-icon iconfont icon-text"></i> 总字数 :</div>
+                        <div class="item-count">93.7k 字</div>
+                    </div>
+                </div>
+            </div>
+        
+    </aside>
+
+
+    </main>
+    
+    
+    
+    <mark id="mask" onclick="close_all()"></mark>
+    
+    
+<footer id="footer" style="display: none">
+    <span id="backTop" onclick="document.documentElement.scrollTop = document.body.scrollTop =0">
+        <i class="iconfont icon-arrow-up"></i>
+    </span>
+    <div class="container">
+        <p class="footer-text">欢迎第<span id="aloeJun-pageview-count" data-path="/"><img width="14px" height="14px" src="/media/detail/loaded.svg" alt="加载中..."></span>位来访者</p>
+        <p class="footer-message">
+            
+                <a id="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+                    豫ICP备2020025858号-2
+                </a>
+            
+            
+                <a id="upy" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"
+                   rel="noopener noreferrer">
+                    <img width="90px" height="40px" src="/media/detail/upy.png" loading="lazy" alt="upy" title="又拍云">
+                </a>
+            
+
+            <a href="/atom.xml" target="_blank" title="RSS订阅">
+                <i class="iconfont icon-dingyue" style="font-size: 1.2rem"></i>
+            </a>
+            <a href="/cc" title="cc协议">
+                <i class="iconfont icon-closed-captioning" style="font-size: 1.5rem"></i>
+            </a>
+    </div>
+</footer>
+    
+    <section id="local-search" class="hidden">
+        <div id="local-search-title">本地搜索 </div>
+        <input id="local-search-input" autocomplete="off" placeholder="搜索文章" type="text">
+        <hr>
+        <div id="local-search-result"></div>
+        <span class="search-close-button" onclick="closeSearch()"><i class="iconfont icon-times-circle-fill"></i></span>
+        <script async src="/js/search.js"></script>
+    </section>
+
+</div>
+
+<div id="resource">
+    
+<script type="application/javascript">
+    var $config = {
+        
+            searchFile: "/search.json",
+        
+        
+        qrcode:{
+            source_js: "/lib/qrcode/qrcode.js",
+            Data:{
+                render: 'canvas',
+                text: 'https://www.islu.cn/posts/ExcelCommonlyUsedFunctions.html',
+                size: 100,
+                correctLevel: 3,
+                background: '#fff',
+                image: '',
+                imageSize: '120px'
+            }
+        },
+        
+        
+        code_block_expand: {
+            enable: true,
+            height: 400,
+            scrollTop: 200
+        },
+        
+    }
+</script>
+
+    <script async type="application/javascript" src="/js/main.js"></script>
+    
+    <script defer type="text/javascript">
+        getScript('/lib/pjax/pjax.min.js', ()=>{
+            window.pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    "head meta[name='keywords']",
+                    "head meta[name='description']",
+                    "header p.now-path",
+                    "main",
+                    "span#aloeJun-pageview-count"
+                ],
+                cacheBust: false
+            });
+        });
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', () => {
+            // 执行进度条
+            
+        });
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', () => {
+            // 加载进度条加载完毕
+            
+            // 执行所有方法
+            exeAllFn()
+        });
+
+        document.addEventListener('pjax:success', () => {
+            $queryAll('script[data-pjax]').forEach((item) => {
+                const newScript = document.createElement('script')
+                const content = item.text || item.textContent || item.innerHTML || ""
+                Array.from(item.attributes).forEach((attr) => {
+                    newScript.setAttribute(attr.name, attr.value)
+                })
+                newScript.appendChild(document.createTextNode(content))
+                item.parentNode.replaceChild(newScript, item)
+            })
+        });
+        // Pjax请求错误时，跳转到404页面
+        document.addEventListener('pjax:error', (err) => {
+            if (err.request.status === 404) {
+                pjax.loadUrl('/404.html')
+            }
+        })
+    </script>
+
+    
+    <div id="nav-music"></div>
+    <script defer>
+        if (document.body.clientWidth > 768) {
+            window.addEventListener('load', () => {
+                getCss('/lib/aplayer/APlayer.min.css')
+                $id("nav-music").innerHTML = `<div id="nav-music-hoverTips" onclick="aloejun.musicToggle()">播放音乐</div>
+                <meting-js
+                        id="8164170333"
+                        server="netease"
+                        type="playlist"
+                        theme='#42b983'
+                        loop='all'
+                        preload='auto'
+                        order='random'
+                        volume='0.7'
+                        data-lrctype="0"
+                >
+                </meting-js>`
+                getScript('/lib/aplayer/APlayer.min.js', () => {
+                    getScript('/lib/aplayer/Meting.min.js')
+                })
+            }, false)
+        }
+    </script>
+
+    
+
+
+
+
+    
+<script async type="text/javascript">
+    window.addEventListener("load", () => {
+        getCss("/lib/waline/waline.css")
+        // 页面加载完毕后执行的代码
+        getScript("/lib/waline/activate-input.js", () => {
+            console.log("\n %c 最美的旅程 %c 是不断的经历 \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3;color:#030307; padding:5px 0;")
+        });
+    });
+
+</script>
+<script type="module" defer data-pjax>
+    import {pageviewCount} from '/lib/waline/pageview.mjs';
+
+    pageviewCount({
+        serverURL: 'https://discuss.islu.cn',
+        path: window.location.pathname,
+        selector: '#aloeJun-pageview-count',
+        update: true
+    });
+</script>
+</div>
+</body>
+
+</html>

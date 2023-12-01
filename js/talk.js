@@ -1,0 +1,7 @@
+const serverURL="https://discuss.islu.cn",urlPath="/books/index.html",count=30,avatar="https://islu.cn/media/detail/avatar.jpg",fetchData=async()=>{return(await(await fetch(`${serverURL}/api/comment?path=${urlPath}&page=1&pageSize=50&sortBy=insertedAt_desc`)).json()).data.data},getTime=t=>{var t=new Date(t),a=[t.getFullYear(),t.getMonth()+1,t.getDate(),t.getHours(),t.getMinutes(),t.getSeconds()];for(let t=0;t<a.length;t++)a[t]=a[t]<=9?"0"+a[t]:a[t]+"";return a[0]+`年${a[1]}月${a[2]}日 ${a[3]}:${a[4]}:`+a[5]},formatItem=t=>({date:getTime(t.time),content:t.orig,ObjectId:t.objectId,tlike:t.like,tCount:t.children.length}),displayItems=async()=>{var t=await fetchData(),a=t.filter(t=>"201"==t.user_id);let e="";a.forEach(t=>{t=formatItem(t);e+=`<div class="talk_item"><div class="talk_meta">
+      <img class="no-lightbox avatar" src=${avatar}>
+      <div class="info"><span class="talk_nick">aloeJun${t.tlike}</span>
+      <span class="talk_date">${t.date}</span></div></div>
+      <div class="talk_content">${t.content}</div>
+      <span class="talk_btn"><a href="#${t.ObjectId}" title="评论" class="iconfont icon-pinglun"></a>
+      </span></div>`}),t.length==count&&(document.querySelector(".limit").style.display="block"),document.getElementById("talk").innerHTML=e};displayItems();
